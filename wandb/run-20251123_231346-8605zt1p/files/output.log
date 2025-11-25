@@ -1,0 +1,1043 @@
+[INFO] Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: dpo
+  finetuning_frequency: 400
+  dpo_strategy: 2
+  dpo_config:
+    beta: 0.4
+    max_seq_length: 6500
+    per_device_train_batch_size: 2
+    gradient_accumulation_steps: 16
+    gradient_checkpointing: 1
+    num_train_epochs: 2
+    learning_rate: 1.0e-05
+    lr_scheduler_type: cosine
+    weight_decay: 0.001
+    warmup_steps: 0
+    logging_steps: 1
+    f_divergence_type: alpha_divergence
+    f_alpha_divergence_coef: 1.0
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 5
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 20
+finetuning_frequency: 10
+lr_annealing: 0
+one_tuning: 0
+percentile: 70
+max_loops: 5
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: evotune_llama_1B_test/bin_llama32_dpo_0
+group_name: evotune_llama_1B_test/bin_llama32_dpo
+logs_path: .
+logs_dir: out/logs/evotune_llama_1B_test/bin_bin_llama32_dpo_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_dpo
+prefix: evotune_llama_1B_test
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/evotune_llama_1B_test/bin_bin_llama32_dpo_0/model_adapter_llama32
+default_wandb_name: 8605zt1p
+2025-11-23 23:13:47,119 - INFO - Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: dpo
+  finetuning_frequency: 400
+  dpo_strategy: 2
+  dpo_config:
+    beta: 0.4
+    max_seq_length: 6500
+    per_device_train_batch_size: 2
+    gradient_accumulation_steps: 16
+    gradient_checkpointing: 1
+    num_train_epochs: 2
+    learning_rate: 1.0e-05
+    lr_scheduler_type: cosine
+    weight_decay: 0.001
+    warmup_steps: 0
+    logging_steps: 1
+    f_divergence_type: alpha_divergence
+    f_alpha_divergence_coef: 1.0
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 5
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 20
+finetuning_frequency: 10
+lr_annealing: 0
+one_tuning: 0
+percentile: 70
+max_loops: 5
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: evotune_llama_1B_test/bin_llama32_dpo_0
+group_name: evotune_llama_1B_test/bin_llama32_dpo
+logs_path: .
+logs_dir: out/logs/evotune_llama_1B_test/bin_bin_llama32_dpo_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_dpo
+prefix: evotune_llama_1B_test
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/evotune_llama_1B_test/bin_bin_llama32_dpo_0/model_adapter_llama32
+default_wandb_name: 8605zt1p
+
+[INFO] Starting from scratch
+
+2025-11-23 23:13:47,127 - INFO - Starting from scratch
+Best score of island 0 increased to -536.78
+Best score of island 1 increased to -536.78
+Best score of island 2 increased to -536.78
+Best score of island 3 increased to -536.78
+Best score of island 4 increased to -536.78
+Best score of island 5 increased to -536.78
+Saving a program to a file...
+[INFO] Flag load finetuned: False
+2025-11-23 23:13:47,424 - INFO - Flag load finetuned: False
+[INFO] ====================== Inference Engine: vLLM ======================
+2025-11-23 23:13:47,425 - INFO - ====================== Inference Engine: vLLM ======================
+[INFO] Starting with round number 0
+2025-11-23 23:13:47,426 - INFO - Starting with round number 0
+[INFO] STARTING ROUND NUM: 0
+2025-11-23 23:13:47,427 - INFO - STARTING ROUND NUM: 0
+[INFO] Prompt num: 0
+2025-11-23 23:13:47,427 - INFO - Prompt num: 0
+[INFO] Total functions generated so far: 0
+2025-11-23 23:13:47,428 - INFO - Total functions generated so far: 0
+[INFO] Total functions evaluated so far: 0
+2025-11-23 23:13:47,428 - INFO - Total functions evaluated so far: 0
+[INFO] Number of functions in the programbank: 6
+2025-11-23 23:13:47,429 - INFO - Number of functions in the programbank: 6
+[INFO] Number of datatpoints in DPO data: 0
+2025-11-23 23:13:47,430 - INFO - Number of datatpoints in DPO data: 0
+[INFO] Best overall program score: -536.78
+2025-11-23 23:13:47,430 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 23:13:47,431 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 23:13:47,431 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] Starting vLLM model server...
+2025-11-23 23:13:47,433 - INFO - Starting vLLM model server...
+[INFO] Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+2025-11-23 23:13:47,434 - INFO - Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+[INFO] Waiting for all servers to start... Server PIDs: [1554226]
+2025-11-23 23:13:47,436 - INFO - Waiting for all servers to start... Server PIDs: [1554226]
+[INFO] Server is ready at port 8080. Serving meta-llama/Llama-3.2-1B-Instruct.
+2025-11-23 23:14:23,145 - INFO - Server is ready at port 8080. Serving meta-llama/Llama-3.2-1B-Instruct.
+[INFO] ----------
+2025-11-23 23:14:23,145 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 23:14:23,145 - INFO - GENERATING PROMPTS
+/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/multiprocessing/popen_fork.py:66: RuntimeWarning: os.fork() was called. os.fork() is incompatible with multithreaded code, and JAX is multithreaded, so this will likely lead to a deadlock.
+  self.pid = os.fork()
+[INFO] ----------
+2025-11-23 23:14:23,175 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 23:14:23,176 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 23:14:23,328 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 23:14:23,331 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 23:14:23,337 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 23:14:23,338 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 4
+2025-11-23 23:14:23,338 - INFO - Island id 4
+[INFO]
+2025-11-23 23:14:23,339 - INFO -
+
+
+[INFO] Time taken for LLM generation: 3 seconds
+
+
+2025-11-23 23:14:27,213 - INFO - Time taken for LLM generation: 3 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 23:14:27,215 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 3
+2025-11-23 23:14:27,218 - INFO - LLM generation time: 3
+[INFO] Producer: Generated 8 functions for prompt 1
+2025-11-23 23:14:27,219 - INFO - Producer: Generated 8 functions for prompt 1
+[INFO] Producer: Generated 0 failed functions for prompt 1
+2025-11-23 23:14:27,219 - INFO - Producer: Generated 0 failed functions for prompt 1
+[INFO]
+2025-11-23 23:14:27,220 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 23:14:27,220 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 23:14:27,220 - INFO - Island id 3
+[INFO]
+2025-11-23 23:14:27,220 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 23:14:31,609 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:14:31,611 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:14:31,611 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 23:14:31,611 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 4
+2025-11-23 23:14:31,614 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 6 functions for prompt 2
+2025-11-23 23:14:31,614 - INFO - Producer: Generated 6 functions for prompt 2
+[INFO] Producer: Generated 2 failed functions for prompt 2
+2025-11-23 23:14:31,637 - INFO - Producer: Generated 2 failed functions for prompt 2
+[INFO]
+2025-11-23 23:14:31,638 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 23:14:31,638 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 5
+2025-11-23 23:14:31,639 - INFO - Island id 5
+[INFO]
+2025-11-23 23:14:31,639 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 23:14:36,765 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:14:36,766 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:14:36,766 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:14:36,767 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 5
+2025-11-23 23:14:36,767 - INFO - Number of outputs with at least one valid function definition: 5
+[INFO] LLM generation time: 5
+2025-11-23 23:14:36,770 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 5 functions for prompt 3
+2025-11-23 23:14:36,771 - INFO - Producer: Generated 5 functions for prompt 3
+[INFO] Producer: Generated 3 failed functions for prompt 3
+2025-11-23 23:14:36,790 - INFO - Producer: Generated 3 failed functions for prompt 3
+[INFO]
+2025-11-23 23:14:36,791 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 23:14:36,792 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 23:14:36,792 - INFO - Island id 0
+[INFO]
+2025-11-23 23:14:36,792 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 23:14:42,380 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:14:42,381 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 23:14:42,382 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 5
+2025-11-23 23:14:42,385 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 7 functions for prompt 4
+2025-11-23 23:14:42,385 - INFO - Producer: Generated 7 functions for prompt 4
+[INFO] Producer: Generated 1 failed functions for prompt 4
+2025-11-23 23:14:42,412 - INFO - Producer: Generated 1 failed functions for prompt 4
+[INFO]
+2025-11-23 23:14:42,413 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 23:14:42,413 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 23:14:42,413 - INFO - Island id 0
+[INFO]
+2025-11-23 23:14:42,414 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 23:14:46,518 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 23:14:46,520 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 4
+2025-11-23 23:14:46,522 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 8 functions for prompt 5
+2025-11-23 23:14:46,523 - INFO - Producer: Generated 8 functions for prompt 5
+[INFO] Producer: Generated 0 failed functions for prompt 5
+2025-11-23 23:14:46,523 - INFO - Producer: Generated 0 failed functions for prompt 5
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-23 23:14:46,523 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-23 23:14:46,524 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 1554497, worker id 0 to finish
+2025-11-23 23:14:46,524 - INFO - Waiting for consumer process 1554497, worker id 0 to finish
+[INFO] Queue size: 20, timeout time: 300
+2025-11-23 23:14:46,525 - INFO - Queue size: 20, timeout time: 300
+[INFO] Consumer process 1554497 exited
+2025-11-23 23:14:50,250 - INFO - Consumer process 1554497 exited
+[INFO] Waiting for consumer process 1554498, worker id 1 to finish
+2025-11-23 23:14:50,251 - INFO - Waiting for consumer process 1554498, worker id 1 to finish
+[INFO] Queue size: 6, timeout time: 180
+2025-11-23 23:14:50,251 - INFO - Queue size: 6, timeout time: 180
+[INFO] Consumer process 1554498 exited
+2025-11-23 23:14:51,105 - INFO - Consumer process 1554498 exited
+[INFO] Waiting for consumer process 1554500, worker id 2 to finish
+2025-11-23 23:14:51,106 - INFO - Waiting for consumer process 1554500, worker id 2 to finish
+[INFO] Queue size: 5, timeout time: 120
+2025-11-23 23:14:51,106 - INFO - Queue size: 5, timeout time: 120
+[INFO] Consumer process 1554500 exited
+2025-11-23 23:14:51,106 - INFO - Consumer process 1554500 exited
+[INFO] Waiting for consumer process 1554504, worker id 3 to finish
+2025-11-23 23:14:51,106 - INFO - Waiting for consumer process 1554504, worker id 3 to finish
+[INFO] Queue size: 5, timeout time: 120
+2025-11-23 23:14:51,106 - INFO - Queue size: 5, timeout time: 120
+[INFO] Consumer process 1554504 exited
+2025-11-23 23:14:56,368 - INFO - Consumer process 1554504 exited
+[INFO] Waiting for consumer process 1554506, worker id 4 to finish
+2025-11-23 23:14:56,368 - INFO - Waiting for consumer process 1554506, worker id 4 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:14:56,368 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1554506 exited
+2025-11-23 23:14:56,369 - INFO - Consumer process 1554506 exited
+[INFO] Waiting for consumer process 1554509, worker id 5 to finish
+2025-11-23 23:14:56,369 - INFO - Waiting for consumer process 1554509, worker id 5 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:14:56,369 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1554509 exited
+2025-11-23 23:14:56,369 - INFO - Consumer process 1554509 exited
+[INFO] Waiting for consumer process 1554512, worker id 6 to finish
+2025-11-23 23:14:56,369 - INFO - Waiting for consumer process 1554512, worker id 6 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:14:56,370 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1554512 exited
+2025-11-23 23:14:56,370 - INFO - Consumer process 1554512 exited
+[INFO] Waiting for consumer process 1554514, worker id 7 to finish
+2025-11-23 23:14:56,370 - INFO - Waiting for consumer process 1554514, worker id 7 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:14:56,370 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1554514 exited
+2025-11-23 23:14:56,370 - INFO - Consumer process 1554514 exited
+[INFO] Waiting for consumer process 1554519, worker id 8 to finish
+2025-11-23 23:14:56,371 - INFO - Waiting for consumer process 1554519, worker id 8 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:14:56,371 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1554519 exited
+2025-11-23 23:14:56,371 - INFO - Consumer process 1554519 exited
+[INFO] Waiting for consumer process 1554521, worker id 9 to finish
+2025-11-23 23:14:56,371 - INFO - Waiting for consumer process 1554521, worker id 9 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:14:56,372 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1554521 exited
+2025-11-23 23:14:56,374 - INFO - Consumer process 1554521 exited
+[INFO] Waiting for consumer process 1554523, worker id 10 to finish
+2025-11-23 23:14:56,375 - INFO - Waiting for consumer process 1554523, worker id 10 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:14:56,375 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1554523 exited
+2025-11-23 23:14:56,376 - INFO - Consumer process 1554523 exited
+[INFO] Waiting for consumer process 1554527, worker id 11 to finish
+2025-11-23 23:14:56,376 - INFO - Waiting for consumer process 1554527, worker id 11 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:14:56,377 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1554527 exited
+2025-11-23 23:15:03,053 - INFO - Consumer process 1554527 exited
+[INFO] ###################
+2025-11-23 23:15:03,063 - INFO - ###################
+[INFO] Num of passed functions: 14
+2025-11-23 23:15:03,064 - INFO - Num of passed functions: 14
+[INFO] Num of failed functions: 26
+2025-11-23 23:15:03,064 - INFO - Num of failed functions: 26
+[INFO] ###################
+2025-11-23 23:15:03,065 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 5 rounds
+2025-11-23 23:15:03,099 - INFO - Finished with continuous sampling and evaluation for 5 rounds
+[INFO] ----------
+2025-11-23 23:15:03,099 - INFO - ----------
+[INFO] REGISTERING PROGRAMS
+2025-11-23 23:15:03,099 - INFO - REGISTERING PROGRAMS
+
+Number of passing functions to register: 14
+
+
+Number of failed functions: 26
+
+Saving the programs from program bank to a file...
+[INFO] Saved to logs directory
+2025-11-23 23:15:03,202 - INFO - Saved to logs directory
+[INFO]
+
+Time taken for one round: 75 seconds
+2025-11-23 23:15:03,202 - INFO -
+
+Time taken for one round: 75 seconds
+
+
+[INFO]
+
+
+2025-11-23 23:15:03,204 - INFO -
+
+
+[INFO] ROUND 0 FINISHED
+
+
+2025-11-23 23:15:03,205 - INFO - ROUND 0 FINISHED
+[INFO] STARTING ROUND NUM: 5
+2025-11-23 23:15:03,205 - INFO - STARTING ROUND NUM: 5
+[INFO] Prompt num: 5
+2025-11-23 23:15:03,206 - INFO - Prompt num: 5
+[INFO] Total functions generated so far: 40
+2025-11-23 23:15:03,207 - INFO - Total functions generated so far: 40
+[INFO] Total functions evaluated so far: 40
+2025-11-23 23:15:03,208 - INFO - Total functions evaluated so far: 40
+[INFO] Number of functions in the programbank: 20
+2025-11-23 23:15:03,208 - INFO - Number of functions in the programbank: 20
+[INFO] Number of datatpoints in DPO data: 30
+2025-11-23 23:15:03,209 - INFO - Number of datatpoints in DPO data: 30
+[INFO] Best overall program score: -536.78
+2025-11-23 23:15:03,209 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 23:15:03,210 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 23:15:03,211 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] VLLM model server is still alive, continuing...
+2025-11-23 23:15:03,212 - INFO - VLLM model server is still alive, continuing...
+[INFO] ----------
+2025-11-23 23:15:03,213 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 23:15:03,213 - INFO - GENERATING PROMPTS
+[INFO] ----------
+2025-11-23 23:15:03,237 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 23:15:03,238 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 23:15:03,389 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 23:15:03,392 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 23:15:03,398 - INFO -
+
+
+[INFO] Prompt scores: [-633.7, -536.78]
+
+
+2025-11-23 23:15:03,399 - INFO - Prompt scores: [-633.7, -536.78]
+[INFO] Island id 0
+2025-11-23 23:15:03,400 - INFO - Island id 0
+[INFO]
+2025-11-23 23:15:03,402 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 23:15:08,015 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 23:15:08,016 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 4
+2025-11-23 23:15:08,020 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 8 functions for prompt 6
+2025-11-23 23:15:08,020 - INFO - Producer: Generated 8 functions for prompt 6
+[INFO] Producer: Generated 0 failed functions for prompt 6
+2025-11-23 23:15:08,021 - INFO - Producer: Generated 0 failed functions for prompt 6
+[INFO]
+2025-11-23 23:15:08,021 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 23:15:08,022 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 2
+2025-11-23 23:15:08,022 - INFO - Island id 2
+[INFO]
+2025-11-23 23:15:08,022 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 23:15:13,600 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:15:13,601 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 23:15:13,601 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 5
+2025-11-23 23:15:13,604 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 7 functions for prompt 7
+2025-11-23 23:15:13,604 - INFO - Producer: Generated 7 functions for prompt 7
+[INFO] Producer: Generated 1 failed functions for prompt 7
+2025-11-23 23:15:13,632 - INFO - Producer: Generated 1 failed functions for prompt 7
+[INFO]
+2025-11-23 23:15:13,633 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 23:15:13,633 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 5
+2025-11-23 23:15:13,633 - INFO - Island id 5
+[INFO]
+2025-11-23 23:15:13,633 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 23:15:18,225 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:15:18,227 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:15:18,228 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 23:15:18,228 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 4
+2025-11-23 23:15:18,230 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 6 functions for prompt 8
+2025-11-23 23:15:18,231 - INFO - Producer: Generated 6 functions for prompt 8
+[INFO] Producer: Generated 2 failed functions for prompt 8
+2025-11-23 23:15:18,253 - INFO - Producer: Generated 2 failed functions for prompt 8
+[INFO]
+2025-11-23 23:15:18,254 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:15:18,255 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 0
+2025-11-23 23:15:18,255 - INFO - Island id 0
+[INFO]
+2025-11-23 23:15:18,255 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 23:15:23,666 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 23:15:23,668 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 5
+2025-11-23 23:15:23,670 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 8 functions for prompt 9
+2025-11-23 23:15:23,671 - INFO - Producer: Generated 8 functions for prompt 9
+[INFO] Producer: Generated 0 failed functions for prompt 9
+2025-11-23 23:15:23,671 - INFO - Producer: Generated 0 failed functions for prompt 9
+[INFO]
+2025-11-23 23:15:23,672 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:15:23,672 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 3
+2025-11-23 23:15:23,672 - INFO - Island id 3
+[INFO]
+2025-11-23 23:15:23,672 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-23 23:15:34,540 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:15:34,540 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:15:34,541 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 23:15:34,542 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 10
+2025-11-23 23:15:34,553 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 6 functions for prompt 10
+2025-11-23 23:15:34,554 - INFO - Producer: Generated 6 functions for prompt 10
+[INFO] Producer: Generated 2 failed functions for prompt 10
+2025-11-23 23:15:34,577 - INFO - Producer: Generated 2 failed functions for prompt 10
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-23 23:15:34,578 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-23 23:15:34,578 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 1555044, worker id 0 to finish
+2025-11-23 23:15:34,578 - INFO - Waiting for consumer process 1555044, worker id 0 to finish
+[INFO] Queue size: 12, timeout time: 240
+2025-11-23 23:15:34,578 - INFO - Queue size: 12, timeout time: 240
+[INFO] Consumer process 1555044 exited
+2025-11-23 23:15:38,093 - INFO - Consumer process 1555044 exited
+[INFO] Waiting for consumer process 1555045, worker id 1 to finish
+2025-11-23 23:15:38,094 - INFO - Waiting for consumer process 1555045, worker id 1 to finish
+[INFO] Queue size: 2, timeout time: 120
+2025-11-23 23:15:38,094 - INFO - Queue size: 2, timeout time: 120
+[INFO] Consumer process 1555045 exited
+2025-11-23 23:15:38,821 - INFO - Consumer process 1555045 exited
+[INFO] Waiting for consumer process 1555048, worker id 2 to finish
+2025-11-23 23:15:38,822 - INFO - Waiting for consumer process 1555048, worker id 2 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:15:38,822 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1555048 exited
+2025-11-23 23:15:39,194 - INFO - Consumer process 1555048 exited
+[INFO] Waiting for consumer process 1555051, worker id 3 to finish
+2025-11-23 23:15:39,194 - INFO - Waiting for consumer process 1555051, worker id 3 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 23:15:39,195 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1555051 exited
+2025-11-23 23:15:40,060 - INFO - Consumer process 1555051 exited
+[INFO] Waiting for consumer process 1555053, worker id 4 to finish
+2025-11-23 23:15:40,061 - INFO - Waiting for consumer process 1555053, worker id 4 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:15:40,061 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555053 exited
+2025-11-23 23:15:40,061 - INFO - Consumer process 1555053 exited
+[INFO] Waiting for consumer process 1555056, worker id 5 to finish
+2025-11-23 23:15:40,061 - INFO - Waiting for consumer process 1555056, worker id 5 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:15:40,062 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555056 exited
+2025-11-23 23:15:40,062 - INFO - Consumer process 1555056 exited
+[INFO] Waiting for consumer process 1555060, worker id 6 to finish
+2025-11-23 23:15:40,062 - INFO - Waiting for consumer process 1555060, worker id 6 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:15:40,063 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555060 exited
+2025-11-23 23:15:40,063 - INFO - Consumer process 1555060 exited
+[INFO] Waiting for consumer process 1555062, worker id 7 to finish
+2025-11-23 23:15:40,063 - INFO - Waiting for consumer process 1555062, worker id 7 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:15:40,064 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555062 exited
+2025-11-23 23:15:40,064 - INFO - Consumer process 1555062 exited
+[INFO] Waiting for consumer process 1555065, worker id 8 to finish
+2025-11-23 23:15:40,064 - INFO - Waiting for consumer process 1555065, worker id 8 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:15:40,064 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555065 exited
+2025-11-23 23:15:40,064 - INFO - Consumer process 1555065 exited
+[INFO] Waiting for consumer process 1555068, worker id 9 to finish
+2025-11-23 23:15:40,065 - INFO - Waiting for consumer process 1555068, worker id 9 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:15:40,065 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555068 exited
+2025-11-23 23:15:40,065 - INFO - Consumer process 1555068 exited
+[INFO] Waiting for consumer process 1555071, worker id 10 to finish
+2025-11-23 23:15:40,065 - INFO - Waiting for consumer process 1555071, worker id 10 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:15:40,065 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555071 exited
+2025-11-23 23:15:40,066 - INFO - Consumer process 1555071 exited
+[INFO] Waiting for consumer process 1555074, worker id 11 to finish
+2025-11-23 23:15:40,066 - INFO - Waiting for consumer process 1555074, worker id 11 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:15:40,066 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555074 exited
+2025-11-23 23:15:40,066 - INFO - Consumer process 1555074 exited
+[INFO] ###################
+2025-11-23 23:15:40,078 - INFO - ###################
+[INFO] Num of passed functions: 10
+2025-11-23 23:15:40,079 - INFO - Num of passed functions: 10
+[INFO] Num of failed functions: 30
+2025-11-23 23:15:40,080 - INFO - Num of failed functions: 30
+[INFO] ###################
+2025-11-23 23:15:40,081 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 5 rounds
+2025-11-23 23:15:40,104 - INFO - Finished with continuous sampling and evaluation for 5 rounds
+[INFO] ----------
+2025-11-23 23:15:40,104 - INFO - ----------
+[INFO] REGISTERING PROGRAMS
+2025-11-23 23:15:40,104 - INFO - REGISTERING PROGRAMS
+
+Number of passing functions to register: 10
+
+
+Number of failed functions: 30
+
+Saving the programs from program bank to a file...
+[INFO] Saved to logs directory
+2025-11-23 23:15:40,179 - INFO - Saved to logs directory
+[INFO]
+
+Time taken for one round: 36 seconds
+2025-11-23 23:15:40,180 - INFO -
+
+Time taken for one round: 36 seconds
+
+
+[INFO]
+
+
+2025-11-23 23:15:40,182 - INFO -
+
+
+[INFO] ROUND 5 FINISHED
+
+
+2025-11-23 23:15:40,183 - INFO - ROUND 5 FINISHED
+[INFO] STARTING ROUND NUM: 10
+2025-11-23 23:15:40,183 - INFO - STARTING ROUND NUM: 10
+[INFO] Prompt num: 10
+2025-11-23 23:15:40,184 - INFO - Prompt num: 10
+[INFO] Total functions generated so far: 80
+2025-11-23 23:15:40,185 - INFO - Total functions generated so far: 80
+[INFO] Total functions evaluated so far: 80
+2025-11-23 23:15:40,185 - INFO - Total functions evaluated so far: 80
+[INFO] Number of functions in the programbank: 30
+2025-11-23 23:15:40,186 - INFO - Number of functions in the programbank: 30
+[INFO] Number of datatpoints in DPO data: 62
+2025-11-23 23:15:40,186 - INFO - Number of datatpoints in DPO data: 62
+[INFO] Best overall program score: -536.78
+2025-11-23 23:15:40,187 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 23:15:40,188 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 23:15:40,188 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] VLLM model server is still alive, continuing...
+2025-11-23 23:15:40,190 - INFO - VLLM model server is still alive, continuing...
+[INFO] ----------
+2025-11-23 23:15:40,190 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 23:15:40,191 - INFO - GENERATING PROMPTS
+[INFO] ----------
+2025-11-23 23:15:40,215 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 23:15:40,215 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 23:15:40,369 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 23:15:40,374 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 23:15:40,381 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:15:40,381 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 5
+2025-11-23 23:15:40,382 - INFO - Island id 5
+[INFO]
+2025-11-23 23:15:40,383 - INFO -
+
+
+[INFO] Time taken for LLM generation: 3 seconds
+
+
+2025-11-23 23:15:44,035 - INFO - Time taken for LLM generation: 3 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 23:15:44,037 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 3
+2025-11-23 23:15:44,040 - INFO - LLM generation time: 3
+[INFO] Producer: Generated 8 functions for prompt 11
+2025-11-23 23:15:44,041 - INFO - Producer: Generated 8 functions for prompt 11
+[INFO] Producer: Generated 0 failed functions for prompt 11
+2025-11-23 23:15:44,041 - INFO - Producer: Generated 0 failed functions for prompt 11
+[INFO]
+2025-11-23 23:15:44,042 - INFO -
+
+
+[INFO] Prompt scores: [-606.36, -536.78]
+
+
+2025-11-23 23:15:44,042 - INFO - Prompt scores: [-606.36, -536.78]
+[INFO] Island id 0
+2025-11-23 23:15:44,042 - INFO - Island id 0
+[INFO]
+2025-11-23 23:15:44,042 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-23 23:15:53,940 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:15:53,941 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 23:15:53,942 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 9
+2025-11-23 23:15:53,963 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 7 functions for prompt 12
+2025-11-23 23:15:53,963 - INFO - Producer: Generated 7 functions for prompt 12
+[INFO] Producer: Generated 1 failed functions for prompt 12
+2025-11-23 23:15:53,992 - INFO - Producer: Generated 1 failed functions for prompt 12
+[INFO]
+2025-11-23 23:15:53,993 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:15:53,993 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 3
+2025-11-23 23:15:53,993 - INFO - Island id 3
+[INFO]
+2025-11-23 23:15:53,994 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-23 23:16:03,552 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:16:03,554 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 23:16:03,554 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 9
+2025-11-23 23:16:03,565 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 7 functions for prompt 13
+2025-11-23 23:16:03,565 - INFO - Producer: Generated 7 functions for prompt 13
+[INFO] Producer: Generated 1 failed functions for prompt 13
+2025-11-23 23:16:03,593 - INFO - Producer: Generated 1 failed functions for prompt 13
+[INFO]
+2025-11-23 23:16:03,594 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:16:03,594 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 4
+2025-11-23 23:16:03,594 - INFO - Island id 4
+[INFO]
+2025-11-23 23:16:03,594 - INFO -
+
+
+[INFO] Time taken for LLM generation: 13 seconds
+
+
+2025-11-23 23:16:17,500 - INFO - Time taken for LLM generation: 13 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 23:16:17,502 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 13
+2025-11-23 23:16:17,512 - INFO - LLM generation time: 13
+[INFO] Producer: Generated 8 functions for prompt 14
+2025-11-23 23:16:17,512 - INFO - Producer: Generated 8 functions for prompt 14
+[INFO] Producer: Generated 0 failed functions for prompt 14
+2025-11-23 23:16:17,512 - INFO - Producer: Generated 0 failed functions for prompt 14
+[INFO]
+2025-11-23 23:16:17,513 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:16:17,514 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 4
+2025-11-23 23:16:17,514 - INFO - Island id 4
+[INFO]
+2025-11-23 23:16:17,514 - INFO -
+
+
+[INFO] Time taken for LLM generation: 11 seconds
+
+
+2025-11-23 23:16:28,736 - INFO - Time taken for LLM generation: 11 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 23:16:28,737 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 11
+2025-11-23 23:16:28,744 - INFO - LLM generation time: 11
+[INFO] Producer: Generated 8 functions for prompt 15
+2025-11-23 23:16:28,744 - INFO - Producer: Generated 8 functions for prompt 15
+[INFO] Producer: Generated 0 failed functions for prompt 15
+2025-11-23 23:16:28,744 - INFO - Producer: Generated 0 failed functions for prompt 15
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-23 23:16:28,745 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-23 23:16:28,746 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 1555624, worker id 0 to finish
+2025-11-23 23:16:28,746 - INFO - Waiting for consumer process 1555624, worker id 0 to finish
+[INFO] Queue size: 20, timeout time: 300
+2025-11-23 23:16:28,746 - INFO - Queue size: 20, timeout time: 300
+[INFO] Consumer process 1555624 exited
+2025-11-23 23:16:32,249 - INFO - Consumer process 1555624 exited
+[INFO] Waiting for consumer process 1555625, worker id 1 to finish
+2025-11-23 23:16:32,249 - INFO - Waiting for consumer process 1555625, worker id 1 to finish
+[INFO] Queue size: 9, timeout time: 180
+2025-11-23 23:16:32,249 - INFO - Queue size: 9, timeout time: 180
+[INFO] Consumer process 1555625 exited
+2025-11-23 23:16:54,559 - INFO - Consumer process 1555625 exited
+[INFO] Waiting for consumer process 1555627, worker id 2 to finish
+2025-11-23 23:16:54,559 - INFO - Waiting for consumer process 1555627, worker id 2 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,560 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555627 exited
+2025-11-23 23:16:54,560 - INFO - Consumer process 1555627 exited
+[INFO] Waiting for consumer process 1555631, worker id 3 to finish
+2025-11-23 23:16:54,560 - INFO - Waiting for consumer process 1555631, worker id 3 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,561 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555631 exited
+2025-11-23 23:16:54,561 - INFO - Consumer process 1555631 exited
+[INFO] Waiting for consumer process 1555634, worker id 4 to finish
+2025-11-23 23:16:54,561 - INFO - Waiting for consumer process 1555634, worker id 4 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,561 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555634 exited
+2025-11-23 23:16:54,561 - INFO - Consumer process 1555634 exited
+[INFO] Waiting for consumer process 1555637, worker id 5 to finish
+2025-11-23 23:16:54,562 - INFO - Waiting for consumer process 1555637, worker id 5 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,562 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555637 exited
+2025-11-23 23:16:54,562 - INFO - Consumer process 1555637 exited
+[INFO] Waiting for consumer process 1555639, worker id 6 to finish
+2025-11-23 23:16:54,562 - INFO - Waiting for consumer process 1555639, worker id 6 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,563 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555639 exited
+2025-11-23 23:16:54,563 - INFO - Consumer process 1555639 exited
+[INFO] Waiting for consumer process 1555643, worker id 7 to finish
+2025-11-23 23:16:54,563 - INFO - Waiting for consumer process 1555643, worker id 7 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,563 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555643 exited
+2025-11-23 23:16:54,563 - INFO - Consumer process 1555643 exited
+[INFO] Waiting for consumer process 1555645, worker id 8 to finish
+2025-11-23 23:16:54,564 - INFO - Waiting for consumer process 1555645, worker id 8 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,564 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555645 exited
+2025-11-23 23:16:54,564 - INFO - Consumer process 1555645 exited
+[INFO] Waiting for consumer process 1555649, worker id 9 to finish
+2025-11-23 23:16:54,564 - INFO - Waiting for consumer process 1555649, worker id 9 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,564 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555649 exited
+2025-11-23 23:16:54,567 - INFO - Consumer process 1555649 exited
+[INFO] Waiting for consumer process 1555652, worker id 10 to finish
+2025-11-23 23:16:54,568 - INFO - Waiting for consumer process 1555652, worker id 10 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,570 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555652 exited
+2025-11-23 23:16:54,570 - INFO - Consumer process 1555652 exited
+[INFO] Waiting for consumer process 1555654, worker id 11 to finish
+2025-11-23 23:16:54,571 - INFO - Waiting for consumer process 1555654, worker id 11 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:16:54,572 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1555654 exited
+2025-11-23 23:16:54,572 - INFO - Consumer process 1555654 exited
+[INFO] ###################
+2025-11-23 23:16:54,582 - INFO - ###################
+[INFO] Num of passed functions: 22
+2025-11-23 23:16:54,583 - INFO - Num of passed functions: 22
+[INFO] Num of failed functions: 18
+2025-11-23 23:16:54,583 - INFO - Num of failed functions: 18
+[INFO] ###################
+2025-11-23 23:16:54,584 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 5 rounds
+2025-11-23 23:16:54,607 - INFO - Finished with continuous sampling and evaluation for 5 rounds
+[INFO] Killing model server, preparing for finetuning...
+2025-11-23 23:16:54,608 - INFO - Killing model server, preparing for finetuning...
+[INFO] Server process 1554226 has terminated successfully.
+2025-11-23 23:16:55,930 - INFO - Server process 1554226 has terminated successfully.
+[INFO] ----------
+2025-11-23 23:16:55,931 - INFO - ----------
+[INFO] TRAINING MODEL AT ROUND NUM: 10
+2025-11-23 23:16:55,931 - INFO - TRAINING MODEL AT ROUND NUM: 10

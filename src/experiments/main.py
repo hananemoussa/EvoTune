@@ -451,11 +451,14 @@ def main(cfg: DictConfig):
                     assert running_dict is not None
                     pickle.dump(running_dict, f)
 
+                # Run Python directly for single-GPU (avoids accelerate subprocess issues)
+                # To restore accelerate, uncomment the lines below and comment out the python command
                 command = [
-                    "accelerate",
-                    "launch",
-                    "--config_file",
-                    cfg.full_accelerate_config,
+                    # "accelerate",
+                    # "launch",
+                    # "--config_file",
+                    # cfg.full_accelerate_config,
+                    "python",
                     f"./src/packing/train/train.py",
                     "--logs_dir",
                     cfg.logs_dir,

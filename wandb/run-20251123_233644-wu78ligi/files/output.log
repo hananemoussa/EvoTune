@@ -1,0 +1,466 @@
+[INFO] Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: dpo
+  finetuning_frequency: 400
+  dpo_strategy: 2
+  dpo_config:
+    beta: 0.4
+    max_seq_length: 4096
+    per_device_train_batch_size: 1
+    gradient_accumulation_steps: 32
+    gradient_checkpointing: 1
+    num_train_epochs: 2
+    learning_rate: 1.0e-05
+    lr_scheduler_type: cosine
+    weight_decay: 0.001
+    warmup_steps: 0
+    logging_steps: 1
+    f_divergence_type: alpha_divergence
+    f_alpha_divergence_coef: 1.0
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 5
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 20
+finetuning_frequency: 10
+lr_annealing: 0
+one_tuning: 0
+percentile: 70
+max_loops: 5
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: evotune_llama_1B_test/bin_llama32_dpo_0
+group_name: evotune_llama_1B_test/bin_llama32_dpo
+logs_path: .
+logs_dir: out/logs/evotune_llama_1B_test/bin_bin_llama32_dpo_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_dpo
+prefix: evotune_llama_1B_test
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/evotune_llama_1B_test/bin_bin_llama32_dpo_0/model_adapter_llama32
+default_wandb_name: wu78ligi
+2025-11-23 23:36:45,294 - INFO - Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: dpo
+  finetuning_frequency: 400
+  dpo_strategy: 2
+  dpo_config:
+    beta: 0.4
+    max_seq_length: 4096
+    per_device_train_batch_size: 1
+    gradient_accumulation_steps: 32
+    gradient_checkpointing: 1
+    num_train_epochs: 2
+    learning_rate: 1.0e-05
+    lr_scheduler_type: cosine
+    weight_decay: 0.001
+    warmup_steps: 0
+    logging_steps: 1
+    f_divergence_type: alpha_divergence
+    f_alpha_divergence_coef: 1.0
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 5
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 20
+finetuning_frequency: 10
+lr_annealing: 0
+one_tuning: 0
+percentile: 70
+max_loops: 5
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: evotune_llama_1B_test/bin_llama32_dpo_0
+group_name: evotune_llama_1B_test/bin_llama32_dpo
+logs_path: .
+logs_dir: out/logs/evotune_llama_1B_test/bin_bin_llama32_dpo_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_dpo
+prefix: evotune_llama_1B_test
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/evotune_llama_1B_test/bin_bin_llama32_dpo_0/model_adapter_llama32
+default_wandb_name: wu78ligi
+
+[INFO] Resuming from logs directory
+
+2025-11-23 23:36:45,302 - INFO - Resuming from logs directory
+[INFO] Total functions evaluated: 80
+2025-11-23 23:36:45,330 - INFO - Total functions evaluated: 80
+[INFO] Number of functions in the programbank: 30
+2025-11-23 23:36:45,330 - INFO - Number of functions in the programbank: 30
+[INFO] Number of functions in the finetuning data: 62
+2025-11-23 23:36:45,331 - INFO - Number of functions in the finetuning data: 62
+[INFO] Flag load finetuned: False
+2025-11-23 23:36:45,334 - INFO - Flag load finetuned: False
+[INFO] ====================== Inference Engine: vLLM ======================
+2025-11-23 23:36:45,335 - INFO - ====================== Inference Engine: vLLM ======================
+[INFO] Starting with round number 10
+2025-11-23 23:36:45,335 - INFO - Starting with round number 10
+[INFO] STARTING ROUND NUM: 10
+2025-11-23 23:36:45,336 - INFO - STARTING ROUND NUM: 10
+[INFO] Prompt num: 20
+2025-11-23 23:36:45,337 - INFO - Prompt num: 20
+[INFO] Total functions generated so far: 160
+2025-11-23 23:36:45,337 - INFO - Total functions generated so far: 160
+[INFO] Total functions evaluated so far: 80
+2025-11-23 23:36:45,338 - INFO - Total functions evaluated so far: 80
+[INFO] Number of functions in the programbank: 30
+2025-11-23 23:36:45,339 - INFO - Number of functions in the programbank: 30
+[INFO] Number of datatpoints in DPO data: 62
+2025-11-23 23:36:45,339 - INFO - Number of datatpoints in DPO data: 62
+[INFO] Best overall program score: -536.78
+2025-11-23 23:36:45,340 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 23:36:45,341 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 23:36:45,341 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] Starting vLLM model server...
+2025-11-23 23:36:45,343 - INFO - Starting vLLM model server...
+[INFO] Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+2025-11-23 23:36:45,343 - INFO - Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+[INFO] Waiting for all servers to start... Server PIDs: [1558535]
+2025-11-23 23:36:45,346 - INFO - Waiting for all servers to start... Server PIDs: [1558535]
+[INFO] Server is ready at port 8080. Serving meta-llama/Llama-3.2-1B-Instruct.
+2025-11-23 23:37:21,079 - INFO - Server is ready at port 8080. Serving meta-llama/Llama-3.2-1B-Instruct.
+[INFO] ----------
+2025-11-23 23:37:21,080 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 23:37:21,080 - INFO - GENERATING PROMPTS
+/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/multiprocessing/popen_fork.py:66: RuntimeWarning: os.fork() was called. os.fork() is incompatible with multithreaded code, and JAX is multithreaded, so this will likely lead to a deadlock.
+  self.pid = os.fork()
+[INFO] ----------
+2025-11-23 23:37:21,110 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 23:37:21,111 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 23:37:21,250 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 23:37:21,253 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 23:37:21,260 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:37:21,261 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 4
+2025-11-23 23:37:21,262 - INFO - Island id 4
+[INFO]
+2025-11-23 23:37:21,262 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 23:37:26,153 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 23:37:26,155 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 4
+2025-11-23 23:37:26,158 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 8 functions for prompt 21
+2025-11-23 23:37:26,159 - INFO - Producer: Generated 8 functions for prompt 21
+[INFO] Producer: Generated 0 failed functions for prompt 21
+2025-11-23 23:37:26,159 - INFO - Producer: Generated 0 failed functions for prompt 21
+[INFO]
+2025-11-23 23:37:26,160 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:37:26,160 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 3
+2025-11-23 23:37:26,160 - INFO - Island id 3
+[INFO]
+2025-11-23 23:37:26,160 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 23:37:32,348 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:37:32,349 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:37:32,349 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 23:37:32,350 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 6
+2025-11-23 23:37:32,353 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 6 functions for prompt 22
+2025-11-23 23:37:32,353 - INFO - Producer: Generated 6 functions for prompt 22
+[INFO] Producer: Generated 2 failed functions for prompt 22
+2025-11-23 23:37:32,377 - INFO - Producer: Generated 2 failed functions for prompt 22
+[INFO]
+2025-11-23 23:37:32,378 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:37:32,379 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 0
+2025-11-23 23:37:32,379 - INFO - Island id 0
+[INFO]
+2025-11-23 23:37:32,379 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-23 23:37:42,584 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:37:42,585 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 23:37:42,586 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 10
+2025-11-23 23:37:42,588 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 7 functions for prompt 23
+2025-11-23 23:37:42,589 - INFO - Producer: Generated 7 functions for prompt 23
+[INFO] Producer: Generated 1 failed functions for prompt 23
+2025-11-23 23:37:42,615 - INFO - Producer: Generated 1 failed functions for prompt 23
+[INFO]
+2025-11-23 23:37:42,616 - INFO -
+
+
+[INFO] Prompt scores: [-606.36, -574.06]
+
+
+2025-11-23 23:37:42,616 - INFO - Prompt scores: [-606.36, -574.06]
+[INFO] Island id 0
+2025-11-23 23:37:42,616 - INFO - Island id 0
+[INFO]
+2025-11-23 23:37:42,617 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-23 23:37:50,747 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 23:37:50,748 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-23 23:37:50,751 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 24
+2025-11-23 23:37:50,751 - INFO - Producer: Generated 8 functions for prompt 24
+[INFO] Producer: Generated 0 failed functions for prompt 24
+2025-11-23 23:37:50,751 - INFO - Producer: Generated 0 failed functions for prompt 24
+[INFO]
+2025-11-23 23:37:50,752 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 23:37:50,752 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 3
+2025-11-23 23:37:50,752 - INFO - Island id 3
+[INFO]
+2025-11-23 23:37:50,753 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-23 23:38:01,714 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 23:38:01,715 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 23:38:01,715 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 10
+2025-11-23 23:38:01,736 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 7 functions for prompt 25
+2025-11-23 23:38:01,736 - INFO - Producer: Generated 7 functions for prompt 25
+[INFO] Producer: Generated 1 failed functions for prompt 25
+2025-11-23 23:38:01,766 - INFO - Producer: Generated 1 failed functions for prompt 25
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-23 23:38:01,766 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-23 23:38:01,766 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 1558654, worker id 0 to finish
+2025-11-23 23:38:01,766 - INFO - Waiting for consumer process 1558654, worker id 0 to finish
+[INFO] Queue size: 12, timeout time: 240
+2025-11-23 23:38:01,767 - INFO - Queue size: 12, timeout time: 240
+[INFO] Consumer process 1558654 exited
+2025-11-23 23:38:12,538 - INFO - Consumer process 1558654 exited
+[INFO] Waiting for consumer process 1558655, worker id 1 to finish
+2025-11-23 23:38:12,538 - INFO - Waiting for consumer process 1558655, worker id 1 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,538 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558655 exited
+2025-11-23 23:38:12,539 - INFO - Consumer process 1558655 exited
+[INFO] Waiting for consumer process 1558656, worker id 2 to finish
+2025-11-23 23:38:12,539 - INFO - Waiting for consumer process 1558656, worker id 2 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,539 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558656 exited
+2025-11-23 23:38:12,539 - INFO - Consumer process 1558656 exited
+[INFO] Waiting for consumer process 1558660, worker id 3 to finish
+2025-11-23 23:38:12,540 - INFO - Waiting for consumer process 1558660, worker id 3 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,540 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558660 exited
+2025-11-23 23:38:12,540 - INFO - Consumer process 1558660 exited
+[INFO] Waiting for consumer process 1558663, worker id 4 to finish
+2025-11-23 23:38:12,540 - INFO - Waiting for consumer process 1558663, worker id 4 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,540 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558663 exited
+2025-11-23 23:38:12,541 - INFO - Consumer process 1558663 exited
+[INFO] Waiting for consumer process 1558665, worker id 5 to finish
+2025-11-23 23:38:12,541 - INFO - Waiting for consumer process 1558665, worker id 5 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,541 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558665 exited
+2025-11-23 23:38:12,541 - INFO - Consumer process 1558665 exited
+[INFO] Waiting for consumer process 1558668, worker id 6 to finish
+2025-11-23 23:38:12,542 - INFO - Waiting for consumer process 1558668, worker id 6 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,542 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558668 exited
+2025-11-23 23:38:12,542 - INFO - Consumer process 1558668 exited
+[INFO] Waiting for consumer process 1558670, worker id 7 to finish
+2025-11-23 23:38:12,542 - INFO - Waiting for consumer process 1558670, worker id 7 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,542 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558670 exited
+2025-11-23 23:38:12,543 - INFO - Consumer process 1558670 exited
+[INFO] Waiting for consumer process 1558673, worker id 8 to finish
+2025-11-23 23:38:12,543 - INFO - Waiting for consumer process 1558673, worker id 8 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,543 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558673 exited
+2025-11-23 23:38:12,543 - INFO - Consumer process 1558673 exited
+[INFO] Waiting for consumer process 1558677, worker id 9 to finish
+2025-11-23 23:38:12,543 - INFO - Waiting for consumer process 1558677, worker id 9 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,544 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558677 exited
+2025-11-23 23:38:12,544 - INFO - Consumer process 1558677 exited
+[INFO] Waiting for consumer process 1558679, worker id 10 to finish
+2025-11-23 23:38:12,544 - INFO - Waiting for consumer process 1558679, worker id 10 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,544 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558679 exited
+2025-11-23 23:38:12,552 - INFO - Consumer process 1558679 exited
+[INFO] Waiting for consumer process 1558682, worker id 11 to finish
+2025-11-23 23:38:12,553 - INFO - Waiting for consumer process 1558682, worker id 11 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 23:38:12,554 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1558682 exited
+2025-11-23 23:38:12,554 - INFO - Consumer process 1558682 exited
+[INFO] ###################
+2025-11-23 23:38:12,564 - INFO - ###################
+[INFO] Num of passed functions: 13
+2025-11-23 23:38:12,565 - INFO - Num of passed functions: 13
+[INFO] Num of failed functions: 27
+2025-11-23 23:38:12,566 - INFO - Num of failed functions: 27
+[INFO] ###################
+2025-11-23 23:38:12,566 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 5 rounds
+2025-11-23 23:38:12,600 - INFO - Finished with continuous sampling and evaluation for 5 rounds
+[INFO] Killing model server, preparing for finetuning...
+2025-11-23 23:38:12,601 - INFO - Killing model server, preparing for finetuning...
+[INFO] Server process 1558535 has terminated successfully.
+2025-11-23 23:38:13,820 - INFO - Server process 1558535 has terminated successfully.
+[INFO] ----------
+2025-11-23 23:38:13,821 - INFO - ----------
+[INFO] TRAINING MODEL AT ROUND NUM: 10
+2025-11-23 23:38:13,821 - INFO - TRAINING MODEL AT ROUND NUM: 10

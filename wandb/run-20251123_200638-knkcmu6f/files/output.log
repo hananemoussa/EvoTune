@@ -1,0 +1,764 @@
+[INFO] Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: none
+  finetuning_frequency: 10000000000
+  dpo_strategy: 2
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 100
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 2701
+finetuning_frequency: 10000000000
+lr_annealing: 0
+one_tuning: 1
+percentile: 70
+max_loops: 1
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: funsearch_baseline_llama_1B/bin_llama32_none_0
+group_name: funsearch_baseline_llama_1B/bin_llama32_none
+logs_path: .
+logs_dir: out/logs/funsearch_baseline_llama_1B/bin_bin_llama32_none_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_none
+prefix: funsearch_baseline_llama_1B
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/funsearch_baseline_llama_1B/bin_bin_llama32_none_0/model_adapter_llama32
+default_wandb_name: knkcmu6f
+2025-11-23 20:06:40,529 - INFO - Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: none
+  finetuning_frequency: 10000000000
+  dpo_strategy: 2
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 100
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 2701
+finetuning_frequency: 10000000000
+lr_annealing: 0
+one_tuning: 1
+percentile: 70
+max_loops: 1
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: funsearch_baseline_llama_1B/bin_llama32_none_0
+group_name: funsearch_baseline_llama_1B/bin_llama32_none
+logs_path: .
+logs_dir: out/logs/funsearch_baseline_llama_1B/bin_bin_llama32_none_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_none
+prefix: funsearch_baseline_llama_1B
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/funsearch_baseline_llama_1B/bin_bin_llama32_none_0/model_adapter_llama32
+default_wandb_name: knkcmu6f
+
+[INFO] Starting from scratch
+
+2025-11-23 20:06:40,547 - INFO - Starting from scratch
+Best score of island 0 increased to -536.78
+Best score of island 1 increased to -536.78
+Best score of island 2 increased to -536.78
+Best score of island 3 increased to -536.78
+Best score of island 4 increased to -536.78
+Best score of island 5 increased to -536.78
+Saving a program to a file...
+[INFO] Flag load finetuned: False
+2025-11-23 20:06:40,835 - INFO - Flag load finetuned: False
+[INFO] ====================== Inference Engine: vLLM ======================
+2025-11-23 20:06:40,836 - INFO - ====================== Inference Engine: vLLM ======================
+[INFO] Starting with round number 0
+2025-11-23 20:06:40,837 - INFO - Starting with round number 0
+[INFO] STARTING ROUND NUM: 0
+2025-11-23 20:06:40,837 - INFO - STARTING ROUND NUM: 0
+[INFO] Prompt num: 0
+2025-11-23 20:06:40,838 - INFO - Prompt num: 0
+[INFO] Total functions generated so far: 0
+2025-11-23 20:06:40,838 - INFO - Total functions generated so far: 0
+[INFO] Total functions evaluated so far: 0
+2025-11-23 20:06:40,839 - INFO - Total functions evaluated so far: 0
+[INFO] Number of functions in the programbank: 6
+2025-11-23 20:06:40,840 - INFO - Number of functions in the programbank: 6
+[INFO] Number of datatpoints in DPO data: 0
+2025-11-23 20:06:40,840 - INFO - Number of datatpoints in DPO data: 0
+[INFO] Best overall program score: -536.78
+2025-11-23 20:06:40,841 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 20:06:40,842 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 20:06:40,842 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] Starting vLLM model server...
+2025-11-23 20:06:40,843 - INFO - Starting vLLM model server...
+[INFO] Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+2025-11-23 20:06:40,844 - INFO - Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+[INFO] Waiting for all servers to start... Server PIDs: [1474803]
+2025-11-23 20:06:40,847 - INFO - Waiting for all servers to start... Server PIDs: [1474803]
+[INFO] Server is ready at port 8080. Serving meta-llama/Llama-3.2-1B-Instruct.
+2025-11-23 20:07:55,135 - INFO - Server is ready at port 8080. Serving meta-llama/Llama-3.2-1B-Instruct.
+[INFO] ----------
+2025-11-23 20:07:55,150 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 20:07:55,150 - INFO - GENERATING PROMPTS
+/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/multiprocessing/popen_fork.py:66: RuntimeWarning: os.fork() was called. os.fork() is incompatible with multithreaded code, and JAX is multithreaded, so this will likely lead to a deadlock.
+  self.pid = os.fork()
+[INFO] ----------
+2025-11-23 20:07:55,221 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 20:07:55,222 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 20:07:55,374 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 20:07:55,376 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 20:07:55,380 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:07:55,381 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 4
+2025-11-23 20:07:55,382 - INFO - Island id 4
+[INFO]
+2025-11-23 20:07:55,382 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 20:07:59,981 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:07:59,983 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 4
+2025-11-23 20:07:59,986 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 8 functions for prompt 1
+2025-11-23 20:07:59,986 - INFO - Producer: Generated 8 functions for prompt 1
+[INFO] Producer: Generated 0 failed functions for prompt 1
+2025-11-23 20:07:59,987 - INFO - Producer: Generated 0 failed functions for prompt 1
+[INFO]
+2025-11-23 20:07:59,988 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:07:59,988 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 20:07:59,988 - INFO - Island id 3
+[INFO]
+2025-11-23 20:08:00,385 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 20:08:05,336 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:08:05,337 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 4
+2025-11-23 20:08:05,340 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 8 functions for prompt 2
+2025-11-23 20:08:05,340 - INFO - Producer: Generated 8 functions for prompt 2
+[INFO] Producer: Generated 0 failed functions for prompt 2
+2025-11-23 20:08:05,341 - INFO - Producer: Generated 0 failed functions for prompt 2
+[INFO]
+2025-11-23 20:08:05,342 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:08:05,342 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 5
+2025-11-23 20:08:05,342 - INFO - Island id 5
+[INFO]
+2025-11-23 20:08:05,342 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 20:08:10,902 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:08:10,903 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 5
+2025-11-23 20:08:10,906 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 8 functions for prompt 3
+2025-11-23 20:08:10,906 - INFO - Producer: Generated 8 functions for prompt 3
+[INFO] Producer: Generated 0 failed functions for prompt 3
+2025-11-23 20:08:10,906 - INFO - Producer: Generated 0 failed functions for prompt 3
+[INFO]
+2025-11-23 20:08:10,907 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:08:10,908 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 20:08:10,908 - INFO - Island id 0
+[INFO]
+2025-11-23 20:08:10,908 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 20:08:18,289 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 20:08:18,290 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 20:08:18,291 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 7
+2025-11-23 20:08:18,294 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 7 functions for prompt 4
+2025-11-23 20:08:18,294 - INFO - Producer: Generated 7 functions for prompt 4
+[INFO] Producer: Generated 1 failed functions for prompt 4
+2025-11-23 20:08:18,324 - INFO - Producer: Generated 1 failed functions for prompt 4
+[INFO]
+2025-11-23 20:08:18,325 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:08:18,325 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 20:08:18,330 - INFO - Island id 0
+[INFO]
+2025-11-23 20:08:18,330 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 20:08:25,437 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:08:25,439 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-23 20:08:25,446 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 5
+2025-11-23 20:08:25,447 - INFO - Producer: Generated 8 functions for prompt 5
+[INFO] Producer: Generated 0 failed functions for prompt 5
+2025-11-23 20:08:25,447 - INFO - Producer: Generated 0 failed functions for prompt 5
+[INFO]
+2025-11-23 20:08:25,448 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:08:25,448 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 20:08:25,449 - INFO - Island id 0
+[INFO]
+2025-11-23 20:08:25,449 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 20:08:32,274 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:08:32,276 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-23 20:08:32,278 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 6
+2025-11-23 20:08:32,279 - INFO - Producer: Generated 8 functions for prompt 6
+[INFO] Producer: Generated 0 failed functions for prompt 6
+2025-11-23 20:08:32,279 - INFO - Producer: Generated 0 failed functions for prompt 6
+[INFO]
+2025-11-23 20:08:32,280 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:08:32,280 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 20:08:32,281 - INFO - Island id 3
+[INFO]
+2025-11-23 20:08:32,281 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 20:08:40,175 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 20:08:40,176 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 20:08:40,177 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 7
+2025-11-23 20:08:40,180 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 7 functions for prompt 7
+2025-11-23 20:08:40,180 - INFO - Producer: Generated 7 functions for prompt 7
+[INFO] Producer: Generated 1 failed functions for prompt 7
+2025-11-23 20:08:40,211 - INFO - Producer: Generated 1 failed functions for prompt 7
+[INFO]
+2025-11-23 20:08:40,212 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:08:40,212 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 20:08:40,212 - INFO - Island id 0
+[INFO]
+2025-11-23 20:08:40,213 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 20:08:45,241 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:08:45,243 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 5
+2025-11-23 20:08:45,245 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 8 functions for prompt 8
+2025-11-23 20:08:45,246 - INFO - Producer: Generated 8 functions for prompt 8
+[INFO] Producer: Generated 0 failed functions for prompt 8
+2025-11-23 20:08:45,246 - INFO - Producer: Generated 0 failed functions for prompt 8
+[INFO]
+2025-11-23 20:08:45,247 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:08:45,247 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 20:08:45,247 - INFO - Island id 3
+[INFO]
+2025-11-23 20:08:45,248 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 20:08:51,957 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:08:51,958 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-23 20:08:51,961 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 9
+2025-11-23 20:08:51,961 - INFO - Producer: Generated 8 functions for prompt 9
+[INFO] Producer: Generated 0 failed functions for prompt 9
+2025-11-23 20:08:51,961 - INFO - Producer: Generated 0 failed functions for prompt 9
+[INFO]
+2025-11-23 20:08:51,962 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:08:51,963 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 20:08:51,963 - INFO - Island id 0
+[INFO]
+2025-11-23 20:08:51,963 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 20:08:57,369 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 20:08:57,370 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 20:08:57,370 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 5
+2025-11-23 20:08:57,373 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 7 functions for prompt 10
+2025-11-23 20:08:57,373 - INFO - Producer: Generated 7 functions for prompt 10
+[INFO] Producer: Generated 1 failed functions for prompt 10
+2025-11-23 20:08:57,405 - INFO - Producer: Generated 1 failed functions for prompt 10
+[INFO]
+2025-11-23 20:08:57,406 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:08:57,406 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 20:08:57,406 - INFO - Island id 0
+[INFO]
+2025-11-23 20:08:57,407 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-23 20:09:08,189 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 20:09:08,191 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 20:09:08,192 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 10
+2025-11-23 20:09:08,203 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 7 functions for prompt 11
+2025-11-23 20:09:08,203 - INFO - Producer: Generated 7 functions for prompt 11
+[INFO] Producer: Generated 1 failed functions for prompt 11
+2025-11-23 20:09:08,232 - INFO - Producer: Generated 1 failed functions for prompt 11
+[INFO]
+2025-11-23 20:09:08,236 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:09:08,237 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 20:09:08,237 - INFO - Island id 3
+[INFO]
+2025-11-23 20:09:08,237 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-23 20:09:16,573 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:09:16,575 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-23 20:09:16,591 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 12
+2025-11-23 20:09:16,591 - INFO - Producer: Generated 8 functions for prompt 12
+[INFO] Producer: Generated 0 failed functions for prompt 12
+2025-11-23 20:09:16,591 - INFO - Producer: Generated 0 failed functions for prompt 12
+[INFO]
+2025-11-23 20:09:16,592 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:09:16,593 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 4
+2025-11-23 20:09:16,593 - INFO - Island id 4
+[INFO]
+2025-11-23 20:09:16,593 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-23 20:09:25,768 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 20:09:25,770 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 20:09:25,770 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 9
+2025-11-23 20:09:25,781 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 7 functions for prompt 13
+2025-11-23 20:09:25,781 - INFO - Producer: Generated 7 functions for prompt 13
+[INFO] Producer: Generated 1 failed functions for prompt 13
+2025-11-23 20:09:25,813 - INFO - Producer: Generated 1 failed functions for prompt 13
+[INFO]
+2025-11-23 20:09:25,814 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:09:25,814 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 5
+2025-11-23 20:09:25,814 - INFO - Island id 5
+[INFO]
+2025-11-23 20:09:25,815 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 20:09:32,281 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:09:32,283 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-23 20:09:32,293 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 14
+2025-11-23 20:09:32,294 - INFO - Producer: Generated 8 functions for prompt 14
+[INFO] Producer: Generated 0 failed functions for prompt 14
+2025-11-23 20:09:32,294 - INFO - Producer: Generated 0 failed functions for prompt 14
+[INFO]
+2025-11-23 20:09:32,295 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:09:32,296 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 1
+2025-11-23 20:09:32,296 - INFO - Island id 1
+[INFO]
+2025-11-23 20:09:32,296 - INFO -
+
+
+[INFO] Time taken for LLM generation: 13 seconds
+
+
+2025-11-23 20:09:45,650 - INFO - Time taken for LLM generation: 13 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:09:45,651 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 13
+2025-11-23 20:09:45,668 - INFO - LLM generation time: 13
+[INFO] Producer: Generated 8 functions for prompt 15
+2025-11-23 20:09:45,668 - INFO - Producer: Generated 8 functions for prompt 15
+[INFO] Producer: Generated 0 failed functions for prompt 15
+2025-11-23 20:09:45,668 - INFO - Producer: Generated 0 failed functions for prompt 15
+[INFO]
+2025-11-23 20:09:45,670 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:09:45,670 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 2
+2025-11-23 20:09:45,670 - INFO - Island id 2
+[INFO]
+2025-11-23 20:09:45,670 - INFO -
+
+
+[INFO] Time taken for LLM generation: 11 seconds
+
+
+2025-11-23 20:09:56,799 - INFO - Time taken for LLM generation: 11 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 20:09:56,800 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 20:09:56,801 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 11
+2025-11-23 20:09:56,812 - INFO - LLM generation time: 11
+[INFO] Producer: Generated 7 functions for prompt 16
+2025-11-23 20:09:56,812 - INFO - Producer: Generated 7 functions for prompt 16
+[INFO] Producer: Generated 1 failed functions for prompt 16
+2025-11-23 20:09:56,841 - INFO - Producer: Generated 1 failed functions for prompt 16
+[INFO]
+2025-11-23 20:09:56,843 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:09:56,843 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 1
+2025-11-23 20:09:56,847 - INFO - Island id 1
+[INFO]
+2025-11-23 20:09:56,847 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-23 20:10:06,598 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 20:10:06,599 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-23 20:10:06,620 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 17
+2025-11-23 20:10:06,620 - INFO - Producer: Generated 8 functions for prompt 17
+[INFO] Producer: Generated 0 failed functions for prompt 17
+2025-11-23 20:10:06,620 - INFO - Producer: Generated 0 failed functions for prompt 17
+[INFO]
+2025-11-23 20:10:06,621 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:10:06,622 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 20:10:06,622 - INFO - Island id 3
+[INFO]
+2025-11-23 20:10:06,622 - INFO -
+
+
+[INFO] Time taken for LLM generation: 12 seconds
+
+
+2025-11-23 20:10:19,157 - INFO - Time taken for LLM generation: 12 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 20:10:19,159 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 20:10:19,159 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 20:10:19,160 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 12
+2025-11-23 20:10:19,177 - INFO - LLM generation time: 12
+[INFO] Producer: Generated 6 functions for prompt 18
+2025-11-23 20:10:19,177 - INFO - Producer: Generated 6 functions for prompt 18
+[INFO] Producer: Generated 2 failed functions for prompt 18
+2025-11-23 20:10:19,204 - INFO - Producer: Generated 2 failed functions for prompt 18
+[INFO]
+2025-11-23 20:10:19,205 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 20:10:19,205 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 20:10:19,206 - INFO - Island id 3
+[INFO]
+2025-11-23 20:10:19,206 - INFO -
+
+
+Traceback (most recent call last):
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py", line 638, in <module>
+    main()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py", line 371, in main
+    producer_thread.join()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/threading.py", line 1096, in join
+    self._wait_for_tstate_lock()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/threading.py", line 1116, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py", line 638, in <module>
+    main()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py", line 371, in main
+    producer_thread.join()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/threading.py", line 1096, in join
+    self._wait_for_tstate_lock()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/threading.py", line 1116, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+KeyboardInterrupt
+Exception ignored in: <module 'threading' from '/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/threading.py", line 1537, in _shutdown
+    atexit_call()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/concurrent/futures/thread.py", line 31, in _python_exit
+    t.join()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/threading.py", line 1096, in join
+    self._wait_for_tstate_lock()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/threading.py", line 1116, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+KeyboardInterrupt:

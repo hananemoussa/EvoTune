@@ -617,15 +617,23 @@ def start_vllm_server(model_id, gpu_num, port):
     return process.pid
 
 
-def kill_process_with_pid_and_wait(pid):
+def kill_process_with_pid_and_wait(pid, timeout=30):
     os.kill(pid, signal.SIGTERM)
     # Wait for the process to terminate so we're sure memory is free for training
+    start_time = time.time()
     while True:
         try:
             # Check the process state
-            pid, _ = os.waitpid(pid, os.WNOHANG)
-            if pid == 0:
-                # Process is still running, sleep for a short duration
+            result_pid, _ = os.waitpid(pid, os.WNOHANG)
+            if result_pid == 0:
+                # Process is still running
+                if time.time() - start_time > timeout:
+                    # Timeout exceeded, force kill
+                    logging.warning(f"Server process {pid} did not terminate after {timeout}s, sending SIGKILL")
+                    os.kill(pid, signal.SIGKILL)
+                    os.waitpid(pid, 0)  # Wait for it to die
+                    logging.info(f"Server process {pid} has been killed.")
+                    break
                 time.sleep(0.1)
             else:
                 # Process has terminated

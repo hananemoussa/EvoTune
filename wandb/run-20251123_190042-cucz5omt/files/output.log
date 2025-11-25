@@ -1,0 +1,2322 @@
+[INFO] Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: none
+  finetuning_frequency: 10000000000
+  dpo_strategy: 2
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 10
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 50
+finetuning_frequency: 10000000000
+lr_annealing: 0
+one_tuning: 1
+percentile: 70
+max_loops: 1
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: funsearch_test/bin_llama32_none_0
+group_name: funsearch_test/bin_llama32_none
+logs_path: .
+logs_dir: out/logs/funsearch_test/bin_bin_llama32_none_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_none
+prefix: funsearch_test
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/funsearch_test/bin_bin_llama32_none_0/model_adapter_llama32
+default_wandb_name: cucz5omt
+2025-11-23 19:00:45,867 - INFO - Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: none
+  finetuning_frequency: 10000000000
+  dpo_strategy: 2
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 10
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 50
+finetuning_frequency: 10000000000
+lr_annealing: 0
+one_tuning: 1
+percentile: 70
+max_loops: 1
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: funsearch_test/bin_llama32_none_0
+group_name: funsearch_test/bin_llama32_none
+logs_path: .
+logs_dir: out/logs/funsearch_test/bin_bin_llama32_none_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_none
+prefix: funsearch_test
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/funsearch_test/bin_bin_llama32_none_0/model_adapter_llama32
+default_wandb_name: cucz5omt
+
+[INFO] Starting from scratch
+
+2025-11-23 19:00:46,050 - INFO - Starting from scratch
+Best score of island 0 increased to -536.78
+Best score of island 1 increased to -536.78
+Best score of island 2 increased to -536.78
+Best score of island 3 increased to -536.78
+Best score of island 4 increased to -536.78
+Best score of island 5 increased to -536.78
+Saving a program to a file...
+[INFO] Flag load finetuned: False
+2025-11-23 19:00:46,360 - INFO - Flag load finetuned: False
+[INFO] ====================== Inference Engine: vLLM ======================
+2025-11-23 19:00:46,362 - INFO - ====================== Inference Engine: vLLM ======================
+[INFO] Starting with round number 0
+2025-11-23 19:00:46,362 - INFO - Starting with round number 0
+[INFO] STARTING ROUND NUM: 0
+2025-11-23 19:00:46,363 - INFO - STARTING ROUND NUM: 0
+[INFO] Prompt num: 0
+2025-11-23 19:00:46,364 - INFO - Prompt num: 0
+[INFO] Total functions generated so far: 0
+2025-11-23 19:00:46,364 - INFO - Total functions generated so far: 0
+[INFO] Total functions evaluated so far: 0
+2025-11-23 19:00:46,365 - INFO - Total functions evaluated so far: 0
+[INFO] Number of functions in the programbank: 6
+2025-11-23 19:00:46,365 - INFO - Number of functions in the programbank: 6
+[INFO] Number of datatpoints in DPO data: 0
+2025-11-23 19:00:46,366 - INFO - Number of datatpoints in DPO data: 0
+[INFO] Best overall program score: -536.78
+2025-11-23 19:00:46,367 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 19:00:46,367 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 19:00:46,368 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] Starting vLLM model server...
+2025-11-23 19:00:46,369 - INFO - Starting vLLM model server...
+[INFO] Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+2025-11-23 19:00:46,370 - INFO - Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+[INFO] Waiting for all servers to start... Server PIDs: [1463883]
+2025-11-23 19:00:46,403 - INFO - Waiting for all servers to start... Server PIDs: [1463883]
+[INFO] Server is ready at port 8080. Serving meta-llama/Llama-3.2-1B-Instruct.
+2025-11-23 19:02:32,780 - INFO - Server is ready at port 8080. Serving meta-llama/Llama-3.2-1B-Instruct.
+[INFO] ----------
+2025-11-23 19:02:32,780 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 19:02:32,781 - INFO - GENERATING PROMPTS
+/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/multiprocessing/popen_fork.py:66: RuntimeWarning: os.fork() was called. os.fork() is incompatible with multithreaded code, and JAX is multithreaded, so this will likely lead to a deadlock.
+  self.pid = os.fork()
+[INFO] ----------
+2025-11-23 19:02:32,860 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 19:02:32,861 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 19:02:33,013 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 19:02:33,016 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 19:02:33,022 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:02:33,023 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 4
+2025-11-23 19:02:33,024 - INFO - Island id 4
+[INFO]
+2025-11-23 19:02:33,024 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 19:02:37,821 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:02:37,823 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:02:37,824 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 4
+2025-11-23 19:02:37,827 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 7 functions for prompt 1
+2025-11-23 19:02:37,828 - INFO - Producer: Generated 7 functions for prompt 1
+[INFO] Producer: Generated 1 failed functions for prompt 1
+2025-11-23 19:02:37,829 - INFO - Producer: Generated 1 failed functions for prompt 1
+[INFO]
+2025-11-23 19:02:37,830 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:02:37,830 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 19:02:37,830 - INFO - Island id 3
+[INFO]
+2025-11-23 19:02:37,830 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 19:02:43,293 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:02:43,294 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:02:43,295 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 5
+2025-11-23 19:02:43,298 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 7 functions for prompt 2
+2025-11-23 19:02:43,298 - INFO - Producer: Generated 7 functions for prompt 2
+[INFO] Producer: Generated 1 failed functions for prompt 2
+2025-11-23 19:02:43,327 - INFO - Producer: Generated 1 failed functions for prompt 2
+[INFO]
+2025-11-23 19:02:43,328 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:02:43,332 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 5
+2025-11-23 19:02:43,332 - INFO - Island id 5
+[INFO]
+2025-11-23 19:02:43,332 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 19:02:48,110 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:02:48,111 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:02:48,112 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 4
+2025-11-23 19:02:48,115 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 7 functions for prompt 3
+2025-11-23 19:02:48,115 - INFO - Producer: Generated 7 functions for prompt 3
+[INFO] Producer: Generated 1 failed functions for prompt 3
+2025-11-23 19:02:48,150 - INFO - Producer: Generated 1 failed functions for prompt 3
+[INFO]
+2025-11-23 19:02:48,151 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:02:48,151 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 19:02:48,151 - INFO - Island id 0
+[INFO]
+2025-11-23 19:02:48,152 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 19:02:54,091 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:02:54,092 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:02:54,093 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 5
+2025-11-23 19:02:54,099 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 7 functions for prompt 4
+2025-11-23 19:02:54,100 - INFO - Producer: Generated 7 functions for prompt 4
+[INFO] Producer: Generated 1 failed functions for prompt 4
+2025-11-23 19:02:54,131 - INFO - Producer: Generated 1 failed functions for prompt 4
+[INFO]
+2025-11-23 19:02:54,132 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:02:54,132 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 19:02:54,132 - INFO - Island id 0
+[INFO]
+2025-11-23 19:02:54,133 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 19:03:01,182 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:03:01,184 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:03:01,184 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 7
+2025-11-23 19:03:01,195 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 7 functions for prompt 5
+2025-11-23 19:03:01,195 - INFO - Producer: Generated 7 functions for prompt 5
+[INFO] Producer: Generated 1 failed functions for prompt 5
+2025-11-23 19:03:01,227 - INFO - Producer: Generated 1 failed functions for prompt 5
+[INFO]
+2025-11-23 19:03:01,228 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:03:01,228 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 19:03:01,228 - INFO - Island id 0
+[INFO]
+2025-11-23 19:03:01,229 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 19:03:09,198 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:03:09,199 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:03:09,200 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 19:03:09,201 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 7
+2025-11-23 19:03:09,213 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 6 functions for prompt 6
+2025-11-23 19:03:09,213 - INFO - Producer: Generated 6 functions for prompt 6
+[INFO] Producer: Generated 2 failed functions for prompt 6
+2025-11-23 19:03:09,241 - INFO - Producer: Generated 2 failed functions for prompt 6
+[INFO]
+2025-11-23 19:03:09,243 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:03:09,243 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 19:03:09,243 - INFO - Island id 3
+[INFO]
+2025-11-23 19:03:09,244 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 19:03:16,281 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:03:16,282 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-23 19:03:16,293 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 7
+2025-11-23 19:03:16,294 - INFO - Producer: Generated 8 functions for prompt 7
+[INFO] Producer: Generated 0 failed functions for prompt 7
+2025-11-23 19:03:16,294 - INFO - Producer: Generated 0 failed functions for prompt 7
+[INFO]
+2025-11-23 19:03:16,295 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:03:16,295 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 19:03:16,296 - INFO - Island id 0
+[INFO]
+2025-11-23 19:03:16,296 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 19:03:22,959 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:03:22,960 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:03:22,961 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 6
+2025-11-23 19:03:22,963 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 7 functions for prompt 8
+2025-11-23 19:03:22,964 - INFO - Producer: Generated 7 functions for prompt 8
+[INFO] Producer: Generated 1 failed functions for prompt 8
+2025-11-23 19:03:22,995 - INFO - Producer: Generated 1 failed functions for prompt 8
+[INFO]
+2025-11-23 19:03:22,996 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:03:22,996 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 3
+2025-11-23 19:03:22,996 - INFO - Island id 3
+[INFO]
+2025-11-23 19:03:22,997 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-23 19:03:32,218 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:03:32,220 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-23 19:03:32,223 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 9
+2025-11-23 19:03:32,223 - INFO - Producer: Generated 8 functions for prompt 9
+[INFO] Producer: Generated 0 failed functions for prompt 9
+2025-11-23 19:03:32,223 - INFO - Producer: Generated 0 failed functions for prompt 9
+[INFO]
+2025-11-23 19:03:32,224 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:03:32,225 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 0
+2025-11-23 19:03:32,225 - INFO - Island id 0
+[INFO]
+2025-11-23 19:03:32,225 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 19:03:37,938 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:03:37,940 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 5
+2025-11-23 19:03:37,942 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 8 functions for prompt 10
+2025-11-23 19:03:37,943 - INFO - Producer: Generated 8 functions for prompt 10
+[INFO] Producer: Generated 0 failed functions for prompt 10
+2025-11-23 19:03:37,943 - INFO - Producer: Generated 0 failed functions for prompt 10
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-23 19:03:37,943 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-23 19:03:37,995 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 1464086, worker id 0 to finish
+2025-11-23 19:03:37,996 - INFO - Waiting for consumer process 1464086, worker id 0 to finish
+[INFO] Queue size: 8, timeout time: 180
+2025-11-23 19:03:37,996 - INFO - Queue size: 8, timeout time: 180
+[INFO] Consumer process 1464086 exited
+2025-11-23 19:03:41,371 - INFO - Consumer process 1464086 exited
+[INFO] Waiting for consumer process 1464088, worker id 1 to finish
+2025-11-23 19:03:41,371 - INFO - Waiting for consumer process 1464088, worker id 1 to finish
+[INFO] Queue size: 2, timeout time: 120
+2025-11-23 19:03:41,372 - INFO - Queue size: 2, timeout time: 120
+[INFO] Consumer process 1464088 exited
+2025-11-23 19:04:48,494 - INFO - Consumer process 1464088 exited
+[INFO] Waiting for consumer process 1464089, worker id 2 to finish
+2025-11-23 19:04:48,495 - INFO - Waiting for consumer process 1464089, worker id 2 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,495 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464089 exited
+2025-11-23 19:04:48,496 - INFO - Consumer process 1464089 exited
+[INFO] Waiting for consumer process 1464092, worker id 3 to finish
+2025-11-23 19:04:48,496 - INFO - Waiting for consumer process 1464092, worker id 3 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,496 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464092 exited
+2025-11-23 19:04:48,497 - INFO - Consumer process 1464092 exited
+[INFO] Waiting for consumer process 1464096, worker id 4 to finish
+2025-11-23 19:04:48,497 - INFO - Waiting for consumer process 1464096, worker id 4 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,497 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464096 exited
+2025-11-23 19:04:48,498 - INFO - Consumer process 1464096 exited
+[INFO] Waiting for consumer process 1464099, worker id 5 to finish
+2025-11-23 19:04:48,498 - INFO - Waiting for consumer process 1464099, worker id 5 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,498 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464099 exited
+2025-11-23 19:04:48,499 - INFO - Consumer process 1464099 exited
+[INFO] Waiting for consumer process 1464101, worker id 6 to finish
+2025-11-23 19:04:48,499 - INFO - Waiting for consumer process 1464101, worker id 6 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,499 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464101 exited
+2025-11-23 19:04:48,501 - INFO - Consumer process 1464101 exited
+[INFO] Waiting for consumer process 1464105, worker id 7 to finish
+2025-11-23 19:04:48,502 - INFO - Waiting for consumer process 1464105, worker id 7 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,502 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464105 exited
+2025-11-23 19:04:48,502 - INFO - Consumer process 1464105 exited
+[INFO] Waiting for consumer process 1464108, worker id 8 to finish
+2025-11-23 19:04:48,503 - INFO - Waiting for consumer process 1464108, worker id 8 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,504 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464108 exited
+2025-11-23 19:04:48,505 - INFO - Consumer process 1464108 exited
+[INFO] Waiting for consumer process 1464110, worker id 9 to finish
+2025-11-23 19:04:48,505 - INFO - Waiting for consumer process 1464110, worker id 9 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,506 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464110 exited
+2025-11-23 19:04:48,507 - INFO - Consumer process 1464110 exited
+[INFO] Waiting for consumer process 1464113, worker id 10 to finish
+2025-11-23 19:04:48,507 - INFO - Waiting for consumer process 1464113, worker id 10 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,508 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464113 exited
+2025-11-23 19:04:48,509 - INFO - Consumer process 1464113 exited
+[INFO] Waiting for consumer process 1464117, worker id 11 to finish
+2025-11-23 19:04:48,509 - INFO - Waiting for consumer process 1464117, worker id 11 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:04:48,510 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1464117 exited
+2025-11-23 19:04:48,511 - INFO - Consumer process 1464117 exited
+[INFO] ###################
+2025-11-23 19:04:48,528 - INFO - ###################
+[INFO] Num of passed functions: 25
+2025-11-23 19:04:48,528 - INFO - Num of passed functions: 25
+[INFO] Num of failed functions: 55
+2025-11-23 19:04:48,529 - INFO - Num of failed functions: 55
+[INFO] ###################
+2025-11-23 19:04:48,529 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 10 rounds
+2025-11-23 19:04:48,562 - INFO - Finished with continuous sampling and evaluation for 10 rounds
+[INFO] ----------
+2025-11-23 19:04:48,563 - INFO - ----------
+[INFO] REGISTERING PROGRAMS
+2025-11-23 19:04:48,563 - INFO - REGISTERING PROGRAMS
+
+Number of passing functions to register: 25
+
+
+Number of failed functions: 55
+
+Saving the programs from program bank to a file...
+[INFO] Saved to logs directory
+2025-11-23 19:04:48,698 - INFO - Saved to logs directory
+[INFO]
+
+Time taken for one round: 242 seconds
+2025-11-23 19:04:48,699 - INFO -
+
+Time taken for one round: 242 seconds
+
+
+[INFO]
+
+
+2025-11-23 19:04:48,701 - INFO -
+
+
+[INFO] ROUND 0 FINISHED
+
+
+2025-11-23 19:04:48,702 - INFO - ROUND 0 FINISHED
+[INFO] STARTING ROUND NUM: 10
+2025-11-23 19:04:48,702 - INFO - STARTING ROUND NUM: 10
+[INFO] Prompt num: 10
+2025-11-23 19:04:48,703 - INFO - Prompt num: 10
+[INFO] Total functions generated so far: 80
+2025-11-23 19:04:48,704 - INFO - Total functions generated so far: 80
+[INFO] Total functions evaluated so far: 80
+2025-11-23 19:04:48,704 - INFO - Total functions evaluated so far: 80
+[INFO] Number of functions in the programbank: 31
+2025-11-23 19:04:48,705 - INFO - Number of functions in the programbank: 31
+[INFO] Number of datatpoints in DPO data: 55
+2025-11-23 19:04:48,706 - INFO - Number of datatpoints in DPO data: 55
+[INFO] Best overall program score: -536.78
+2025-11-23 19:04:48,706 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 19:04:48,707 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 19:04:48,707 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] VLLM model server is still alive, continuing...
+2025-11-23 19:04:48,709 - INFO - VLLM model server is still alive, continuing...
+[INFO] ----------
+2025-11-23 19:04:48,709 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 19:04:48,710 - INFO - GENERATING PROMPTS
+[INFO] ----------
+2025-11-23 19:04:48,736 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 19:04:48,737 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 19:04:48,892 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 19:04:48,895 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 19:04:48,901 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:04:48,902 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 0
+2025-11-23 19:04:48,902 - INFO - Island id 0
+[INFO]
+2025-11-23 19:04:48,903 - INFO -
+
+
+[INFO] Time taken for LLM generation: 3 seconds
+
+
+2025-11-23 19:04:52,416 - INFO - Time taken for LLM generation: 3 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:04:52,418 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 3
+2025-11-23 19:04:52,421 - INFO - LLM generation time: 3
+[INFO] Producer: Generated 8 functions for prompt 11
+2025-11-23 19:04:52,422 - INFO - Producer: Generated 8 functions for prompt 11
+[INFO] Producer: Generated 0 failed functions for prompt 11
+2025-11-23 19:04:52,422 - INFO - Producer: Generated 0 failed functions for prompt 11
+[INFO]
+2025-11-23 19:04:52,423 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:04:52,424 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 4
+2025-11-23 19:04:52,424 - INFO - Island id 4
+[INFO]
+2025-11-23 19:04:52,424 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 19:04:59,727 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:04:59,728 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:04:59,729 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:04:59,730 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 5
+2025-11-23 19:04:59,730 - INFO - Number of outputs with at least one valid function definition: 5
+[INFO] LLM generation time: 7
+2025-11-23 19:04:59,733 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 5 functions for prompt 12
+2025-11-23 19:04:59,734 - INFO - Producer: Generated 5 functions for prompt 12
+[INFO] Producer: Generated 3 failed functions for prompt 12
+2025-11-23 19:04:59,755 - INFO - Producer: Generated 3 failed functions for prompt 12
+[INFO]
+2025-11-23 19:04:59,756 - INFO -
+
+
+[INFO] Prompt scores: [-539.26, -536.78]
+
+
+2025-11-23 19:04:59,756 - INFO - Prompt scores: [-539.26, -536.78]
+[INFO] Island id 4
+2025-11-23 19:04:59,761 - INFO - Island id 4
+[INFO]
+2025-11-23 19:04:59,761 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 19:05:04,944 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:04,945 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:04,946 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 19:05:04,946 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 5
+2025-11-23 19:05:04,949 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 6 functions for prompt 13
+2025-11-23 19:05:04,949 - INFO - Producer: Generated 6 functions for prompt 13
+[INFO] Producer: Generated 2 failed functions for prompt 13
+2025-11-23 19:05:04,977 - INFO - Producer: Generated 2 failed functions for prompt 13
+[INFO]
+2025-11-23 19:05:04,978 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:05:04,978 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 1
+2025-11-23 19:05:04,979 - INFO - Island id 1
+[INFO]
+2025-11-23 19:05:04,979 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 19:05:11,935 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:11,936 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:05:11,937 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 6
+2025-11-23 19:05:11,939 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 7 functions for prompt 14
+2025-11-23 19:05:11,940 - INFO - Producer: Generated 7 functions for prompt 14
+[INFO] Producer: Generated 1 failed functions for prompt 14
+2025-11-23 19:05:11,970 - INFO - Producer: Generated 1 failed functions for prompt 14
+[INFO]
+2025-11-23 19:05:11,972 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:05:11,972 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 3
+2025-11-23 19:05:11,972 - INFO - Island id 3
+[INFO]
+2025-11-23 19:05:11,973 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 19:05:19,116 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:19,116 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:19,117 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:19,118 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 5
+2025-11-23 19:05:19,118 - INFO - Number of outputs with at least one valid function definition: 5
+[INFO] LLM generation time: 7
+2025-11-23 19:05:19,121 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 5 functions for prompt 15
+2025-11-23 19:05:19,122 - INFO - Producer: Generated 5 functions for prompt 15
+[INFO] Producer: Generated 3 failed functions for prompt 15
+2025-11-23 19:05:19,142 - INFO - Producer: Generated 3 failed functions for prompt 15
+[INFO]
+2025-11-23 19:05:19,143 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:05:19,147 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 3
+2025-11-23 19:05:19,147 - INFO - Island id 3
+[INFO]
+2025-11-23 19:05:19,147 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 19:05:24,810 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:24,811 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:05:24,812 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 5
+2025-11-23 19:05:24,815 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 7 functions for prompt 16
+2025-11-23 19:05:24,815 - INFO - Producer: Generated 7 functions for prompt 16
+[INFO] Producer: Generated 1 failed functions for prompt 16
+2025-11-23 19:05:24,847 - INFO - Producer: Generated 1 failed functions for prompt 16
+[INFO]
+2025-11-23 19:05:24,848 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -539.26]
+
+
+2025-11-23 19:05:24,848 - INFO - Prompt scores: [-574.06, -539.26]
+[INFO] Island id 4
+2025-11-23 19:05:24,848 - INFO - Island id 4
+[INFO]
+2025-11-23 19:05:24,849 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 19:05:30,146 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:30,147 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:05:30,148 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 5
+2025-11-23 19:05:30,151 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 7 functions for prompt 17
+2025-11-23 19:05:30,151 - INFO - Producer: Generated 7 functions for prompt 17
+[INFO] Producer: Generated 1 failed functions for prompt 17
+2025-11-23 19:05:30,183 - INFO - Producer: Generated 1 failed functions for prompt 17
+[INFO]
+2025-11-23 19:05:30,184 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:05:30,184 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 4
+2025-11-23 19:05:30,184 - INFO - Island id 4
+[INFO]
+2025-11-23 19:05:30,185 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-23 19:05:39,404 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:39,405 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:39,406 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 19:05:39,406 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 9
+2025-11-23 19:05:39,412 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 6 functions for prompt 18
+2025-11-23 19:05:39,413 - INFO - Producer: Generated 6 functions for prompt 18
+[INFO] Producer: Generated 2 failed functions for prompt 18
+2025-11-23 19:05:39,440 - INFO - Producer: Generated 2 failed functions for prompt 18
+[INFO]
+2025-11-23 19:05:39,442 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:05:39,442 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 1
+2025-11-23 19:05:39,442 - INFO - Island id 1
+[INFO]
+2025-11-23 19:05:39,443 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 19:05:46,553 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:46,554 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:05:46,555 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 7
+2025-11-23 19:05:46,566 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 7 functions for prompt 19
+2025-11-23 19:05:46,566 - INFO - Producer: Generated 7 functions for prompt 19
+[INFO] Producer: Generated 1 failed functions for prompt 19
+2025-11-23 19:05:46,596 - INFO - Producer: Generated 1 failed functions for prompt 19
+[INFO]
+2025-11-23 19:05:46,597 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -556.66]
+
+
+2025-11-23 19:05:46,601 - INFO - Prompt scores: [-574.06, -556.66]
+[INFO] Island id 0
+2025-11-23 19:05:46,601 - INFO - Island id 0
+[INFO]
+2025-11-23 19:05:46,601 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-23 19:05:56,796 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:05:56,797 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:05:56,798 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 10
+2025-11-23 19:05:56,801 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 7 functions for prompt 20
+2025-11-23 19:05:56,801 - INFO - Producer: Generated 7 functions for prompt 20
+[INFO] Producer: Generated 1 failed functions for prompt 20
+2025-11-23 19:05:56,830 - INFO - Producer: Generated 1 failed functions for prompt 20
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-23 19:05:56,830 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-23 19:05:56,834 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 1465308, worker id 0 to finish
+2025-11-23 19:05:56,834 - INFO - Waiting for consumer process 1465308, worker id 0 to finish
+[INFO] Queue size: 12, timeout time: 240
+2025-11-23 19:05:56,835 - INFO - Queue size: 12, timeout time: 240
+[INFO] Consumer process 1465308 exited
+2025-11-23 19:06:00,283 - INFO - Consumer process 1465308 exited
+[INFO] Waiting for consumer process 1465310, worker id 1 to finish
+2025-11-23 19:06:00,284 - INFO - Waiting for consumer process 1465310, worker id 1 to finish
+[INFO] Queue size: 2, timeout time: 120
+2025-11-23 19:06:00,284 - INFO - Queue size: 2, timeout time: 120
+[INFO] Consumer process 1465310 exited
+2025-11-23 19:06:01,078 - INFO - Consumer process 1465310 exited
+[INFO] Waiting for consumer process 1465312, worker id 2 to finish
+2025-11-23 19:06:01,079 - INFO - Waiting for consumer process 1465312, worker id 2 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:06:01,079 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1465312 exited
+2025-11-23 19:06:01,080 - INFO - Consumer process 1465312 exited
+[INFO] Waiting for consumer process 1465315, worker id 3 to finish
+2025-11-23 19:06:01,080 - INFO - Waiting for consumer process 1465315, worker id 3 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:06:01,080 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1465315 exited
+2025-11-23 19:06:01,081 - INFO - Consumer process 1465315 exited
+[INFO] Waiting for consumer process 1465317, worker id 4 to finish
+2025-11-23 19:06:01,081 - INFO - Waiting for consumer process 1465317, worker id 4 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:06:01,081 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1465317 exited
+2025-11-23 19:06:01,125 - INFO - Consumer process 1465317 exited
+[INFO] Waiting for consumer process 1465321, worker id 5 to finish
+2025-11-23 19:06:01,125 - INFO - Waiting for consumer process 1465321, worker id 5 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:06:01,125 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1465321 exited
+2025-11-23 19:06:02,313 - INFO - Consumer process 1465321 exited
+[INFO] Waiting for consumer process 1465324, worker id 6 to finish
+2025-11-23 19:06:02,313 - INFO - Waiting for consumer process 1465324, worker id 6 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:06:02,314 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1465324 exited
+2025-11-23 19:06:02,314 - INFO - Consumer process 1465324 exited
+[INFO] Waiting for consumer process 1465327, worker id 7 to finish
+2025-11-23 19:06:02,314 - INFO - Waiting for consumer process 1465327, worker id 7 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:06:02,315 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1465327 exited
+2025-11-23 19:06:02,315 - INFO - Consumer process 1465327 exited
+[INFO] Waiting for consumer process 1465329, worker id 8 to finish
+2025-11-23 19:06:02,315 - INFO - Waiting for consumer process 1465329, worker id 8 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:06:02,316 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1465329 exited
+2025-11-23 19:06:02,316 - INFO - Consumer process 1465329 exited
+[INFO] Waiting for consumer process 1465333, worker id 9 to finish
+2025-11-23 19:06:02,316 - INFO - Waiting for consumer process 1465333, worker id 9 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:06:02,317 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1465333 exited
+2025-11-23 19:06:02,317 - INFO - Consumer process 1465333 exited
+[INFO] Waiting for consumer process 1465335, worker id 10 to finish
+2025-11-23 19:06:02,317 - INFO - Waiting for consumer process 1465335, worker id 10 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:06:02,318 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1465335 exited
+2025-11-23 19:06:02,324 - INFO - Consumer process 1465335 exited
+[INFO] Waiting for consumer process 1465339, worker id 11 to finish
+2025-11-23 19:06:02,324 - INFO - Waiting for consumer process 1465339, worker id 11 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:06:02,325 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1465339 exited
+2025-11-23 19:06:02,326 - INFO - Consumer process 1465339 exited
+[INFO] ###################
+2025-11-23 19:06:02,343 - INFO - ###################
+[INFO] Num of passed functions: 24
+2025-11-23 19:06:02,343 - INFO - Num of passed functions: 24
+[INFO] Num of failed functions: 56
+2025-11-23 19:06:02,344 - INFO - Num of failed functions: 56
+[INFO] ###################
+2025-11-23 19:06:02,344 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 10 rounds
+2025-11-23 19:06:02,368 - INFO - Finished with continuous sampling and evaluation for 10 rounds
+[INFO] ----------
+2025-11-23 19:06:02,369 - INFO - ----------
+[INFO] REGISTERING PROGRAMS
+2025-11-23 19:06:02,369 - INFO - REGISTERING PROGRAMS
+
+Number of passing functions to register: 24
+
+
+Number of failed functions: 56
+
+Saving the programs from program bank to a file...
+[INFO] Saved to logs directory
+2025-11-23 19:06:02,539 - INFO - Saved to logs directory
+[INFO]
+
+Time taken for one round: 73 seconds
+2025-11-23 19:06:02,539 - INFO -
+
+Time taken for one round: 73 seconds
+
+
+[INFO]
+
+
+2025-11-23 19:06:02,542 - INFO -
+
+
+[INFO] ROUND 10 FINISHED
+
+
+2025-11-23 19:06:02,546 - INFO - ROUND 10 FINISHED
+[INFO] STARTING ROUND NUM: 20
+2025-11-23 19:06:02,547 - INFO - STARTING ROUND NUM: 20
+[INFO] Prompt num: 20
+2025-11-23 19:06:02,547 - INFO - Prompt num: 20
+[INFO] Total functions generated so far: 160
+2025-11-23 19:06:02,548 - INFO - Total functions generated so far: 160
+[INFO] Total functions evaluated so far: 160
+2025-11-23 19:06:02,548 - INFO - Total functions evaluated so far: 160
+[INFO] Number of functions in the programbank: 55
+2025-11-23 19:06:02,549 - INFO - Number of functions in the programbank: 55
+[INFO] Number of datatpoints in DPO data: 117
+2025-11-23 19:06:02,550 - INFO - Number of datatpoints in DPO data: 117
+[INFO] Best overall program score: -536.78
+2025-11-23 19:06:02,551 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 19:06:02,551 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 19:06:02,552 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] VLLM model server is still alive, continuing...
+2025-11-23 19:06:02,553 - INFO - VLLM model server is still alive, continuing...
+[INFO] ----------
+2025-11-23 19:06:02,554 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 19:06:02,554 - INFO - GENERATING PROMPTS
+[INFO] ----------
+2025-11-23 19:06:02,579 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 19:06:02,580 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 19:06:02,729 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 19:06:02,735 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 19:06:02,741 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -556.66]
+
+
+2025-11-23 19:06:02,742 - INFO - Prompt scores: [-574.06, -556.66]
+[INFO] Island id 0
+2025-11-23 19:06:02,743 - INFO - Island id 0
+[INFO]
+2025-11-23 19:06:02,743 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-23 19:06:11,193 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:06:11,194 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:06:11,195 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 19:06:11,195 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 8
+2025-11-23 19:06:11,199 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 6 functions for prompt 21
+2025-11-23 19:06:11,199 - INFO - Producer: Generated 6 functions for prompt 21
+[INFO] Producer: Generated 2 failed functions for prompt 21
+2025-11-23 19:06:11,200 - INFO - Producer: Generated 2 failed functions for prompt 21
+[INFO]
+2025-11-23 19:06:11,201 - INFO -
+
+
+[INFO] Prompt scores: [-536.78]
+
+
+2025-11-23 19:06:11,202 - INFO - Prompt scores: [-536.78]
+[INFO] Island id 2
+2025-11-23 19:06:11,202 - INFO - Island id 2
+[INFO]
+2025-11-23 19:06:11,202 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 19:06:17,319 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:06:17,321 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-23 19:06:17,332 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 22
+2025-11-23 19:06:17,332 - INFO - Producer: Generated 8 functions for prompt 22
+[INFO] Producer: Generated 0 failed functions for prompt 22
+2025-11-23 19:06:17,332 - INFO - Producer: Generated 0 failed functions for prompt 22
+[INFO]
+2025-11-23 19:06:17,333 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:06:17,370 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 1
+2025-11-23 19:06:17,370 - INFO - Island id 1
+[INFO]
+2025-11-23 19:06:17,371 - INFO -
+
+
+[INFO] Time taken for LLM generation: 13 seconds
+
+
+2025-11-23 19:06:31,339 - INFO - Time taken for LLM generation: 13 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:06:31,340 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 13
+2025-11-23 19:06:31,353 - INFO - LLM generation time: 13
+[INFO] Producer: Generated 8 functions for prompt 23
+2025-11-23 19:06:31,353 - INFO - Producer: Generated 8 functions for prompt 23
+[INFO] Producer: Generated 0 failed functions for prompt 23
+2025-11-23 19:06:31,353 - INFO - Producer: Generated 0 failed functions for prompt 23
+[INFO]
+2025-11-23 19:06:31,354 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:06:31,355 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 1
+2025-11-23 19:06:31,355 - INFO - Island id 1
+[INFO]
+2025-11-23 19:06:31,355 - INFO -
+
+
+[INFO] Time taken for LLM generation: 13 seconds
+
+
+2025-11-23 19:06:44,556 - INFO - Time taken for LLM generation: 13 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:06:44,557 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 13
+2025-11-23 19:06:44,585 - INFO - LLM generation time: 13
+[INFO] Producer: Generated 8 functions for prompt 24
+2025-11-23 19:06:44,585 - INFO - Producer: Generated 8 functions for prompt 24
+[INFO] Producer: Generated 0 failed functions for prompt 24
+2025-11-23 19:06:44,585 - INFO - Producer: Generated 0 failed functions for prompt 24
+[INFO]
+2025-11-23 19:06:44,586 - INFO -
+
+
+[INFO] Prompt scores: [-551.69, -536.78]
+
+
+2025-11-23 19:06:44,587 - INFO - Prompt scores: [-551.69, -536.78]
+[INFO] Island id 3
+2025-11-23 19:06:44,587 - INFO - Island id 3
+[INFO]
+2025-11-23 19:06:44,587 - INFO -
+
+
+[INFO] Time taken for LLM generation: 17 seconds
+
+
+2025-11-23 19:07:02,110 - INFO - Time taken for LLM generation: 17 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:07:02,111 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:07:02,112 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 19:07:02,112 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 17
+2025-11-23 19:07:02,123 - INFO - LLM generation time: 17
+[INFO] Producer: Generated 6 functions for prompt 25
+2025-11-23 19:07:02,124 - INFO - Producer: Generated 6 functions for prompt 25
+[INFO] Producer: Generated 2 failed functions for prompt 25
+2025-11-23 19:07:02,149 - INFO - Producer: Generated 2 failed functions for prompt 25
+[INFO]
+2025-11-23 19:07:02,150 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:07:02,154 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 3
+2025-11-23 19:07:02,154 - INFO - Island id 3
+[INFO]
+2025-11-23 19:07:02,154 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 19:07:09,161 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:07:09,162 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:07:09,163 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 7
+2025-11-23 19:07:09,173 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 7 functions for prompt 26
+2025-11-23 19:07:09,173 - INFO - Producer: Generated 7 functions for prompt 26
+[INFO] Producer: Generated 1 failed functions for prompt 26
+2025-11-23 19:07:09,205 - INFO - Producer: Generated 1 failed functions for prompt 26
+[INFO]
+2025-11-23 19:07:09,206 - INFO -
+
+
+[INFO] Prompt scores: [-556.66, -536.78]
+
+
+2025-11-23 19:07:09,206 - INFO - Prompt scores: [-556.66, -536.78]
+[INFO] Island id 0
+2025-11-23 19:07:09,206 - INFO - Island id 0
+[INFO]
+2025-11-23 19:07:09,207 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-23 19:07:18,127 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:07:18,128 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:07:18,129 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 8
+2025-11-23 19:07:18,137 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 7 functions for prompt 27
+2025-11-23 19:07:18,137 - INFO - Producer: Generated 7 functions for prompt 27
+[INFO] Producer: Generated 1 failed functions for prompt 27
+2025-11-23 19:07:18,170 - INFO - Producer: Generated 1 failed functions for prompt 27
+[INFO]
+2025-11-23 19:07:18,172 - INFO -
+
+
+[INFO] Prompt scores: [-556.66, -536.78]
+
+
+2025-11-23 19:07:18,175 - INFO - Prompt scores: [-556.66, -536.78]
+[INFO] Island id 0
+2025-11-23 19:07:18,175 - INFO - Island id 0
+[INFO]
+2025-11-23 19:07:18,175 - INFO -
+
+
+[INFO] Time taken for LLM generation: 13 seconds
+
+
+2025-11-23 19:07:31,887 - INFO - Time taken for LLM generation: 13 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:07:31,889 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 13
+2025-11-23 19:07:31,900 - INFO - LLM generation time: 13
+[INFO] Producer: Generated 8 functions for prompt 28
+2025-11-23 19:07:31,901 - INFO - Producer: Generated 8 functions for prompt 28
+[INFO] Producer: Generated 0 failed functions for prompt 28
+2025-11-23 19:07:31,901 - INFO - Producer: Generated 0 failed functions for prompt 28
+[INFO]
+2025-11-23 19:07:31,902 - INFO -
+
+
+[INFO] Prompt scores: [-551.69, -536.78]
+
+
+2025-11-23 19:07:31,902 - INFO - Prompt scores: [-551.69, -536.78]
+[INFO] Island id 3
+2025-11-23 19:07:31,902 - INFO - Island id 3
+[INFO]
+2025-11-23 19:07:31,903 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-23 19:07:40,852 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:07:40,853 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-23 19:07:40,859 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 29
+2025-11-23 19:07:40,859 - INFO - Producer: Generated 8 functions for prompt 29
+[INFO] Producer: Generated 0 failed functions for prompt 29
+2025-11-23 19:07:40,860 - INFO - Producer: Generated 0 failed functions for prompt 29
+[INFO]
+2025-11-23 19:07:40,861 - INFO -
+
+
+[INFO] Prompt scores: [-539.26, -536.78]
+
+
+2025-11-23 19:07:40,861 - INFO - Prompt scores: [-539.26, -536.78]
+[INFO] Island id 4
+2025-11-23 19:07:40,861 - INFO - Island id 4
+[INFO]
+2025-11-23 19:07:40,861 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 19:07:45,808 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:07:45,810 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:07:45,810 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 4
+2025-11-23 19:07:45,813 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 7 functions for prompt 30
+2025-11-23 19:07:45,813 - INFO - Producer: Generated 7 functions for prompt 30
+[INFO] Producer: Generated 1 failed functions for prompt 30
+2025-11-23 19:07:45,842 - INFO - Producer: Generated 1 failed functions for prompt 30
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-23 19:07:45,843 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-23 19:07:45,847 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 1466253, worker id 0 to finish
+2025-11-23 19:07:45,847 - INFO - Waiting for consumer process 1466253, worker id 0 to finish
+[INFO] Queue size: 12, timeout time: 240
+2025-11-23 19:07:45,848 - INFO - Queue size: 12, timeout time: 240
+[INFO] Consumer process 1466253 exited
+2025-11-23 19:07:54,674 - INFO - Consumer process 1466253 exited
+[INFO] Waiting for consumer process 1466255, worker id 1 to finish
+2025-11-23 19:07:54,674 - INFO - Waiting for consumer process 1466255, worker id 1 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,675 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466255 exited
+2025-11-23 19:07:54,675 - INFO - Consumer process 1466255 exited
+[INFO] Waiting for consumer process 1466256, worker id 2 to finish
+2025-11-23 19:07:54,675 - INFO - Waiting for consumer process 1466256, worker id 2 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,677 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466256 exited
+2025-11-23 19:07:54,677 - INFO - Consumer process 1466256 exited
+[INFO] Waiting for consumer process 1466260, worker id 3 to finish
+2025-11-23 19:07:54,677 - INFO - Waiting for consumer process 1466260, worker id 3 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,678 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466260 exited
+2025-11-23 19:07:54,678 - INFO - Consumer process 1466260 exited
+[INFO] Waiting for consumer process 1466262, worker id 4 to finish
+2025-11-23 19:07:54,678 - INFO - Waiting for consumer process 1466262, worker id 4 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,679 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466262 exited
+2025-11-23 19:07:54,679 - INFO - Consumer process 1466262 exited
+[INFO] Waiting for consumer process 1466265, worker id 5 to finish
+2025-11-23 19:07:54,679 - INFO - Waiting for consumer process 1466265, worker id 5 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,680 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466265 exited
+2025-11-23 19:07:54,680 - INFO - Consumer process 1466265 exited
+[INFO] Waiting for consumer process 1466269, worker id 6 to finish
+2025-11-23 19:07:54,680 - INFO - Waiting for consumer process 1466269, worker id 6 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,682 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466269 exited
+2025-11-23 19:07:54,682 - INFO - Consumer process 1466269 exited
+[INFO] Waiting for consumer process 1466271, worker id 7 to finish
+2025-11-23 19:07:54,683 - INFO - Waiting for consumer process 1466271, worker id 7 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,683 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466271 exited
+2025-11-23 19:07:54,684 - INFO - Consumer process 1466271 exited
+[INFO] Waiting for consumer process 1466275, worker id 8 to finish
+2025-11-23 19:07:54,685 - INFO - Waiting for consumer process 1466275, worker id 8 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,685 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466275 exited
+2025-11-23 19:07:54,686 - INFO - Consumer process 1466275 exited
+[INFO] Waiting for consumer process 1466277, worker id 9 to finish
+2025-11-23 19:07:54,687 - INFO - Waiting for consumer process 1466277, worker id 9 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,688 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466277 exited
+2025-11-23 19:07:54,688 - INFO - Consumer process 1466277 exited
+[INFO] Waiting for consumer process 1466281, worker id 10 to finish
+2025-11-23 19:07:54,689 - INFO - Waiting for consumer process 1466281, worker id 10 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,689 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466281 exited
+2025-11-23 19:07:54,690 - INFO - Consumer process 1466281 exited
+[INFO] Waiting for consumer process 1466283, worker id 11 to finish
+2025-11-23 19:07:54,691 - INFO - Waiting for consumer process 1466283, worker id 11 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:07:54,691 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1466283 exited
+2025-11-23 19:08:56,373 - INFO - Consumer process 1466283 exited
+[INFO] ###################
+2025-11-23 19:08:56,391 - INFO - ###################
+[INFO] Num of passed functions: 17
+2025-11-23 19:08:56,392 - INFO - Num of passed functions: 17
+[INFO] Num of failed functions: 63
+2025-11-23 19:08:56,393 - INFO - Num of failed functions: 63
+[INFO] ###################
+2025-11-23 19:08:56,394 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 10 rounds
+2025-11-23 19:08:56,417 - INFO - Finished with continuous sampling and evaluation for 10 rounds
+[INFO] ----------
+2025-11-23 19:08:56,418 - INFO - ----------
+[INFO] REGISTERING PROGRAMS
+2025-11-23 19:08:56,418 - INFO - REGISTERING PROGRAMS
+
+Number of passing functions to register: 17
+
+
+Number of failed functions: 63
+
+Saving the programs from program bank to a file...
+[INFO] Saved to logs directory
+2025-11-23 19:08:56,591 - INFO - Saved to logs directory
+[INFO]
+
+Time taken for one round: 174 seconds
+2025-11-23 19:08:56,592 - INFO -
+
+Time taken for one round: 174 seconds
+
+
+[INFO]
+
+
+2025-11-23 19:08:56,594 - INFO -
+
+
+[INFO] ROUND 20 FINISHED
+
+
+2025-11-23 19:08:56,595 - INFO - ROUND 20 FINISHED
+[INFO] STARTING ROUND NUM: 30
+2025-11-23 19:08:56,595 - INFO - STARTING ROUND NUM: 30
+[INFO] Prompt num: 30
+2025-11-23 19:08:56,596 - INFO - Prompt num: 30
+[INFO] Total functions generated so far: 240
+2025-11-23 19:08:56,596 - INFO - Total functions generated so far: 240
+[INFO] Total functions evaluated so far: 240
+2025-11-23 19:08:56,597 - INFO - Total functions evaluated so far: 240
+[INFO] Number of functions in the programbank: 72
+2025-11-23 19:08:56,598 - INFO - Number of functions in the programbank: 72
+[INFO] Number of datatpoints in DPO data: 176
+2025-11-23 19:08:56,598 - INFO - Number of datatpoints in DPO data: 176
+[INFO] Best overall program score: -536.78
+2025-11-23 19:08:56,599 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 19:08:56,599 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 19:08:56,600 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] VLLM model server is still alive, continuing...
+2025-11-23 19:08:56,602 - INFO - VLLM model server is still alive, continuing...
+[INFO] ----------
+2025-11-23 19:08:56,602 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 19:08:56,603 - INFO - GENERATING PROMPTS
+[INFO] ----------
+2025-11-23 19:08:56,629 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 19:08:56,630 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 19:08:56,784 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 19:08:56,791 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 19:08:56,796 - INFO -
+
+
+[INFO] Prompt scores: [-14850.89, -536.78]
+
+
+2025-11-23 19:08:56,797 - INFO - Prompt scores: [-14850.89, -536.78]
+[INFO] Island id 5
+2025-11-23 19:08:56,798 - INFO - Island id 5
+[INFO]
+2025-11-23 19:08:56,798 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-23 19:09:05,398 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:09:05,400 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:09:05,401 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 8
+2025-11-23 19:09:05,404 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 7 functions for prompt 31
+2025-11-23 19:09:05,405 - INFO - Producer: Generated 7 functions for prompt 31
+[INFO] Producer: Generated 1 failed functions for prompt 31
+2025-11-23 19:09:05,405 - INFO - Producer: Generated 1 failed functions for prompt 31
+[INFO]
+2025-11-23 19:09:05,407 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:09:05,407 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 1
+2025-11-23 19:09:05,407 - INFO - Island id 1
+[INFO]
+2025-11-23 19:09:05,407 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 19:09:12,729 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:09:12,730 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-23 19:09:12,733 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 32
+2025-11-23 19:09:12,733 - INFO - Producer: Generated 8 functions for prompt 32
+[INFO] Producer: Generated 0 failed functions for prompt 32
+2025-11-23 19:09:12,733 - INFO - Producer: Generated 0 failed functions for prompt 32
+[INFO]
+2025-11-23 19:09:12,734 - INFO -
+
+
+[INFO] Prompt scores: [-556.66, -536.78]
+
+
+2025-11-23 19:09:12,735 - INFO - Prompt scores: [-556.66, -536.78]
+[INFO] Island id 0
+2025-11-23 19:09:12,735 - INFO - Island id 0
+[INFO]
+2025-11-23 19:09:12,735 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 19:09:19,208 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:09:19,209 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-23 19:09:19,212 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 33
+2025-11-23 19:09:19,213 - INFO - Producer: Generated 8 functions for prompt 33
+[INFO] Producer: Generated 0 failed functions for prompt 33
+2025-11-23 19:09:19,213 - INFO - Producer: Generated 0 failed functions for prompt 33
+[INFO]
+2025-11-23 19:09:19,214 - INFO -
+
+
+[INFO] Prompt scores: [-14850.89, -536.78]
+
+
+2025-11-23 19:09:19,214 - INFO - Prompt scores: [-14850.89, -536.78]
+[INFO] Island id 5
+2025-11-23 19:09:19,215 - INFO - Island id 5
+[INFO]
+2025-11-23 19:09:19,215 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 19:09:26,060 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:09:26,061 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-23 19:09:26,064 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 34
+2025-11-23 19:09:26,064 - INFO - Producer: Generated 8 functions for prompt 34
+[INFO] Producer: Generated 0 failed functions for prompt 34
+2025-11-23 19:09:26,064 - INFO - Producer: Generated 0 failed functions for prompt 34
+[INFO]
+2025-11-23 19:09:26,065 - INFO -
+
+
+[INFO] Prompt scores: [-551.69, -536.78]
+
+
+2025-11-23 19:09:26,066 - INFO - Prompt scores: [-551.69, -536.78]
+[INFO] Island id 3
+2025-11-23 19:09:26,066 - INFO - Island id 3
+[INFO]
+2025-11-23 19:09:26,066 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-23 19:09:35,266 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:09:35,268 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-23 19:09:35,271 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 35
+2025-11-23 19:09:35,271 - INFO - Producer: Generated 8 functions for prompt 35
+[INFO] Producer: Generated 0 failed functions for prompt 35
+2025-11-23 19:09:35,271 - INFO - Producer: Generated 0 failed functions for prompt 35
+[INFO]
+2025-11-23 19:09:35,272 - INFO -
+
+
+[INFO] Prompt scores: [-556.66, -536.78]
+
+
+2025-11-23 19:09:35,272 - INFO - Prompt scores: [-556.66, -536.78]
+[INFO] Island id 0
+2025-11-23 19:09:35,273 - INFO - Island id 0
+[INFO]
+2025-11-23 19:09:35,273 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 19:09:40,449 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:09:40,451 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 5
+2025-11-23 19:09:40,453 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 8 functions for prompt 36
+2025-11-23 19:09:40,453 - INFO - Producer: Generated 8 functions for prompt 36
+[INFO] Producer: Generated 0 failed functions for prompt 36
+2025-11-23 19:09:40,454 - INFO - Producer: Generated 0 failed functions for prompt 36
+[INFO]
+2025-11-23 19:09:40,455 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:09:40,455 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 0
+2025-11-23 19:09:40,455 - INFO - Island id 0
+[INFO]
+2025-11-23 19:09:40,456 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-23 19:09:50,563 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:09:50,564 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 10
+2025-11-23 19:09:50,571 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 8 functions for prompt 37
+2025-11-23 19:09:50,571 - INFO - Producer: Generated 8 functions for prompt 37
+[INFO] Producer: Generated 0 failed functions for prompt 37
+2025-11-23 19:09:50,571 - INFO - Producer: Generated 0 failed functions for prompt 37
+[INFO]
+2025-11-23 19:09:50,573 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:09:50,573 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 4
+2025-11-23 19:09:50,573 - INFO - Island id 4
+[INFO]
+2025-11-23 19:09:50,573 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-23 19:10:01,563 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:10:01,563 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:10:01,564 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:10:01,565 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 5
+2025-11-23 19:10:01,565 - INFO - Number of outputs with at least one valid function definition: 5
+[INFO] LLM generation time: 10
+2025-11-23 19:10:01,576 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 5 functions for prompt 38
+2025-11-23 19:10:01,577 - INFO - Producer: Generated 5 functions for prompt 38
+[INFO] Producer: Generated 3 failed functions for prompt 38
+2025-11-23 19:10:01,600 - INFO - Producer: Generated 3 failed functions for prompt 38
+[INFO]
+2025-11-23 19:10:01,601 - INFO -
+
+
+[INFO] Prompt scores: [-2880.22, -536.78]
+
+
+2025-11-23 19:10:01,601 - INFO - Prompt scores: [-2880.22, -536.78]
+[INFO] Island id 2
+2025-11-23 19:10:01,602 - INFO - Island id 2
+[INFO]
+2025-11-23 19:10:01,602 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-23 19:10:11,084 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:10:11,086 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-23 19:10:11,097 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 39
+2025-11-23 19:10:11,097 - INFO - Producer: Generated 8 functions for prompt 39
+[INFO] Producer: Generated 0 failed functions for prompt 39
+2025-11-23 19:10:11,097 - INFO - Producer: Generated 0 failed functions for prompt 39
+[INFO]
+2025-11-23 19:10:11,098 - INFO -
+
+
+[INFO] Prompt scores: [-14850.89, -536.78]
+
+
+2025-11-23 19:10:11,099 - INFO - Prompt scores: [-14850.89, -536.78]
+[INFO] Island id 5
+2025-11-23 19:10:11,099 - INFO - Island id 5
+[INFO]
+2025-11-23 19:10:11,099 - INFO -
+
+
+[INFO] Time taken for LLM generation: 12 seconds
+
+
+2025-11-23 19:10:23,775 - INFO - Time taken for LLM generation: 12 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:10:23,776 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:10:23,776 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 12
+2025-11-23 19:10:23,787 - INFO - LLM generation time: 12
+[INFO] Producer: Generated 7 functions for prompt 40
+2025-11-23 19:10:23,788 - INFO - Producer: Generated 7 functions for prompt 40
+[INFO] Producer: Generated 1 failed functions for prompt 40
+2025-11-23 19:10:23,820 - INFO - Producer: Generated 1 failed functions for prompt 40
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-23 19:10:23,820 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-23 19:10:23,821 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 1467385, worker id 0 to finish
+2025-11-23 19:10:23,821 - INFO - Waiting for consumer process 1467385, worker id 0 to finish
+[INFO] Queue size: 12, timeout time: 240
+2025-11-23 19:10:23,821 - INFO - Queue size: 12, timeout time: 240
+[INFO] Consumer process 1467385 exited
+2025-11-23 19:10:28,436 - INFO - Consumer process 1467385 exited
+[INFO] Waiting for consumer process 1467386, worker id 1 to finish
+2025-11-23 19:10:28,437 - INFO - Waiting for consumer process 1467386, worker id 1 to finish
+[INFO] Queue size: 5, timeout time: 120
+2025-11-23 19:10:28,437 - INFO - Queue size: 5, timeout time: 120
+[INFO] Consumer process 1467386 exited
+2025-11-23 19:10:30,555 - INFO - Consumer process 1467386 exited
+[INFO] Waiting for consumer process 1467388, worker id 2 to finish
+2025-11-23 19:10:30,555 - INFO - Waiting for consumer process 1467388, worker id 2 to finish
+[INFO] Queue size: 3, timeout time: 120
+2025-11-23 19:10:30,556 - INFO - Queue size: 3, timeout time: 120
+[INFO] Consumer process 1467388 exited
+2025-11-23 19:10:36,913 - INFO - Consumer process 1467388 exited
+[INFO] Waiting for consumer process 1467392, worker id 3 to finish
+2025-11-23 19:10:36,913 - INFO - Waiting for consumer process 1467392, worker id 3 to finish
+[INFO] Queue size: 2, timeout time: 120
+2025-11-23 19:10:36,914 - INFO - Queue size: 2, timeout time: 120
+[INFO] Consumer process 1467392 exited
+2025-11-23 19:10:51,257 - INFO - Consumer process 1467392 exited
+[INFO] Waiting for consumer process 1467395, worker id 4 to finish
+2025-11-23 19:10:51,257 - INFO - Waiting for consumer process 1467395, worker id 4 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:10:51,258 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1467395 exited
+2025-11-23 19:10:51,258 - INFO - Consumer process 1467395 exited
+[INFO] Waiting for consumer process 1467399, worker id 5 to finish
+2025-11-23 19:10:51,258 - INFO - Waiting for consumer process 1467399, worker id 5 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:10:51,259 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1467399 exited
+2025-11-23 19:10:51,259 - INFO - Consumer process 1467399 exited
+[INFO] Waiting for consumer process 1467401, worker id 6 to finish
+2025-11-23 19:10:51,259 - INFO - Waiting for consumer process 1467401, worker id 6 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:10:51,260 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1467401 exited
+2025-11-23 19:10:51,260 - INFO - Consumer process 1467401 exited
+[INFO] Waiting for consumer process 1467404, worker id 7 to finish
+2025-11-23 19:10:51,260 - INFO - Waiting for consumer process 1467404, worker id 7 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:10:51,261 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1467404 exited
+2025-11-23 19:10:51,261 - INFO - Consumer process 1467404 exited
+[INFO] Waiting for consumer process 1467406, worker id 8 to finish
+2025-11-23 19:10:51,261 - INFO - Waiting for consumer process 1467406, worker id 8 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:10:51,262 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1467406 exited
+2025-11-23 19:10:51,264 - INFO - Consumer process 1467406 exited
+[INFO] Waiting for consumer process 1467410, worker id 9 to finish
+2025-11-23 19:10:51,264 - INFO - Waiting for consumer process 1467410, worker id 9 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:10:51,264 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1467410 exited
+2025-11-23 19:10:51,265 - INFO - Consumer process 1467410 exited
+[INFO] Waiting for consumer process 1467413, worker id 10 to finish
+2025-11-23 19:10:51,266 - INFO - Waiting for consumer process 1467413, worker id 10 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:10:51,267 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1467413 exited
+2025-11-23 19:10:51,267 - INFO - Consumer process 1467413 exited
+[INFO] Waiting for consumer process 1467415, worker id 11 to finish
+2025-11-23 19:10:51,268 - INFO - Waiting for consumer process 1467415, worker id 11 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:10:51,269 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1467415 exited
+2025-11-23 19:11:12,005 - INFO - Consumer process 1467415 exited
+[INFO] ###################
+2025-11-23 19:11:12,023 - INFO - ###################
+[INFO] Num of passed functions: 23
+2025-11-23 19:11:12,024 - INFO - Num of passed functions: 23
+[INFO] Num of failed functions: 57
+2025-11-23 19:11:12,025 - INFO - Num of failed functions: 57
+[INFO] ###################
+2025-11-23 19:11:12,025 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 10 rounds
+2025-11-23 19:11:12,049 - INFO - Finished with continuous sampling and evaluation for 10 rounds
+[INFO] ----------
+2025-11-23 19:11:12,050 - INFO - ----------
+[INFO] REGISTERING PROGRAMS
+2025-11-23 19:11:12,050 - INFO - REGISTERING PROGRAMS
+
+Number of passing functions to register: 23
+
+
+Number of failed functions: 57
+
+Saving the programs from program bank to a file...
+[INFO] Saved to logs directory
+2025-11-23 19:11:12,194 - INFO - Saved to logs directory
+[INFO]
+
+Time taken for one round: 135 seconds
+2025-11-23 19:11:12,195 - INFO -
+
+Time taken for one round: 135 seconds
+
+
+[INFO]
+
+
+2025-11-23 19:11:12,197 - INFO -
+
+
+[INFO] ROUND 30 FINISHED
+
+
+2025-11-23 19:11:12,198 - INFO - ROUND 30 FINISHED
+[INFO] STARTING ROUND NUM: 40
+2025-11-23 19:11:12,199 - INFO - STARTING ROUND NUM: 40
+[INFO] Prompt num: 40
+2025-11-23 19:11:12,199 - INFO - Prompt num: 40
+[INFO] Total functions generated so far: 320
+2025-11-23 19:11:12,200 - INFO - Total functions generated so far: 320
+[INFO] Total functions evaluated so far: 320
+2025-11-23 19:11:12,200 - INFO - Total functions evaluated so far: 320
+[INFO] Number of functions in the programbank: 95
+2025-11-23 19:11:12,201 - INFO - Number of functions in the programbank: 95
+[INFO] Number of datatpoints in DPO data: 232
+2025-11-23 19:11:12,201 - INFO - Number of datatpoints in DPO data: 232
+[INFO] Best overall program score: -536.78
+2025-11-23 19:11:12,202 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 19:11:12,203 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 19:11:12,203 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] VLLM model server is still alive, continuing...
+2025-11-23 19:11:12,204 - INFO - VLLM model server is still alive, continuing...
+[INFO] ----------
+2025-11-23 19:11:12,205 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-23 19:11:12,206 - INFO - GENERATING PROMPTS
+[INFO] ----------
+2025-11-23 19:11:12,233 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-23 19:11:12,234 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-23 19:11:12,386 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-23 19:11:12,389 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-23 19:11:12,396 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:11:12,397 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 4
+2025-11-23 19:11:12,398 - INFO - Island id 4
+[INFO]
+2025-11-23 19:11:12,398 - INFO -
+
+
+[INFO] Time taken for LLM generation: 4 seconds
+
+
+2025-11-23 19:11:16,812 - INFO - Time taken for LLM generation: 4 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:11:16,813 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:11:16,814 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:11:16,814 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:11:16,815 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 4
+2025-11-23 19:11:16,815 - INFO - Number of outputs with at least one valid function definition: 4
+[INFO] LLM generation time: 4
+2025-11-23 19:11:16,819 - INFO - LLM generation time: 4
+[INFO] Producer: Generated 4 functions for prompt 41
+2025-11-23 19:11:16,819 - INFO - Producer: Generated 4 functions for prompt 41
+[INFO] Producer: Generated 4 failed functions for prompt 41
+2025-11-23 19:11:16,821 - INFO - Producer: Generated 4 failed functions for prompt 41
+[INFO]
+2025-11-23 19:11:16,822 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -556.66]
+
+
+2025-11-23 19:11:16,822 - INFO - Prompt scores: [-574.06, -556.66]
+[INFO] Island id 0
+2025-11-23 19:11:16,822 - INFO - Island id 0
+[INFO]
+2025-11-23 19:11:16,823 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-23 19:11:22,411 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:11:22,412 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:11:22,413 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 5
+2025-11-23 19:11:22,416 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 7 functions for prompt 42
+2025-11-23 19:11:22,416 - INFO - Producer: Generated 7 functions for prompt 42
+[INFO] Producer: Generated 1 failed functions for prompt 42
+2025-11-23 19:11:22,447 - INFO - Producer: Generated 1 failed functions for prompt 42
+[INFO]
+2025-11-23 19:11:22,452 - INFO -
+
+
+[INFO] Prompt scores: [-539.26, -536.78]
+
+
+2025-11-23 19:11:22,452 - INFO - Prompt scores: [-539.26, -536.78]
+[INFO] Island id 4
+2025-11-23 19:11:22,456 - INFO - Island id 4
+[INFO]
+2025-11-23 19:11:22,456 - INFO -
+
+
+[INFO] Time taken for LLM generation: 15 seconds
+
+
+2025-11-23 19:11:38,338 - INFO - Time taken for LLM generation: 15 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:11:38,339 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 15
+2025-11-23 19:11:38,354 - INFO - LLM generation time: 15
+[INFO] Producer: Generated 8 functions for prompt 43
+2025-11-23 19:11:38,354 - INFO - Producer: Generated 8 functions for prompt 43
+[INFO] Producer: Generated 0 failed functions for prompt 43
+2025-11-23 19:11:38,355 - INFO - Producer: Generated 0 failed functions for prompt 43
+[INFO]
+2025-11-23 19:11:38,356 - INFO -
+
+
+[INFO] Prompt scores: [-541.75, -536.78]
+
+
+2025-11-23 19:11:38,356 - INFO - Prompt scores: [-541.75, -536.78]
+[INFO] Island id 5
+2025-11-23 19:11:38,356 - INFO - Island id 5
+[INFO]
+2025-11-23 19:11:38,356 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-23 19:11:47,258 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:11:47,259 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:11:47,260 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 19:11:47,261 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 8
+2025-11-23 19:11:47,272 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 6 functions for prompt 44
+2025-11-23 19:11:47,272 - INFO - Producer: Generated 6 functions for prompt 44
+[INFO] Producer: Generated 2 failed functions for prompt 44
+2025-11-23 19:11:47,297 - INFO - Producer: Generated 2 failed functions for prompt 44
+[INFO]
+2025-11-23 19:11:47,298 - INFO -
+
+
+[INFO] Prompt scores: [-556.66, -536.78]
+
+
+2025-11-23 19:11:47,302 - INFO - Prompt scores: [-556.66, -536.78]
+[INFO] Island id 5
+2025-11-23 19:11:47,302 - INFO - Island id 5
+[INFO]
+2025-11-23 19:11:47,302 - INFO -
+
+
+[INFO] Time taken for LLM generation: 15 seconds
+
+
+2025-11-23 19:12:03,219 - INFO - Time taken for LLM generation: 15 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:12:03,220 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:12:03,221 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 19:12:03,221 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 15
+2025-11-23 19:12:03,228 - INFO - LLM generation time: 15
+[INFO] Producer: Generated 6 functions for prompt 45
+2025-11-23 19:12:03,228 - INFO - Producer: Generated 6 functions for prompt 45
+[INFO] Producer: Generated 2 failed functions for prompt 45
+2025-11-23 19:12:03,256 - INFO - Producer: Generated 2 failed functions for prompt 45
+[INFO]
+2025-11-23 19:12:03,257 - INFO -
+
+
+[INFO] Prompt scores: [-541.75, -536.78]
+
+
+2025-11-23 19:12:03,257 - INFO - Prompt scores: [-541.75, -536.78]
+[INFO] Island id 5
+2025-11-23 19:12:03,258 - INFO - Island id 5
+[INFO]
+2025-11-23 19:12:03,258 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-23 19:12:12,852 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:12:12,853 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 7
+2025-11-23 19:12:12,854 - INFO - Number of outputs with at least one valid function definition: 7
+[INFO] LLM generation time: 9
+2025-11-23 19:12:12,865 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 7 functions for prompt 46
+2025-11-23 19:12:12,865 - INFO - Producer: Generated 7 functions for prompt 46
+[INFO] Producer: Generated 1 failed functions for prompt 46
+2025-11-23 19:12:12,892 - INFO - Producer: Generated 1 failed functions for prompt 46
+[INFO]
+2025-11-23 19:12:12,893 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -551.69]
+
+
+2025-11-23 19:12:12,897 - INFO - Prompt scores: [-574.06, -551.69]
+[INFO] Island id 3
+2025-11-23 19:12:12,897 - INFO - Island id 3
+[INFO]
+2025-11-23 19:12:12,897 - INFO -
+
+
+[INFO] Time taken for LLM generation: 13 seconds
+
+
+2025-11-23 19:12:26,280 - INFO - Time taken for LLM generation: 13 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:12:26,281 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 13
+2025-11-23 19:12:26,284 - INFO - LLM generation time: 13
+[INFO] Producer: Generated 8 functions for prompt 47
+2025-11-23 19:12:26,284 - INFO - Producer: Generated 8 functions for prompt 47
+[INFO] Producer: Generated 0 failed functions for prompt 47
+2025-11-23 19:12:26,285 - INFO - Producer: Generated 0 failed functions for prompt 47
+[INFO]
+2025-11-23 19:12:26,286 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -551.69]
+
+
+2025-11-23 19:12:26,286 - INFO - Prompt scores: [-574.06, -551.69]
+[INFO] Island id 3
+2025-11-23 19:12:26,286 - INFO - Island id 3
+[INFO]
+2025-11-23 19:12:26,286 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-23 19:12:33,244 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-23 19:12:33,245 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-23 19:12:33,248 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 48
+2025-11-23 19:12:33,248 - INFO - Producer: Generated 8 functions for prompt 48
+[INFO] Producer: Generated 0 failed functions for prompt 48
+2025-11-23 19:12:33,248 - INFO - Producer: Generated 0 failed functions for prompt 48
+[INFO]
+2025-11-23 19:12:33,249 - INFO -
+
+
+[INFO] Prompt scores: [-556.66, -536.78]
+
+
+2025-11-23 19:12:33,250 - INFO - Prompt scores: [-556.66, -536.78]
+[INFO] Island id 0
+2025-11-23 19:12:33,250 - INFO - Island id 0
+[INFO]
+2025-11-23 19:12:33,250 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-23 19:12:41,944 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:12:41,945 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:12:41,946 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:12:41,946 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 5
+2025-11-23 19:12:41,947 - INFO - Number of outputs with at least one valid function definition: 5
+[INFO] LLM generation time: 8
+2025-11-23 19:12:41,950 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 5 functions for prompt 49
+2025-11-23 19:12:41,950 - INFO - Producer: Generated 5 functions for prompt 49
+[INFO] Producer: Generated 3 failed functions for prompt 49
+2025-11-23 19:12:41,972 - INFO - Producer: Generated 3 failed functions for prompt 49
+[INFO]
+2025-11-23 19:12:41,973 - INFO -
+
+
+[INFO] Prompt scores: [-574.06, -536.78]
+
+
+2025-11-23 19:12:41,973 - INFO - Prompt scores: [-574.06, -536.78]
+[INFO] Island id 3
+2025-11-23 19:12:41,978 - INFO - Island id 3
+[INFO]
+2025-11-23 19:12:41,978 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-23 19:12:49,032 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:12:49,034 - INFO - Function priority not found in the extracted function.
+[INFO] Function priority not found in the extracted function.
+2025-11-23 19:12:49,034 - INFO - Function priority not found in the extracted function.
+[INFO] Number of outputs with at least one valid function definition: 6
+2025-11-23 19:12:49,035 - INFO - Number of outputs with at least one valid function definition: 6
+[INFO] LLM generation time: 7
+2025-11-23 19:12:49,037 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 6 functions for prompt 50
+2025-11-23 19:12:49,038 - INFO - Producer: Generated 6 functions for prompt 50
+[INFO] Producer: Generated 2 failed functions for prompt 50
+2025-11-23 19:12:49,063 - INFO - Producer: Generated 2 failed functions for prompt 50
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-23 19:12:49,063 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-23 19:12:49,064 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 1468497, worker id 0 to finish
+2025-11-23 19:12:49,064 - INFO - Waiting for consumer process 1468497, worker id 0 to finish
+[INFO] Queue size: 12, timeout time: 240
+2025-11-23 19:12:49,065 - INFO - Queue size: 12, timeout time: 240
+[INFO] Consumer process 1468497 exited
+2025-11-23 19:12:53,281 - INFO - Consumer process 1468497 exited
+[INFO] Waiting for consumer process 1468498, worker id 1 to finish
+2025-11-23 19:12:53,282 - INFO - Waiting for consumer process 1468498, worker id 1 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,282 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468498 exited
+2025-11-23 19:12:53,348 - INFO - Consumer process 1468498 exited
+[INFO] Waiting for consumer process 1468501, worker id 2 to finish
+2025-11-23 19:12:53,348 - INFO - Waiting for consumer process 1468501, worker id 2 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,348 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468501 exited
+2025-11-23 19:12:53,349 - INFO - Consumer process 1468501 exited
+[INFO] Waiting for consumer process 1468504, worker id 3 to finish
+2025-11-23 19:12:53,349 - INFO - Waiting for consumer process 1468504, worker id 3 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,349 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468504 exited
+2025-11-23 19:12:53,350 - INFO - Consumer process 1468504 exited
+[INFO] Waiting for consumer process 1468506, worker id 4 to finish
+2025-11-23 19:12:53,350 - INFO - Waiting for consumer process 1468506, worker id 4 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,350 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468506 exited
+2025-11-23 19:12:53,351 - INFO - Consumer process 1468506 exited
+[INFO] Waiting for consumer process 1468510, worker id 5 to finish
+2025-11-23 19:12:53,351 - INFO - Waiting for consumer process 1468510, worker id 5 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,351 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468510 exited
+2025-11-23 19:12:53,352 - INFO - Consumer process 1468510 exited
+[INFO] Waiting for consumer process 1468513, worker id 6 to finish
+2025-11-23 19:12:53,352 - INFO - Waiting for consumer process 1468513, worker id 6 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,353 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468513 exited
+2025-11-23 19:12:53,355 - INFO - Consumer process 1468513 exited
+[INFO] Waiting for consumer process 1468515, worker id 7 to finish
+2025-11-23 19:12:53,355 - INFO - Waiting for consumer process 1468515, worker id 7 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,356 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468515 exited
+2025-11-23 19:12:53,357 - INFO - Consumer process 1468515 exited
+[INFO] Waiting for consumer process 1468517, worker id 8 to finish
+2025-11-23 19:12:53,357 - INFO - Waiting for consumer process 1468517, worker id 8 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,358 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468517 exited
+2025-11-23 19:12:53,359 - INFO - Consumer process 1468517 exited
+[INFO] Waiting for consumer process 1468521, worker id 9 to finish
+2025-11-23 19:12:53,359 - INFO - Waiting for consumer process 1468521, worker id 9 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,360 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468521 exited
+2025-11-23 19:12:53,360 - INFO - Consumer process 1468521 exited
+[INFO] Waiting for consumer process 1468524, worker id 10 to finish
+2025-11-23 19:12:53,361 - INFO - Waiting for consumer process 1468524, worker id 10 to finish
+[INFO] Queue size: 1, timeout time: 120
+2025-11-23 19:12:53,362 - INFO - Queue size: 1, timeout time: 120
+[INFO] Consumer process 1468524 exited
+2025-11-23 19:12:54,551 - INFO - Consumer process 1468524 exited
+[INFO] Waiting for consumer process 1468527, worker id 11 to finish
+2025-11-23 19:12:54,551 - INFO - Waiting for consumer process 1468527, worker id 11 to finish
+[INFO] Queue size: 0, timeout time: 120
+2025-11-23 19:12:54,552 - INFO - Queue size: 0, timeout time: 120
+[INFO] Consumer process 1468527 exited
+2025-11-23 19:12:54,552 - INFO - Consumer process 1468527 exited
+[INFO] ###################
+2025-11-23 19:12:54,570 - INFO - ###################
+[INFO] Num of passed functions: 17
+2025-11-23 19:12:54,570 - INFO - Num of passed functions: 17
+[INFO] Num of failed functions: 63
+2025-11-23 19:12:54,571 - INFO - Num of failed functions: 63
+[INFO] ###################
+2025-11-23 19:12:54,572 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 10 rounds
+2025-11-23 19:12:54,595 - INFO - Finished with continuous sampling and evaluation for 10 rounds
+[INFO] ----------
+2025-11-23 19:12:54,596 - INFO - ----------
+[INFO] REGISTERING PROGRAMS
+2025-11-23 19:12:54,597 - INFO - REGISTERING PROGRAMS
+
+Number of passing functions to register: 17
+
+
+Number of failed functions: 63
+
+Saving the programs from program bank to a file...
+[INFO] Saved to logs directory
+2025-11-23 19:12:54,816 - INFO - Saved to logs directory
+[INFO]
+
+Time taken for one round: 102 seconds
+2025-11-23 19:12:54,817 - INFO -
+
+Time taken for one round: 102 seconds
+
+
+[INFO]
+
+
+2025-11-23 19:12:54,819 - INFO -
+
+
+[INFO] ROUND 40 FINISHED
+
+
+2025-11-23 19:12:54,820 - INFO - ROUND 40 FINISHED
+[INFO] FINISHED ALL ROUNDS
+2025-11-23 19:12:54,820 - INFO - FINISHED ALL ROUNDS

@@ -1,0 +1,267 @@
+[INFO] Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: dpo
+  finetuning_frequency: 400
+  dpo_strategy: 2
+  dpo_config:
+    beta: 0.4
+    max_seq_length: 6500
+    per_device_train_batch_size: 2
+    gradient_accumulation_steps: 16
+    gradient_checkpointing: 1
+    num_train_epochs: 2
+    learning_rate: 1.0e-05
+    lr_scheduler_type: cosine
+    weight_decay: 0.001
+    warmup_steps: 0
+    logging_steps: 1
+    f_divergence_type: alpha_divergence
+    f_alpha_divergence_coef: 1.0
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 5
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 20
+finetuning_frequency: 10
+lr_annealing: 0
+one_tuning: 0
+percentile: 70
+max_loops: 5
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: funsearch_test/bin_llama32_dpo_0
+group_name: funsearch_test/bin_llama32_dpo
+logs_path: .
+logs_dir: out/logs/funsearch_test/bin_bin_llama32_dpo_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_dpo
+prefix: funsearch_test
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/funsearch_test/bin_bin_llama32_dpo_0/model_adapter_llama32
+default_wandb_name: vjvenjkb
+2025-11-23 22:57:33,824 - INFO - Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: bin
+  function_str_to_extract: priority
+  Weibull: 0
+  OR: 1
+  init_best_fit: 1
+  failed_score: -20000
+  timeout_period: 60
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: llama32
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: dpo
+  finetuning_frequency: 400
+  dpo_strategy: 2
+  dpo_config:
+    beta: 0.4
+    max_seq_length: 6500
+    per_device_train_batch_size: 2
+    gradient_accumulation_steps: 16
+    gradient_checkpointing: 1
+    num_train_epochs: 2
+    learning_rate: 1.0e-05
+    lr_scheduler_type: cosine
+    weight_decay: 0.001
+    warmup_steps: 0
+    logging_steps: 1
+    f_divergence_type: alpha_divergence
+    f_alpha_divergence_coef: 1.0
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 5
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 20
+finetuning_frequency: 10
+lr_annealing: 0
+one_tuning: 0
+percentile: 70
+max_loops: 5
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: priority
+wandb_name: funsearch_test/bin_llama32_dpo_0
+group_name: funsearch_test/bin_llama32_dpo
+logs_path: .
+logs_dir: out/logs/funsearch_test/bin_bin_llama32_dpo_0
+wandb: 1
+project: evotune-reproducing
+entity: hananenmoussa
+seed: 0
+run_identifier_name: bin_llama32_dpo
+prefix: funsearch_test
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: meta-llama/Llama-3.2-1B-Instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/funsearch_test/bin_bin_llama32_dpo_0/model_adapter_llama32
+default_wandb_name: vjvenjkb
+
+[INFO] Starting from scratch
+
+2025-11-23 22:57:33,849 - INFO - Starting from scratch
+Best score of island 0 increased to -536.78
+Best score of island 1 increased to -536.78
+Best score of island 2 increased to -536.78
+Best score of island 3 increased to -536.78
+Best score of island 4 increased to -536.78
+Best score of island 5 increased to -536.78
+Saving a program to a file...
+[INFO] Flag load finetuned: False
+2025-11-23 22:57:34,157 - INFO - Flag load finetuned: False
+[INFO] ====================== Inference Engine: vLLM ======================
+2025-11-23 22:57:34,159 - INFO - ====================== Inference Engine: vLLM ======================
+[INFO] Starting with round number 0
+2025-11-23 22:57:34,159 - INFO - Starting with round number 0
+[INFO] STARTING ROUND NUM: 0
+2025-11-23 22:57:34,160 - INFO - STARTING ROUND NUM: 0
+[INFO] Prompt num: 0
+2025-11-23 22:57:34,161 - INFO - Prompt num: 0
+[INFO] Total functions generated so far: 0
+2025-11-23 22:57:34,161 - INFO - Total functions generated so far: 0
+[INFO] Total functions evaluated so far: 0
+2025-11-23 22:57:34,162 - INFO - Total functions evaluated so far: 0
+[INFO] Number of functions in the programbank: 6
+2025-11-23 22:57:34,163 - INFO - Number of functions in the programbank: 6
+[INFO] Number of datatpoints in DPO data: 0
+2025-11-23 22:57:34,163 - INFO - Number of datatpoints in DPO data: 0
+[INFO] Best overall program score: -536.78
+2025-11-23 22:57:34,164 - INFO - Best overall program score: -536.78
+[INFO] Best running_dict score: -inf
+2025-11-23 22:57:34,164 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-23 22:57:34,165 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] Starting vLLM model server...
+2025-11-23 22:57:34,166 - INFO - Starting vLLM model server...
+[INFO] Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+2025-11-23 22:57:34,167 - INFO - Starting vLLM server for model meta-llama/Llama-3.2-1B-Instruct on GPU 0 at port 8080
+[INFO] Waiting for all servers to start... Server PIDs: [1530964]
+2025-11-23 22:57:34,170 - INFO - Waiting for all servers to start... Server PIDs: [1530964]
+Traceback (most recent call last):
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py", line 638, in <module>
+    main()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py", line 264, in main
+    server_pids, server_ports = initialize_models_server(cfg, flag_load_finetuned, use_vllm=True)
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/packing/model/model.py", line 572, in initialize_models_server
+    wait_for_vllm_server(port, model_id)
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/packing/model/model.py", line 703, in wait_for_vllm_server
+    time.sleep(1)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py", line 638, in <module>
+    main()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py", line 264, in main
+    server_pids, server_ports = initialize_models_server(cfg, flag_load_finetuned, use_vllm=True)
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/packing/model/model.py", line 572, in initialize_models_server
+    wait_for_vllm_server(port, model_id)
+  File "/fs/ess/PAA0201/hananemoussa/EvoTune/src/packing/model/model.py", line 703, in wait_for_vllm_server
+    time.sleep(1)
+KeyboardInterrupt
