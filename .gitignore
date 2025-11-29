@@ -3,3 +3,4 @@ logs/
 llm-srbench/
 llm-srbench-dataset/
 wandb/
+main.log
