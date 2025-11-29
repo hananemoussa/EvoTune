@@ -1,0 +1,122 @@
+{
+  "os":  "Linux-5.14.0-427.96.1.el9_4.x86_64-x86_64-with-glibc2.34",
+  "python":  "CPython 3.10.19",
+  "startedAt":  "2025-11-28T17:31:35.886671Z",
+  "args":  [
+    "task=sr",
+    "task.dataset_category=bio_pop_growth",
+    "task.problem_name=BPG10",
+    "model=phi",
+    "train=none",
+    "cluster=osc_ascend",
+    "seed=0",
+    "prefix=funsearch_sr_BPG10_phi",
+    "num_rounds=2701",
+    "num_cont_rounds=100",
+    "gpu_nums=0",
+    "wandb=1",
+    "project=cse-6521-project",
+    "entity=hananenmoussa",
+    "run_or_dev=run"
+  ],
+  "program":  "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py",
+  "codePath":  "src/experiments/main.py",
+  "codePathLocal":  "src/experiments/main.py",
+  "git":  {
+    "remote":  "https://github.com/hananemoussa/EvoTune.git",
+    "commit":  "4c8ea8174e6473e784e782feb0cee24a3b1fcf2f"
+  },
+  "root":  "/fs/ess/PAA0201/hananemoussa/EvoTune",
+  "host":  "a0014.ten.osc.edu",
+  "executable":  "/users/PAA0201/hananemoussa/.conda/envs/evotune/bin/python",
+  "cpu_count":  96,
+  "cpu_count_logical":  96,
+  "gpu":  "NVIDIA A100-SXM4-80GB",
+  "gpu_count":  4,
+  "disk":  {
+    "/":  {
+      "total":  "204010946560",
+      "used":  "32455065600"
+    }
+  },
+  "memory":  {
+    "total":  "1081776652288"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-d3b321ff-679c-149c-8ae8-87f4726943dd"
+    },
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-cd8e899c-dd0f-61c5-e1f4-7f2631981a6e"
+    },
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-025dd8c5-db98-0607-090d-e9ceb0de82ae"
+    },
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-ba736548-f38f-235e-71d9-8895b04bdf08"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "slurm":  {
+    "cluster_name":  "ascend",
+    "conf":  "/var/spool/slurmd/conf-cache/slurm.conf",
+    "cpus_on_node":  "88",
+    "cpus_per_task":  "12",
+    "gpus_on_node":  "4",
+    "gpus_per_node":  "1",
+    "gtids":  "0",
+    "job_account":  "paa0201",
+    "job_cpus_per_node":  "88",
+    "job_end_time":  "1764523853",
+    "job_gid":  "6044",
+    "job_gpus":  "0,1,2,3",
+    "job_gres":  "gres/gpu:1",
+    "job_id":  "2950253",
+    "job_name":  "funsearch_sr_BPG10",
+    "job_nodelist":  "a0014",
+    "job_num_nodes":  "1",
+    "job_partition":  "quad",
+    "job_qos":  "ascend-default",
+    "job_start_time":  "1764351053",
+    "job_uid":  "46117",
+    "job_user":  "hananemoussa",
+    "jobid":  "2950253",
+    "localid":  "0",
+    "mem_per_node":  "102400",
+    "nnodes":  "1",
+    "nodeid":  "0",
+    "nodelist":  "a0014",
+    "nprocs":  "1",
+    "ntasks":  "1",
+    "ntasks_per_node":  "1",
+    "oom_kill_step":  "0",
+    "prio_process":  "0",
+    "procid":  "0",
+    "script_context":  "prolog_task",
+    "submit_dir":  "/fs/ess/PAA0201/hananemoussa/EvoTune",
+    "submit_host":  "ascend-login02.hpc.osc.edu",
+    "task_pid":  "2762519",
+    "tasks_per_node":  "1",
+    "time_limit":  "172800",
+    "topology_addr":  "a0014",
+    "topology_addr_pattern":  "node",
+    "tres_per_task":  "cpu=12"
+  },
+  "writerId":  "4q2jmqisofv4ka0hfpm4906evjrqghr5"
+}

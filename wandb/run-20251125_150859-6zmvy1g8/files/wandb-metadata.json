@@ -1,0 +1,99 @@
+{
+  "os":  "Linux-5.14.0-427.96.1.el9_4.x86_64-x86_64-with-glibc2.34",
+  "python":  "CPython 3.10.19",
+  "startedAt":  "2025-11-25T20:08:59.132530Z",
+  "args":  [
+    "task=bin",
+    "model=qwen3",
+    "train=none",
+    "cluster=osc_ascend",
+    "seed=0",
+    "prefix=funsearch_qwen3_1.7B_baseline",
+    "num_rounds=2701",
+    "num_cont_rounds=100",
+    "gpu_nums=0",
+    "wandb=1",
+    "project=cse-6521-project",
+    "entity=hananenmoussa",
+    "run_or_dev=run"
+  ],
+  "program":  "/fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py",
+  "codePath":  "src/experiments/main.py",
+  "codePathLocal":  "src/experiments/main.py",
+  "git":  {
+    "remote":  "https://github.com/hananemoussa/EvoTune.git",
+    "commit":  "4c8ea8174e6473e784e782feb0cee24a3b1fcf2f"
+  },
+  "root":  "/fs/ess/PAA0201/hananemoussa/EvoTune",
+  "host":  "a0006.ten.osc.edu",
+  "executable":  "/users/PAA0201/hananemoussa/.conda/envs/evotune/bin/python",
+  "cpu_count":  96,
+  "cpu_count_logical":  96,
+  "gpu":  "NVIDIA A100-SXM4-80GB",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "204010946560",
+      "used":  "31569608704"
+    }
+  },
+  "memory":  {
+    "total":  "1081776627712"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-f761074a-525d-a829-d93f-b6af992f41a1"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "slurm":  {
+    "cluster_name":  "ascend",
+    "conf":  "/var/spool/slurmd/conf-cache/slurm.conf",
+    "cpus_on_node":  "12",
+    "cpus_per_task":  "12",
+    "gpus_on_node":  "1",
+    "gpus_per_node":  "1",
+    "gtids":  "0",
+    "job_account":  "paa0201",
+    "job_cpus_per_node":  "12",
+    "job_end_time":  "1764274100",
+    "job_gid":  "6044",
+    "job_gpus":  "1",
+    "job_gres":  "gres/gpu:1",
+    "job_id":  "2928864",
+    "job_name":  "funsearch_qwen3_1.7B_baseline",
+    "job_nodelist":  "a0006",
+    "job_num_nodes":  "1",
+    "job_partition":  "quad",
+    "job_qos":  "ascend-default",
+    "job_start_time":  "1764101300",
+    "job_uid":  "46117",
+    "job_user":  "hananemoussa",
+    "jobid":  "2928864",
+    "localid":  "0",
+    "mem_per_node":  "102400",
+    "nnodes":  "1",
+    "nodeid":  "0",
+    "nodelist":  "a0006",
+    "nprocs":  "1",
+    "ntasks":  "1",
+    "ntasks_per_node":  "1",
+    "oom_kill_step":  "0",
+    "prio_process":  "0",
+    "procid":  "0",
+    "script_context":  "prolog_task",
+    "submit_dir":  "/fs/ess/PAA0201/hananemoussa/EvoTune",
+    "submit_host":  "ascend-login02.hpc.osc.edu",
+    "task_pid":  "669277",
+    "tasks_per_node":  "1",
+    "time_limit":  "172800",
+    "topology_addr":  "a0006",
+    "topology_addr_pattern":  "node",
+    "tres_per_task":  "cpu=12"
+  },
+  "writerId":  "ch6le002qah8lqpcbb80su2mrjxze4hc"
+}

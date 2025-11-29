@@ -634,6 +634,65 @@ def main(cfg: DictConfig):
         logging.info("\n\n")
         logging.info(f"ROUND {round_num} FINISHED")
 
+    # Final evaluation for symbolic regression task
+    if cfg.task.task_name == "sr":
+        logging.info("-" * 50)
+        logging.info("RUNNING FINAL SYMBOLIC REGRESSION EVALUATION")
+        logging.info("-" * 50)
+        try:
+            from packing.evaluate.symbolic_regression.task_sr import save_final_sr_metrics
+
+            best_program = programdatabase.get_best_program
+            if best_program is not None:
+                # The program may contain imports at the beginning
+                # Split into imports and function
+                lines = best_program.split('\n')
+                import_lines = []
+                func_lines = []
+                in_function = False
+                for line in lines:
+                    if line.strip().startswith('def '):
+                        in_function = True
+                    if in_function:
+                        func_lines.append(line)
+                    else:
+                        import_lines.append(line)
+
+                imports_str = '\n'.join(import_lines)
+                function_str = '\n'.join(func_lines)
+
+                # If no function found, treat entire thing as function
+                if not func_lines:
+                    function_str = best_program
+                    imports_str = ""
+
+                final_metrics = save_final_sr_metrics(
+                    cfg,
+                    function_str,
+                    imports_str,
+                    cfg.logs_dir,
+                    round_num
+                )
+
+                # Log to wandb if enabled
+                if cfg.wandb:
+                    wandb_metrics = {
+                        "final/train_nmse": final_metrics['train'].get('nmse', float('inf')),
+                        "final/train_score": final_metrics['train'].get('score', float('-inf')),
+                        "final/test_nmse": final_metrics['test'].get('nmse', float('inf')),
+                        "final/test_score": final_metrics['test'].get('score', float('-inf')),
+                    }
+                    if final_metrics.get('ood_test') is not None:
+                        wandb_metrics["final/ood_nmse"] = final_metrics['ood_test'].get('nmse', float('inf'))
+                        wandb_metrics["final/ood_score"] = final_metrics['ood_test'].get('score', float('-inf'))
+                    wandb.log(wandb_metrics)
+            else:
+                logging.warning("No best program found in program database")
+        except Exception as e:
+            logging.error(f"Error during final SR evaluation: {e}")
+            import traceback
+            traceback.print_exc()
+
     logging.info("FINISHED ALL ROUNDS")
 
 

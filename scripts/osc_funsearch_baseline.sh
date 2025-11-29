@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=funsearch_llama_1B_baseline
+#SBATCH --job-name=funsearch_qwen3_no_think_1.7B_baseline
 #SBATCH --account=PAA0201
 #SBATCH --time=48:00:00
 #SBATCH --nodes=1
@@ -8,8 +8,8 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=quad
 #SBATCH --mem=100G
-#SBATCH --output=logs/funsearch_llama_1B_baseline_%j.out
-#SBATCH --error=logs/funsearch_llama_1B_baseline_%j.err
+#SBATCH --output=logs/funsearch_qwen3_no_think_1.7B_baseline_%j.out
+#SBATCH --error=logs/funsearch_qwen3_no_think_1.7B_baseline_%j.err
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=moussa.45@osu.edu
 
@@ -38,11 +38,11 @@ mkdir -p logs out/logs
 
 python src/experiments/main.py \
     task=bin \
-    model=llama32 \
+    model=qwen3 \
     train=none \
     cluster=osc_ascend \
     seed=0 \
-    prefix=funsearch_llama_1B_baseline \
+    prefix=funsearch_qwen3_no_think_1.7B_baseline \
     num_rounds=2701 \
     num_cont_rounds=100 \
     gpu_nums=0 \

@@ -1,0 +1,274 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            brfjbahpax8gcedrxgfuidernm0cpf6m:
+                args:
+                    - task=bin
+                    - model=gemma3
+                    - train=dpo
+                    - cluster=osc_ascend
+                    - seed=0
+                    - prefix=evotune_gemma3_1B
+                    - gpu_nums=0
+                    - num_rounds=2701
+                    - num_cont_rounds=100
+                    - finetuning_frequency=400
+                    - one_tuning=1
+                    - max_loops=1
+                    - wandb=1
+                    - project=cse-6521-project
+                    - entity=hananenmoussa
+                    - run_or_dev=run
+                codePath: src/experiments/main.py
+                codePathLocal: src/experiments/main.py
+                cpu_count: 96
+                cpu_count_logical: 96
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "204010946560"
+                        used: "31631867904"
+                executable: /users/PAA0201/hananemoussa/.conda/envs/evotune/bin/python
+                git:
+                    commit: 4c8ea8174e6473e784e782feb0cee24a3b1fcf2f
+                    remote: https://github.com/hananemoussa/EvoTune.git
+                gpu: NVIDIA A100-SXM4-80GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-6080e014-9385-2ec4-79ec-eceee1254b22
+                host: a0001.ten.osc.edu
+                memory:
+                    total: "1081776648192"
+                os: Linux-5.14.0-427.96.1.el9_4.x86_64-x86_64-with-glibc2.34
+                program: /fs/ess/PAA0201/hananemoussa/EvoTune/src/experiments/main.py
+                python: CPython 3.10.19
+                root: /fs/ess/PAA0201/hananemoussa/EvoTune
+                slurm:
+                    cluster_name: ascend
+                    conf: /var/spool/slurmd/conf-cache/slurm.conf
+                    cpus_on_node: "12"
+                    cpus_per_task: "12"
+                    gpus_on_node: "1"
+                    gpus_per_node: "1"
+                    gtids: "0"
+                    job_account: paa0201
+                    job_cpus_per_node: "12"
+                    job_end_time: "1764368507"
+                    job_gid: "6044"
+                    job_gpus: "2"
+                    job_gres: gres/gpu:1
+                    job_id: "2929245"
+                    job_name: evotune_gemma3_1B
+                    job_nodelist: a0001
+                    job_num_nodes: "1"
+                    job_partition: quad
+                    job_qos: ascend-default
+                    job_start_time: "1764109307"
+                    job_uid: "46117"
+                    job_user: hananemoussa
+                    jobid: "2929245"
+                    localid: "0"
+                    mem_per_node: "102400"
+                    nnodes: "1"
+                    nodeid: "0"
+                    nodelist: a0001
+                    nprocs: "1"
+                    ntasks: "1"
+                    ntasks_per_node: "1"
+                    oom_kill_step: "0"
+                    prio_process: "0"
+                    procid: "0"
+                    script_context: prolog_task
+                    submit_dir: /fs/ess/PAA0201/hananemoussa/EvoTune
+                    submit_host: ascend-login02.hpc.osc.edu
+                    task_pid: "2761476"
+                    tasks_per_node: "1"
+                    time_limit: "259200"
+                    topology_addr: a0001
+                    topology_addr_pattern: node
+                    tres_per_task: cpu=12
+                startedAt: "2025-11-26T07:50:49.085833Z"
+                writerId: brfjbahpax8gcedrxgfuidernm0cpf6m
+        m: []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 12
+                - 41
+                - 49
+                - 50
+                - 51
+                - 53
+                - 71
+                - 84
+                - 95
+                - 98
+            "2":
+                - 1
+                - 5
+                - 11
+                - 12
+                - 41
+                - 49
+                - 50
+                - 51
+                - 53
+                - 71
+                - 84
+                - 95
+                - 98
+            "3":
+                - 5
+                - 13
+                - 14
+                - 16
+                - 62
+            "4": 3.10.19
+            "5": 0.22.3
+            "6": 4.57.1
+            "10":
+                - 20
+            "12": 0.22.3
+            "13": linux-x86_64
+accelerate_config:
+    value: 1gpu_0
+cluster:
+    value:
+        scratch_path: $PFSDIR
+        use_tgi: 0
+        use_vllm: 1
+creative_prompt:
+    value: 1
+default_wandb_name:
+    value: dsaxod29
+descending_order:
+    value: 1
+entity:
+    value: hananenmoussa
+eval_frequency:
+    value: 100
+evalset:
+    value: trainperturbedset
+final_percentile:
+    value: 0.2
+finetuning_frequency:
+    value: 400
+flash_attn:
+    value: 0
+full_accelerate_config:
+    value: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name:
+    value: google/gemma-3-1b-it
+function_str_to_extract:
+    value: priority
+gpu_nums:
+    value: 0
+group_name:
+    value: evotune_gemma3_1B/bin_gemma3_dpo
+initial_percentile:
+    value: 0.6
+logs_dir:
+    value: out/logs/evotune_gemma3_1B/bin_bin_gemma3_dpo_0
+logs_path:
+    value: .
+lora_config:
+    value:
+        lora_alpha: 32
+        r: 64
+lr_annealing:
+    value: 0
+max_loops:
+    value: 1
+model:
+    value:
+        max_tokens: 2048
+        model_name: gemma3
+        temperature: 0.7
+        topk: 100
+        topp: 0.95
+model_adapter_dir:
+    value: out/logs/evotune_gemma3_1B/bin_bin_gemma3_dpo_0/model_adapter_gemma3
+model_dtype:
+    value: bfloat16
+multiple_models:
+    value: 0
+num_cont_rounds:
+    value: 100
+num_outputs_per_prompt:
+    value: 8
+num_rounds:
+    value: 2701
+num_workers:
+    value: 12
+one_tuning:
+    value: 1
+percentile:
+    value: 70
+prefix:
+    value: evotune_gemma3_1B
+programdatabaseConfig:
+    value:
+        functions_per_prompt: 2
+        num_islands: 6
+        temp: 40
+        temp_sampling_flag: 1
+project:
+    value: cse-6521-project
+run_identifier_name:
+    value: bin_gemma3_dpo
+run_or_dev:
+    value: run
+seed:
+    value: 0
+task:
+    value:
+        OR: 1
+        Weibull: 0
+        failed_score: -20000
+        function_str_to_extract: priority
+        init_best_fit: 1
+        initial_percentile: 0.3
+        mem_limit_gb: 10
+        programdatabaseConfig:
+            temp: 40
+        task_name: bin
+        timeout_period: 60
+testset:
+    value: testset
+top_k_functions_for_test:
+    value: 50
+train:
+    value:
+        dpo_config:
+            beta: 0.4
+            f_alpha_divergence_coef: 1
+            f_divergence_type: alpha_divergence
+            gradient_accumulation_steps: 32
+            gradient_checkpointing: 1
+            learning_rate: 1e-05
+            logging_steps: 1
+            lr_scheduler_type: cosine
+            max_seq_length: 4096
+            num_train_epochs: 2
+            per_device_train_batch_size: 1
+            warmup_steps: 0
+            weight_decay: 0.001
+        dpo_strategy: 2
+        finetuning_frequency: 400
+        train_method_name: dpo
+use_tgi:
+    value: 0
+use_vllm:
+    value: 1
+wandb:
+    value: 1
+wandb_name:
+    value: evotune_gemma3_1B/bin_gemma3_dpo_0

@@ -1,0 +1,845 @@
+_name_or_path:
+    value: google/gemma-3-1b-it
+_sliding_window_pattern:
+    value: 6
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            v5xly1tjz0v29uqn2jblusoutujzvcbj:
+                args:
+                    - --logs_dir
+                    - out/logs/evotune_gemma3_1B/bin_bin_gemma3_dpo_0
+                    - --model_name
+                    - gemma3
+                    - --full_model_name
+                    - google/gemma-3-1b-it
+                    - --model_adapter_dir
+                    - out/logs/evotune_gemma3_1B/bin_bin_gemma3_dpo_0/model_adapter_gemma3
+                    - --round_num
+                    - "2000"
+                    - --dpo_threshold
+                    - "-541.75"
+                codePath: src/packing/train/train.py
+                codePathLocal: src/packing/train/train.py
+                cpu_count: 96
+                cpu_count_logical: 96
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "204010946560"
+                        used: "31900499968"
+                executable: /users/PAA0201/hananemoussa/.conda/envs/evotune/bin/python
+                git:
+                    commit: 4c8ea8174e6473e784e782feb0cee24a3b1fcf2f
+                    remote: https://github.com/hananemoussa/EvoTune.git
+                gpu: NVIDIA A100-SXM4-80GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-6080e014-9385-2ec4-79ec-eceee1254b22
+                host: a0001.ten.osc.edu
+                memory:
+                    total: "1081776648192"
+                os: Linux-5.14.0-427.96.1.el9_4.x86_64-x86_64-with-glibc2.34
+                program: /fs/ess/PAA0201/hananemoussa/EvoTune/./src/packing/train/train.py
+                python: CPython 3.10.19
+                root: /fs/ess/PAA0201/hananemoussa/EvoTune
+                slurm:
+                    cluster_name: ascend
+                    conf: /var/spool/slurmd/conf-cache/slurm.conf
+                    cpus_on_node: "12"
+                    cpus_per_task: "12"
+                    gpus_on_node: "1"
+                    gpus_per_node: "1"
+                    gtids: "0"
+                    job_account: paa0201
+                    job_cpus_per_node: "12"
+                    job_end_time: "1764368507"
+                    job_gid: "6044"
+                    job_gpus: "2"
+                    job_gres: gres/gpu:1
+                    job_id: "2929245"
+                    job_name: evotune_gemma3_1B
+                    job_nodelist: a0001
+                    job_num_nodes: "1"
+                    job_partition: quad
+                    job_qos: ascend-default
+                    job_start_time: "1764109307"
+                    job_uid: "46117"
+                    job_user: hananemoussa
+                    jobid: "2929245"
+                    localid: "0"
+                    mem_per_node: "102400"
+                    nnodes: "1"
+                    nodeid: "0"
+                    nodelist: a0001
+                    nprocs: "1"
+                    ntasks: "1"
+                    ntasks_per_node: "1"
+                    oom_kill_step: "0"
+                    prio_process: "0"
+                    procid: "0"
+                    script_context: prolog_task
+                    submit_dir: /fs/ess/PAA0201/hananemoussa/EvoTune
+                    submit_host: ascend-login02.hpc.osc.edu
+                    task_pid: "2761476"
+                    tasks_per_node: "1"
+                    time_limit: "259200"
+                    topology_addr: a0001
+                    topology_addr_pattern: node
+                    tres_per_task: cpu=12
+                startedAt: "2025-11-26T05:01:16.365414Z"
+                writerId: v5xly1tjz0v29uqn2jblusoutujzvcbj
+        m:
+            - "1": train/global_step
+              "6":
+                - 3
+              "7": []
+            - "2": '*'
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 84
+                - 95
+                - 98
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 84
+                - 95
+                - 98
+            "3":
+                - 2
+                - 7
+                - 13
+                - 16
+                - 19
+                - 62
+                - 66
+            "4": 3.10.19
+            "5": 0.22.3
+            "6": 4.57.1
+            "9":
+                "1": transformers_trainer
+            "10":
+                - 20
+            "12": 0.22.3
+            "13": linux-x86_64
+accelerate_config:
+    value: 1gpu_0
+accelerator_config:
+    value:
+        dispatch_batches: null
+        even_batches: true
+        gradient_accumulation_kwargs: null
+        non_blocking: false
+        split_batches: false
+        use_seedable_sampler: true
+adafactor:
+    value: false
+adam_beta1:
+    value: 0.9
+adam_beta2:
+    value: 0.999
+adam_epsilon:
+    value: 1e-08
+add_cross_attention:
+    value: false
+architectures:
+    value:
+        - Gemma3ForCausalLM
+attention_bias:
+    value: false
+attention_dropout:
+    value: 0
+attn_logit_softcapping:
+    value: null
+auto_find_batch_size:
+    value: false
+average_tokens_across_devices:
+    value: true
+bad_words_ids:
+    value: null
+batch_eval_metrics:
+    value: false
+begin_suppress_tokens:
+    value: null
+beta:
+    value: 0.4
+bf16:
+    value: true
+bf16_full_eval:
+    value: false
+bos_token_id:
+    value: 2
+cache_implementation:
+    value: hybrid
+chunk_size_feed_forward:
+    value: 0
+cluster:
+    value:
+        scratch_path: $PFSDIR
+        use_tgi: 0
+        use_vllm: 1
+creative_prompt:
+    value: 1
+cross_attention_hidden_size:
+    value: null
+data_seed:
+    value: null
+dataloader_drop_last:
+    value: false
+dataloader_num_workers:
+    value: 0
+dataloader_persistent_workers:
+    value: false
+dataloader_pin_memory:
+    value: true
+dataloader_prefetch_factor:
+    value: null
+dataset_num_proc:
+    value: null
+ddp_backend:
+    value: null
+ddp_broadcast_buffers:
+    value: null
+ddp_bucket_cap_mb:
+    value: null
+ddp_find_unused_parameters:
+    value: null
+ddp_timeout:
+    value: 1800
+debug:
+    value: []
+decoder_start_token_id:
+    value: null
+deepspeed:
+    value: null
+default_wandb_name:
+    value: dsaxod29
+descending_order:
+    value: 1
+disable_dropout:
+    value: true
+disable_tqdm:
+    value: false
+discopop_tau:
+    value: 0.05
+diversity_penalty:
+    value: 0
+do_eval:
+    value: false
+do_predict:
+    value: false
+do_sample:
+    value: false
+do_train:
+    value: false
+dtype:
+    value: float32
+early_stopping:
+    value: false
+encoder_no_repeat_ngram_size:
+    value: 0
+entity:
+    value: hananenmoussa
+eos_token_id:
+    value: 1
+eval_accumulation_steps:
+    value: null
+eval_delay:
+    value: 0
+eval_do_concat_batches:
+    value: true
+eval_frequency:
+    value: 100
+eval_on_start:
+    value: false
+eval_steps:
+    value: null
+eval_strategy:
+    value: "no"
+eval_use_gather_object:
+    value: false
+evalset:
+    value: trainperturbedset
+exponential_decay_length_penalty:
+    value: null
+f_alpha_divergence_coef:
+    value: 1
+f_divergence_type:
+    value: alpha_divergence
+final_logit_softcapping:
+    value: null
+final_percentile:
+    value: 0.2
+finetuning_frequency:
+    value: 400
+finetuning_task:
+    value: null
+flash_attn:
+    value: 0
+force_use_ref_model:
+    value: false
+forced_bos_token_id:
+    value: null
+forced_eos_token_id:
+    value: null
+fp16:
+    value: false
+fp16_backend:
+    value: auto
+fp16_full_eval:
+    value: false
+fp16_opt_level:
+    value: O1
+fsdp:
+    value: []
+fsdp_config:
+    value:
+        min_num_params: 0
+        xla: false
+        xla_fsdp_grad_ckpt: false
+        xla_fsdp_v2: false
+fsdp_min_num_params:
+    value: 0
+fsdp_transformer_layer_cls_to_wrap:
+    value: null
+full_accelerate_config:
+    value: ./configs/accelerate_config/1gpu_0.yaml
+full_determinism:
+    value: false
+full_model_name:
+    value: google/gemma-3-1b-it
+function_str_to_extract:
+    value: priority
+generate_during_eval:
+    value: false
+gpu_nums:
+    value: 0
+gradient_accumulation_steps:
+    value: 32
+gradient_checkpointing:
+    value: true
+gradient_checkpointing_kwargs:
+    value:
+        use_reentrant: false
+greater_is_better:
+    value: null
+group_by_length:
+    value: false
+group_name:
+    value: evotune_gemma3_1B/bin_gemma3_dpo
+half_precision_backend:
+    value: auto
+head_dim:
+    value: 256
+hidden_activation:
+    value: gelu_pytorch_tanh
+hidden_size:
+    value: 1152
+hub_always_push:
+    value: false
+hub_model_id:
+    value: null
+hub_private_repo:
+    value: null
+hub_revision:
+    value: null
+hub_strategy:
+    value: every_save
+hub_token:
+    value: <HUB_TOKEN>
+id2label:
+    value:
+        "0": LABEL_0
+        "1": LABEL_1
+ignore_data_skip:
+    value: false
+include_for_metrics:
+    value: []
+include_inputs_for_metrics:
+    value: false
+include_num_input_tokens_seen:
+    value: "no"
+include_tokens_per_second:
+    value: false
+initial_percentile:
+    value: 0.6
+initializer_range:
+    value: 0.02
+intermediate_size:
+    value: 6912
+is_decoder:
+    value: false
+is_encoder_decoder:
+    value: false
+jit_mode_eval:
+    value: false
+label_names:
+    value: null
+label_pad_token_id:
+    value: -100
+label_smoothing:
+    value: 0
+label_smoothing_factor:
+    value: 0
+label2id:
+    value:
+        LABEL_0: 0
+        LABEL_1: 1
+layer_types:
+    value:
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - full_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - full_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - full_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - sliding_attention
+        - full_attention
+        - sliding_attention
+        - sliding_attention
+ld_alpha:
+    value: null
+learning_rate:
+    value: 7.071067811865476e-06
+length_column_name:
+    value: length
+length_penalty:
+    value: 1
+liger_kernel_config:
+    value: null
+load_best_model_at_end:
+    value: false
+local_rank:
+    value: 0
+log_level:
+    value: passive
+log_level_replica:
+    value: warning
+log_on_each_node:
+    value: true
+logging_dir:
+    value: out/logs/evotune_gemma3_1B/bin_bin_gemma3_dpo_0/runs/Nov26_00-01-20_a0001.ten.osc.edu
+logging_first_step:
+    value: true
+logging_nan_inf_filter:
+    value: true
+logging_steps:
+    value: 1
+logging_strategy:
+    value: steps
+logs_dir:
+    value: out/logs/evotune_gemma3_1B/bin_bin_gemma3_dpo_0
+logs_path:
+    value: .
+lora_config:
+    value:
+        lora_alpha: 32
+        r: 64
+loss_type:
+    value: sigmoid
+lr_annealing:
+    value: 0
+lr_scheduler_type:
+    value: cosine
+max_completion_length:
+    value: null
+max_grad_norm:
+    value: 1
+max_length:
+    value: 4096
+max_loops:
+    value: 1
+max_position_embeddings:
+    value: 32768
+max_prompt_length:
+    value: 2048
+max_steps:
+    value: -1
+metric_for_best_model:
+    value: null
+min_length:
+    value: 0
+model:
+    value:
+        max_tokens: 2048
+        model_name: gemma3
+        temperature: 0.7
+        topk: 100
+        topp: 0.95
+model/num_parameters:
+    value: 1052068992
+model_adapter_dir:
+    value: out/logs/evotune_gemma3_1B/bin_bin_gemma3_dpo_0/model_adapter_gemma3
+model_adapter_name:
+    value: null
+model_dtype:
+    value: bfloat16
+model_init_kwargs:
+    value: null
+model_type:
+    value: gemma3_text
+mp_parameters:
+    value: ""
+multiple_models:
+    value: 0
+neftune_noise_alpha:
+    value: null
+no_cuda:
+    value: false
+no_repeat_ngram_size:
+    value: 0
+num_attention_heads:
+    value: 4
+num_beam_groups:
+    value: 1
+num_beams:
+    value: 1
+num_cont_rounds:
+    value: 100
+num_hidden_layers:
+    value: 26
+num_key_value_heads:
+    value: 1
+num_outputs_per_prompt:
+    value: 8
+num_return_sequences:
+    value: 1
+num_rounds:
+    value: 2701
+num_train_epochs:
+    value: 2
+num_workers:
+    value: 12
+one_tuning:
+    value: 1
+optim:
+    value: adamw_torch_fused
+optim_args:
+    value: null
+optim_target_modules:
+    value: null
+output_attentions:
+    value: false
+output_dir:
+    value: out/logs/evotune_gemma3_1B/bin_bin_gemma3_dpo_0
+output_hidden_states:
+    value: false
+output_scores:
+    value: false
+overwrite_output_dir:
+    value: false
+pad_token_id:
+    value: 0
+padding_free:
+    value: false
+padding_value:
+    value: null
+parallelism_config:
+    value: null
+past_index:
+    value: -1
+peft_config:
+    value:
+        default:
+            auto_mapping: null
+            base_model_name_or_path: google/gemma-3-1b-it
+            bias: none
+            corda_config: null
+            eva_config: null
+            exclude_modules: null
+            fan_in_fan_out: false
+            inference_mode: false
+            init_lora_weights: true
+            layer_replication: null
+            layers_pattern: null
+            layers_to_transform: null
+            lora_alpha: 32
+            lora_bias: false
+            lora_dropout: 0
+            megatron_config: null
+            megatron_core: megatron.core
+            modules_to_save: null
+            peft_type: LORA
+            qalora_group_size: 16
+            r: 64
+            revision: null
+            runtime_config:
+                ephemeral_gpu_offload: false
+            target_modules:
+                - o_proj
+                - q_proj
+                - gate_proj
+                - up_proj
+                - down_proj
+                - k_proj
+                - v_proj
+            target_parameters: null
+            task_type: CAUSAL_LM
+            trainable_token_indices: null
+            use_dora: false
+            use_qalora: false
+            use_rslora: false
+per_device_eval_batch_size:
+    value: 8
+per_device_train_batch_size:
+    value: 1
+per_gpu_eval_batch_size:
+    value: null
+per_gpu_train_batch_size:
+    value: null
+percentile:
+    value: 70
+precompute_ref_batch_size:
+    value: null
+precompute_ref_log_probs:
+    value: false
+prediction_loss_only:
+    value: false
+prefix:
+    value: null
+problem_type:
+    value: null
+programdatabaseConfig:
+    value:
+        functions_per_prompt: 2
+        num_islands: 6
+        temp: 40
+        temp_sampling_flag: 1
+project:
+    value: huggingface
+push_to_hub:
+    value: false
+push_to_hub_model_id:
+    value: null
+push_to_hub_organization:
+    value: null
+push_to_hub_token:
+    value: <PUSH_TO_HUB_TOKEN>
+query_pre_attn_scalar:
+    value: 256
+ray_scope:
+    value: last
+ref_adapter_name:
+    value: null
+ref_model_init_kwargs:
+    value: null
+ref_model_mixup_alpha:
+    value: 0.6
+ref_model_sync_steps:
+    value: 512
+reference_free:
+    value: false
+remove_invalid_values:
+    value: false
+remove_unused_columns:
+    value: true
+repetition_penalty:
+    value: 1
+report_to:
+    value:
+        - wandb
+restore_callback_states_from_checkpoint:
+    value: false
+resume_from_checkpoint:
+    value: null
+return_dict:
+    value: true
+return_dict_in_generate:
+    value: false
+rms_norm_eps:
+    value: 1e-06
+rope_local_base_freq:
+    value: 10000
+rope_scaling:
+    value: null
+rope_theta:
+    value: 1000000
+rpo_alpha:
+    value: null
+run_identifier_name:
+    value: bin_gemma3_dpo
+run_name:
+    value: null
+run_or_dev:
+    value: run
+save_on_each_node:
+    value: false
+save_only_model:
+    value: false
+save_safetensors:
+    value: true
+save_steps:
+    value: 500
+save_strategy:
+    value: "no"
+save_total_limit:
+    value: null
+seed:
+    value: 0
+sep_token_id:
+    value: null
+skip_memory_metrics:
+    value: true
+sliding_window:
+    value: 512
+sliding_window_pattern:
+    value: 6
+suppress_tokens:
+    value: null
+sync_ref_model:
+    value: false
+task:
+    value:
+        OR: 1
+        Weibull: 0
+        failed_score: -20000
+        function_str_to_extract: priority
+        init_best_fit: 1
+        initial_percentile: 0.3
+        mem_limit_gb: 10
+        programdatabaseConfig:
+            temp: 40
+        task_name: bin
+        timeout_period: 60
+task_specific_params:
+    value: null
+temperature:
+    value: 1
+testset:
+    value: testset
+tf_legacy_loss:
+    value: false
+tf32:
+    value: null
+tie_encoder_decoder:
+    value: false
+tie_word_embeddings:
+    value: true
+tokenizer_class:
+    value: null
+tools:
+    value: null
+top_k:
+    value: 50
+top_k_functions_for_test:
+    value: 50
+top_p:
+    value: 1
+torch_compile:
+    value: false
+torch_compile_backend:
+    value: null
+torch_compile_mode:
+    value: null
+torch_empty_cache_steps:
+    value: null
+torchdynamo:
+    value: null
+torchscript:
+    value: false
+tpu_metrics_debug:
+    value: false
+tpu_num_cores:
+    value: null
+trackio_space_id:
+    value: trackio
+train:
+    value:
+        dpo_config:
+            beta: 0.4
+            f_alpha_divergence_coef: 1
+            f_divergence_type: alpha_divergence
+            gradient_accumulation_steps: 32
+            gradient_checkpointing: 1
+            learning_rate: 1e-05
+            logging_steps: 1
+            lr_scheduler_type: cosine
+            max_seq_length: 4096
+            num_train_epochs: 2
+            per_device_train_batch_size: 1
+            warmup_steps: 0
+            weight_decay: 0.001
+        dpo_strategy: 2
+        finetuning_frequency: 400
+        train_method_name: dpo
+transformers_version:
+    value: 4.57.1
+truncation_mode:
+    value: keep_end
+typical_p:
+    value: 1
+use_bfloat16:
+    value: false
+use_bidirectional_attention:
+    value: false
+use_cache:
+    value: false
+use_cpu:
+    value: false
+use_legacy_prediction_loop:
+    value: false
+use_liger_kernel:
+    value: false
+use_logits_to_keep:
+    value: false
+use_mps_device:
+    value: false
+use_tgi:
+    value: 0
+use_vllm:
+    value: 1
+use_weighting:
+    value: false
+vocab_size:
+    value: 262144
+wandb:
+    value: 1
+wandb_name:
+    value: evotune_gemma3_1B/bin_gemma3_dpo_0
+warmup_ratio:
+    value: 0
+warmup_steps:
+    value: 0
+weight_decay:
+    value: 0.001

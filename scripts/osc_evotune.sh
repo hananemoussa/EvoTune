@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=evotune_llama_1B 
+#SBATCH --job-name=evotune_qwen3_no_think_1.7B 
 #SBATCH --account=PAA0201    # TODO: Replace with your OSC project allocation
 #SBATCH --time=72:00:00                 # 48 hours (adjust as needed)
 #SBATCH --nodes=1
@@ -8,8 +8,8 @@
 #SBATCH --gpus-per-node=1               # Request 1 GPU for single run
 #SBATCH --partition=quad                # Options: nextgen (2 GPUs), quad (4 GPUs), batch (4 GPUs)
 #SBATCH --mem=100G                      # Memory request
-#SBATCH --output=logs/evotune_llama_1B_%j.out
-#SBATCH --error=logs/evotune_llama_1B_%j.err
+#SBATCH --output=logs/evotune_qwen3_no_think_1.7B_%j.out
+#SBATCH --error=logs/evotune_qwen3_no_think_1.7B_%j.err
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=moussa.45@osu.edu
 
@@ -42,11 +42,11 @@ mkdir -p logs out/logs
 # Run the training
 python src/experiments/main.py \
     task=bin \
-    model=llama32 \
+    model=qwen3 \
     train=dpo \
     cluster=osc_ascend \
     seed=0 \
-    prefix=evotune_llama_1B \
+    prefix=evotune_qwen3_no_think_1.7B \
     gpu_nums=0 \
     num_rounds=2701 \
     num_cont_rounds=100 \

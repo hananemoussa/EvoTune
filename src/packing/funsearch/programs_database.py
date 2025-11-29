@@ -147,6 +147,12 @@ class ProgramsDatabase:
         return self._best_score_per_island[island_id]
 
     @property
+    def get_best_program(self):
+        """Returns the best program across all islands."""
+        best_island_id = np.argmax(self._best_score_per_island)
+        return self._best_program_per_island[best_island_id]
+
+    @property
     def total_num_programs(self):
         return sum([island._num_programs for island in self._islands])
 

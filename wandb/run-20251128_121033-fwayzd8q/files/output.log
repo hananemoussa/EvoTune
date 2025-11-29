@@ -1,0 +1,4151 @@
+[INFO] Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: sr
+  function_str_to_extract: equation
+  dataset_category: bio_pop_growth
+  problem_name: BPG10
+  failed_score: -10000
+  timeout_period: 30
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: phi
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: dpo
+  finetuning_frequency: 400
+  dpo_strategy: 2
+  dpo_config:
+    beta: 0.4
+    max_seq_length: 4096
+    per_device_train_batch_size: 1
+    gradient_accumulation_steps: 32
+    gradient_checkpointing: 1
+    num_train_epochs: 2
+    learning_rate: 1.0e-05
+    lr_scheduler_type: cosine
+    weight_decay: 0.001
+    warmup_steps: 0
+    logging_steps: 1
+    f_divergence_type: alpha_divergence
+    f_alpha_divergence_coef: 1.0
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 100
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 2701
+finetuning_frequency: 400
+lr_annealing: 0
+one_tuning: 1
+percentile: 70
+max_loops: 1
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: equation
+wandb_name: evotune_sr_BPG10_phi/sr_phi_dpo_0
+group_name: evotune_sr_BPG10_phi/sr_phi_dpo
+logs_path: .
+logs_dir: out/logs/evotune_sr_BPG10_phi/sr_sr_phi_dpo_0
+wandb: 1
+project: cse-6521-project
+entity: hananenmoussa
+seed: 0
+run_identifier_name: sr_phi_dpo
+prefix: evotune_sr_BPG10_phi
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: microsoft/Phi-3.5-mini-instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/evotune_sr_BPG10_phi/sr_sr_phi_dpo_0/model_adapter_phi
+default_wandb_name: fwayzd8q
+2025-11-28 12:10:34,645 - INFO - Running with config:
+cluster:
+  scratch_path: $PFSDIR
+  use_tgi: 0
+  use_vllm: 1
+task:
+  task_name: sr
+  function_str_to_extract: equation
+  dataset_category: bio_pop_growth
+  problem_name: BPG10
+  failed_score: -10000
+  timeout_period: 30
+  mem_limit_gb: 10
+  programdatabaseConfig:
+    temp: 40.0
+  initial_percentile: 0.3
+model:
+  model_name: phi
+  temperature: 0.9
+  topk: 100
+  topp: 0.95
+  max_tokens: 2048
+train:
+  train_method_name: dpo
+  finetuning_frequency: 400
+  dpo_strategy: 2
+  dpo_config:
+    beta: 0.4
+    max_seq_length: 4096
+    per_device_train_batch_size: 1
+    gradient_accumulation_steps: 32
+    gradient_checkpointing: 1
+    num_train_epochs: 2
+    learning_rate: 1.0e-05
+    lr_scheduler_type: cosine
+    weight_decay: 0.001
+    warmup_steps: 0
+    logging_steps: 1
+    f_divergence_type: alpha_divergence
+    f_alpha_divergence_coef: 1.0
+multiple_models: 0
+creative_prompt: 1
+descending_order: 1
+gpu_nums: 0
+flash_attn: 0
+programdatabaseConfig:
+  functions_per_prompt: 2
+  num_islands: 6
+  temp_sampling_flag: 1
+  temp: 40.0
+initial_percentile: 0.6
+final_percentile: 0.2
+num_cont_rounds: 100
+num_outputs_per_prompt: 8
+num_workers: 12
+num_rounds: 2701
+finetuning_frequency: 400
+lr_annealing: 0
+one_tuning: 1
+percentile: 70
+max_loops: 1
+accelerate_config: 1gpu_0
+lora_config:
+  r: 64
+  lora_alpha: 32
+eval_frequency: 100
+evalset: trainperturbedset
+testset: testset
+top_k_functions_for_test: 50
+function_str_to_extract: equation
+wandb_name: evotune_sr_BPG10_phi/sr_phi_dpo_0
+group_name: evotune_sr_BPG10_phi/sr_phi_dpo
+logs_path: .
+logs_dir: out/logs/evotune_sr_BPG10_phi/sr_sr_phi_dpo_0
+wandb: 1
+project: cse-6521-project
+entity: hananenmoussa
+seed: 0
+run_identifier_name: sr_phi_dpo
+prefix: evotune_sr_BPG10_phi
+run_or_dev: run
+use_tgi: 0
+use_vllm: 1
+full_accelerate_config: ./configs/accelerate_config/1gpu_0.yaml
+full_model_name: microsoft/Phi-3.5-mini-instruct
+model_dtype: bfloat16
+model_adapter_dir: out/logs/evotune_sr_BPG10_phi/sr_sr_phi_dpo_0/model_adapter_phi
+default_wandb_name: fwayzd8q
+
+[INFO] Starting from scratch
+
+2025-11-28 12:10:34,652 - INFO - Starting from scratch
+Best score of island 0 increased to -3301.3008
+Best score of island 1 increased to -3301.3008
+Best score of island 2 increased to -3301.3008
+Best score of island 3 increased to -3301.3008
+Best score of island 4 increased to -3301.3008
+Best score of island 5 increased to -3301.3008
+Saving a program to a file...
+[INFO] Flag load finetuned: False
+2025-11-28 12:10:34,669 - INFO - Flag load finetuned: False
+[INFO] ====================== Inference Engine: vLLM ======================
+2025-11-28 12:10:34,670 - INFO - ====================== Inference Engine: vLLM ======================
+[INFO] Starting with round number 0
+2025-11-28 12:10:34,670 - INFO - Starting with round number 0
+[INFO] STARTING ROUND NUM: 0
+2025-11-28 12:10:34,671 - INFO - STARTING ROUND NUM: 0
+[INFO] Prompt num: 0
+2025-11-28 12:10:34,671 - INFO - Prompt num: 0
+[INFO] Total functions generated so far: 0
+2025-11-28 12:10:34,671 - INFO - Total functions generated so far: 0
+[INFO] Total functions evaluated so far: 0
+2025-11-28 12:10:34,672 - INFO - Total functions evaluated so far: 0
+[INFO] Number of functions in the programbank: 6
+2025-11-28 12:10:34,672 - INFO - Number of functions in the programbank: 6
+[INFO] Number of datatpoints in DPO data: 0
+2025-11-28 12:10:34,672 - INFO - Number of datatpoints in DPO data: 0
+[INFO] Best overall program score: -3301.3008
+2025-11-28 12:10:34,672 - INFO - Best overall program score: -3301.3008
+[INFO] Best running_dict score: -inf
+2025-11-28 12:10:34,673 - INFO - Best running_dict score: -inf
+[INFO] Best running_dict best_true_score_from_score: -inf
+2025-11-28 12:10:34,673 - INFO - Best running_dict best_true_score_from_score: -inf
+[INFO] Starting vLLM model server...
+2025-11-28 12:10:34,674 - INFO - Starting vLLM model server...
+[INFO] Starting vLLM server for model microsoft/Phi-3.5-mini-instruct on GPU 0 at port 8080
+2025-11-28 12:10:34,675 - INFO - Starting vLLM server for model microsoft/Phi-3.5-mini-instruct on GPU 0 at port 8080
+[INFO] Waiting for all servers to start... Server PIDs: [751613]
+2025-11-28 12:10:34,676 - INFO - Waiting for all servers to start... Server PIDs: [751613]
+[INFO] Server is ready at port 8080. Serving microsoft/Phi-3.5-mini-instruct.
+2025-11-28 12:11:08,239 - INFO - Server is ready at port 8080. Serving microsoft/Phi-3.5-mini-instruct.
+[INFO] ----------
+2025-11-28 12:11:08,240 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-28 12:11:08,240 - INFO - GENERATING PROMPTS
+/users/PAA0201/hananemoussa/.conda/envs/evotune/lib/python3.10/multiprocessing/popen_fork.py:66: RuntimeWarning: os.fork() was called. os.fork() is incompatible with multithreaded code, and JAX is multithreaded, so this will likely lead to a deadlock.
+  self.pid = os.fork()
+[INFO] ----------
+2025-11-28 12:11:08,300 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-28 12:11:08,301 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-28 12:11:08,429 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-28 12:11:08,431 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-28 12:11:08,435 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:11:08,436 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:11:08,436 - INFO - Island id 4
+[INFO]
+2025-11-28 12:11:08,437 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-28 12:11:17,954 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:11:17,957 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-28 12:11:17,959 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 1
+2025-11-28 12:11:17,960 - INFO - Producer: Generated 8 functions for prompt 1
+[INFO] Producer: Generated 0 failed functions for prompt 1
+2025-11-28 12:11:17,961 - INFO - Producer: Generated 0 failed functions for prompt 1
+[INFO]
+2025-11-28 12:11:17,962 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:11:17,963 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:11:17,963 - INFO - Island id 3
+[INFO]
+2025-11-28 12:11:17,964 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:11:25,357 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:11:25,358 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:11:25,360 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 2
+2025-11-28 12:11:25,361 - INFO - Producer: Generated 8 functions for prompt 2
+[INFO] Producer: Generated 0 failed functions for prompt 2
+2025-11-28 12:11:25,362 - INFO - Producer: Generated 0 failed functions for prompt 2
+[INFO]
+2025-11-28 12:11:25,363 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:11:25,363 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:11:25,364 - INFO - Island id 5
+[INFO]
+2025-11-28 12:11:25,364 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:11:32,403 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:11:32,404 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:11:32,406 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 3
+2025-11-28 12:11:32,407 - INFO - Producer: Generated 8 functions for prompt 3
+[INFO] Producer: Generated 0 failed functions for prompt 3
+2025-11-28 12:11:32,407 - INFO - Producer: Generated 0 failed functions for prompt 3
+[INFO]
+2025-11-28 12:11:32,409 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:11:32,410 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:11:32,410 - INFO - Island id 0
+[INFO]
+2025-11-28 12:11:32,410 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:11:39,579 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:11:39,581 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:11:39,583 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 4
+2025-11-28 12:11:39,584 - INFO - Producer: Generated 8 functions for prompt 4
+[INFO] Producer: Generated 0 failed functions for prompt 4
+2025-11-28 12:11:39,585 - INFO - Producer: Generated 0 failed functions for prompt 4
+[INFO]
+2025-11-28 12:11:39,586 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:11:39,586 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:11:39,587 - INFO - Island id 0
+[INFO]
+2025-11-28 12:11:39,587 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:11:47,705 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:11:47,707 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:11:47,709 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 5
+2025-11-28 12:11:47,709 - INFO - Producer: Generated 8 functions for prompt 5
+[INFO] Producer: Generated 0 failed functions for prompt 5
+2025-11-28 12:11:47,710 - INFO - Producer: Generated 0 failed functions for prompt 5
+[INFO]
+2025-11-28 12:11:47,712 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:11:47,712 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:11:47,713 - INFO - Island id 0
+[INFO]
+2025-11-28 12:11:47,713 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:11:55,445 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:11:55,446 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:11:55,448 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 6
+2025-11-28 12:11:55,448 - INFO - Producer: Generated 8 functions for prompt 6
+[INFO] Producer: Generated 0 failed functions for prompt 6
+2025-11-28 12:11:55,449 - INFO - Producer: Generated 0 failed functions for prompt 6
+[INFO]
+2025-11-28 12:11:55,450 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:11:55,451 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:11:55,451 - INFO - Island id 3
+[INFO]
+2025-11-28 12:11:55,451 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-28 12:12:05,932 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:12:05,934 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 10
+2025-11-28 12:12:05,936 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 8 functions for prompt 7
+2025-11-28 12:12:05,937 - INFO - Producer: Generated 8 functions for prompt 7
+[INFO] Producer: Generated 0 failed functions for prompt 7
+2025-11-28 12:12:05,938 - INFO - Producer: Generated 0 failed functions for prompt 7
+[INFO]
+2025-11-28 12:12:05,939 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:12:05,939 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:12:05,940 - INFO - Island id 0
+[INFO]
+2025-11-28 12:12:05,940 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:12:13,608 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:12:13,610 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:12:13,612 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 8
+2025-11-28 12:12:13,612 - INFO - Producer: Generated 8 functions for prompt 8
+[INFO] Producer: Generated 0 failed functions for prompt 8
+2025-11-28 12:12:13,613 - INFO - Producer: Generated 0 failed functions for prompt 8
+[INFO]
+2025-11-28 12:12:13,614 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:12:13,615 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:12:13,615 - INFO - Island id 3
+[INFO]
+2025-11-28 12:12:13,615 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-28 12:12:24,457 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:12:24,459 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 10
+2025-11-28 12:12:24,460 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 8 functions for prompt 9
+2025-11-28 12:12:24,461 - INFO - Producer: Generated 8 functions for prompt 9
+[INFO] Producer: Generated 0 failed functions for prompt 9
+2025-11-28 12:12:24,462 - INFO - Producer: Generated 0 failed functions for prompt 9
+[INFO]
+2025-11-28 12:12:24,463 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:12:24,463 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:12:24,464 - INFO - Island id 0
+[INFO]
+2025-11-28 12:12:24,464 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:12:32,477 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:12:32,479 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:12:32,481 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 10
+2025-11-28 12:12:32,482 - INFO - Producer: Generated 8 functions for prompt 10
+[INFO] Producer: Generated 0 failed functions for prompt 10
+2025-11-28 12:12:32,483 - INFO - Producer: Generated 0 failed functions for prompt 10
+[INFO]
+2025-11-28 12:12:32,484 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:12:32,484 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:12:32,485 - INFO - Island id 0
+[INFO]
+2025-11-28 12:12:32,485 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:12:39,650 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:12:39,652 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:12:39,654 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 11
+2025-11-28 12:12:39,655 - INFO - Producer: Generated 8 functions for prompt 11
+[INFO] Producer: Generated 0 failed functions for prompt 11
+2025-11-28 12:12:39,656 - INFO - Producer: Generated 0 failed functions for prompt 11
+[INFO]
+2025-11-28 12:12:39,657 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:12:39,657 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:12:39,658 - INFO - Island id 3
+[INFO]
+2025-11-28 12:12:39,658 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:12:46,203 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:12:46,205 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:12:46,207 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 12
+2025-11-28 12:12:46,207 - INFO - Producer: Generated 8 functions for prompt 12
+[INFO] Producer: Generated 0 failed functions for prompt 12
+2025-11-28 12:12:46,209 - INFO - Producer: Generated 0 failed functions for prompt 12
+[INFO]
+2025-11-28 12:12:46,210 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:12:46,210 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:12:46,210 - INFO - Island id 4
+[INFO]
+2025-11-28 12:12:46,210 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:12:52,242 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:12:52,244 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:12:52,246 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 13
+2025-11-28 12:12:52,246 - INFO - Producer: Generated 8 functions for prompt 13
+[INFO] Producer: Generated 0 failed functions for prompt 13
+2025-11-28 12:12:52,247 - INFO - Producer: Generated 0 failed functions for prompt 13
+[INFO]
+2025-11-28 12:12:52,248 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:12:52,248 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:12:52,248 - INFO - Island id 5
+[INFO]
+2025-11-28 12:12:52,249 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:12:59,912 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:12:59,914 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:12:59,916 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 14
+2025-11-28 12:12:59,916 - INFO - Producer: Generated 8 functions for prompt 14
+[INFO] Producer: Generated 0 failed functions for prompt 14
+2025-11-28 12:12:59,918 - INFO - Producer: Generated 0 failed functions for prompt 14
+[INFO]
+2025-11-28 12:12:59,919 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:12:59,919 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:12:59,920 - INFO - Island id 1
+[INFO]
+2025-11-28 12:12:59,920 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:13:06,654 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:13:06,656 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:13:06,658 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 15
+2025-11-28 12:13:06,659 - INFO - Producer: Generated 8 functions for prompt 15
+[INFO] Producer: Generated 0 failed functions for prompt 15
+2025-11-28 12:13:06,659 - INFO - Producer: Generated 0 failed functions for prompt 15
+[INFO]
+2025-11-28 12:13:06,661 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:13:06,661 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 2
+2025-11-28 12:13:06,661 - INFO - Island id 2
+[INFO]
+2025-11-28 12:13:06,662 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:13:12,839 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:13:12,841 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:13:12,843 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 16
+2025-11-28 12:13:12,843 - INFO - Producer: Generated 8 functions for prompt 16
+[INFO] Producer: Generated 0 failed functions for prompt 16
+2025-11-28 12:13:12,844 - INFO - Producer: Generated 0 failed functions for prompt 16
+[INFO]
+2025-11-28 12:13:12,845 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:13:12,846 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:13:12,846 - INFO - Island id 1
+[INFO]
+2025-11-28 12:13:12,846 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-28 12:13:22,755 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:13:22,757 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-28 12:13:22,759 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 17
+2025-11-28 12:13:22,759 - INFO - Producer: Generated 8 functions for prompt 17
+[INFO] Producer: Generated 0 failed functions for prompt 17
+2025-11-28 12:13:22,761 - INFO - Producer: Generated 0 failed functions for prompt 17
+[INFO]
+2025-11-28 12:13:22,762 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:13:22,763 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:13:22,763 - INFO - Island id 3
+[INFO]
+2025-11-28 12:13:22,764 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:13:29,345 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:13:29,346 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:13:29,348 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 18
+2025-11-28 12:13:29,348 - INFO - Producer: Generated 8 functions for prompt 18
+[INFO] Producer: Generated 0 failed functions for prompt 18
+2025-11-28 12:13:29,349 - INFO - Producer: Generated 0 failed functions for prompt 18
+[INFO]
+2025-11-28 12:13:29,350 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:13:29,351 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:13:29,351 - INFO - Island id 3
+[INFO]
+2025-11-28 12:13:29,351 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:13:36,175 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:13:36,177 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:13:36,178 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 19
+2025-11-28 12:13:36,179 - INFO - Producer: Generated 8 functions for prompt 19
+[INFO] Producer: Generated 0 failed functions for prompt 19
+2025-11-28 12:13:36,180 - INFO - Producer: Generated 0 failed functions for prompt 19
+[INFO]
+2025-11-28 12:13:36,182 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:13:36,182 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:13:36,182 - INFO - Island id 4
+[INFO]
+2025-11-28 12:13:36,183 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:13:44,498 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:13:44,500 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:13:44,502 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 20
+2025-11-28 12:13:44,502 - INFO - Producer: Generated 8 functions for prompt 20
+[INFO] Producer: Generated 0 failed functions for prompt 20
+2025-11-28 12:13:44,503 - INFO - Producer: Generated 0 failed functions for prompt 20
+[INFO]
+2025-11-28 12:13:44,504 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:13:44,504 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:13:44,505 - INFO - Island id 4
+[INFO]
+2025-11-28 12:13:44,505 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:13:52,140 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:13:52,141 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:13:52,143 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 21
+2025-11-28 12:13:52,143 - INFO - Producer: Generated 8 functions for prompt 21
+[INFO] Producer: Generated 0 failed functions for prompt 21
+2025-11-28 12:13:52,144 - INFO - Producer: Generated 0 failed functions for prompt 21
+[INFO]
+2025-11-28 12:13:52,145 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:13:52,146 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:13:52,146 - INFO - Island id 0
+[INFO]
+2025-11-28 12:13:52,146 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:13:58,655 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:13:58,657 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:13:58,659 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 22
+2025-11-28 12:13:58,659 - INFO - Producer: Generated 8 functions for prompt 22
+[INFO] Producer: Generated 0 failed functions for prompt 22
+2025-11-28 12:13:58,660 - INFO - Producer: Generated 0 failed functions for prompt 22
+[INFO]
+2025-11-28 12:13:58,662 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:13:58,662 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 2
+2025-11-28 12:13:58,662 - INFO - Island id 2
+[INFO]
+2025-11-28 12:13:58,663 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:14:07,442 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:14:07,444 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:14:07,446 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 23
+2025-11-28 12:14:07,446 - INFO - Producer: Generated 8 functions for prompt 23
+[INFO] Producer: Generated 0 failed functions for prompt 23
+2025-11-28 12:14:07,447 - INFO - Producer: Generated 0 failed functions for prompt 23
+[INFO]
+2025-11-28 12:14:07,448 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:14:07,449 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:14:07,453 - INFO - Island id 5
+[INFO]
+2025-11-28 12:14:07,453 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:14:15,403 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:14:15,404 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:14:15,407 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 24
+2025-11-28 12:14:15,407 - INFO - Producer: Generated 8 functions for prompt 24
+[INFO] Producer: Generated 0 failed functions for prompt 24
+2025-11-28 12:14:15,408 - INFO - Producer: Generated 0 failed functions for prompt 24
+[INFO]
+2025-11-28 12:14:15,409 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:14:15,410 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:14:15,410 - INFO - Island id 3
+[INFO]
+2025-11-28 12:14:15,410 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:14:22,817 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:14:22,819 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:14:22,821 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 25
+2025-11-28 12:14:22,822 - INFO - Producer: Generated 8 functions for prompt 25
+[INFO] Producer: Generated 0 failed functions for prompt 25
+2025-11-28 12:14:22,823 - INFO - Producer: Generated 0 failed functions for prompt 25
+[INFO]
+2025-11-28 12:14:22,824 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:14:22,825 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:14:22,825 - INFO - Island id 0
+[INFO]
+2025-11-28 12:14:22,825 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:14:29,798 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:14:29,799 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:14:29,801 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 26
+2025-11-28 12:14:29,802 - INFO - Producer: Generated 8 functions for prompt 26
+[INFO] Producer: Generated 0 failed functions for prompt 26
+2025-11-28 12:14:29,803 - INFO - Producer: Generated 0 failed functions for prompt 26
+[INFO]
+2025-11-28 12:14:29,804 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:14:29,804 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:14:29,804 - INFO - Island id 0
+[INFO]
+2025-11-28 12:14:29,805 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:14:36,487 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:14:36,489 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:14:36,490 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 27
+2025-11-28 12:14:36,491 - INFO - Producer: Generated 8 functions for prompt 27
+[INFO] Producer: Generated 0 failed functions for prompt 27
+2025-11-28 12:14:36,492 - INFO - Producer: Generated 0 failed functions for prompt 27
+[INFO]
+2025-11-28 12:14:36,493 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:14:36,493 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:14:36,493 - INFO - Island id 5
+[INFO]
+2025-11-28 12:14:36,493 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:14:43,626 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:14:43,628 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:14:43,630 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 28
+2025-11-28 12:14:43,630 - INFO - Producer: Generated 8 functions for prompt 28
+[INFO] Producer: Generated 0 failed functions for prompt 28
+2025-11-28 12:14:43,631 - INFO - Producer: Generated 0 failed functions for prompt 28
+[INFO]
+2025-11-28 12:14:43,638 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:14:43,639 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:14:43,639 - INFO - Island id 0
+[INFO]
+2025-11-28 12:14:43,639 - INFO -
+
+
+[INFO] Time taken for LLM generation: 5 seconds
+
+
+2025-11-28 12:14:49,487 - INFO - Time taken for LLM generation: 5 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:14:49,488 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 5
+2025-11-28 12:14:49,490 - INFO - LLM generation time: 5
+[INFO] Producer: Generated 8 functions for prompt 29
+2025-11-28 12:14:49,491 - INFO - Producer: Generated 8 functions for prompt 29
+[INFO] Producer: Generated 0 failed functions for prompt 29
+2025-11-28 12:14:49,491 - INFO - Producer: Generated 0 failed functions for prompt 29
+[INFO]
+2025-11-28 12:14:49,493 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:14:49,493 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:14:49,493 - INFO - Island id 3
+[INFO]
+2025-11-28 12:14:49,494 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-28 12:14:58,580 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:14:58,582 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-28 12:14:58,584 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 30
+2025-11-28 12:14:58,584 - INFO - Producer: Generated 8 functions for prompt 30
+[INFO] Producer: Generated 0 failed functions for prompt 30
+2025-11-28 12:14:58,586 - INFO - Producer: Generated 0 failed functions for prompt 30
+[INFO]
+2025-11-28 12:14:58,588 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:14:58,591 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:14:58,591 - INFO - Island id 3
+[INFO]
+2025-11-28 12:14:58,591 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:15:06,009 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:15:06,010 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:15:06,012 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 31
+2025-11-28 12:15:06,013 - INFO - Producer: Generated 8 functions for prompt 31
+[INFO] Producer: Generated 0 failed functions for prompt 31
+2025-11-28 12:15:06,014 - INFO - Producer: Generated 0 failed functions for prompt 31
+[INFO]
+2025-11-28 12:15:06,016 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:15:06,017 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:15:06,017 - INFO - Island id 3
+[INFO]
+2025-11-28 12:15:06,017 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:15:12,390 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:15:12,392 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:15:12,393 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 32
+2025-11-28 12:15:12,394 - INFO - Producer: Generated 8 functions for prompt 32
+[INFO] Producer: Generated 0 failed functions for prompt 32
+2025-11-28 12:15:12,395 - INFO - Producer: Generated 0 failed functions for prompt 32
+[INFO]
+2025-11-28 12:15:12,396 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:15:12,396 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:15:12,396 - INFO - Island id 1
+[INFO]
+2025-11-28 12:15:12,396 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:15:20,225 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:15:20,227 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:15:20,229 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 33
+2025-11-28 12:15:20,230 - INFO - Producer: Generated 8 functions for prompt 33
+[INFO] Producer: Generated 0 failed functions for prompt 33
+2025-11-28 12:15:20,230 - INFO - Producer: Generated 0 failed functions for prompt 33
+[INFO]
+2025-11-28 12:15:20,232 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:15:20,232 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:15:20,233 - INFO - Island id 3
+[INFO]
+2025-11-28 12:15:20,233 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:15:26,779 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:15:26,780 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:15:26,782 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 34
+2025-11-28 12:15:26,783 - INFO - Producer: Generated 8 functions for prompt 34
+[INFO] Producer: Generated 0 failed functions for prompt 34
+2025-11-28 12:15:26,784 - INFO - Producer: Generated 0 failed functions for prompt 34
+[INFO]
+2025-11-28 12:15:26,785 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:15:26,785 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:15:26,786 - INFO - Island id 0
+[INFO]
+2025-11-28 12:15:26,786 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:15:33,889 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:15:33,891 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:15:33,893 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 35
+2025-11-28 12:15:33,893 - INFO - Producer: Generated 8 functions for prompt 35
+[INFO] Producer: Generated 0 failed functions for prompt 35
+2025-11-28 12:15:33,894 - INFO - Producer: Generated 0 failed functions for prompt 35
+[INFO]
+2025-11-28 12:15:33,896 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:15:33,896 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:15:33,897 - INFO - Island id 3
+[INFO]
+2025-11-28 12:15:33,897 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:15:41,229 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:15:41,231 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:15:41,233 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 36
+2025-11-28 12:15:41,233 - INFO - Producer: Generated 8 functions for prompt 36
+[INFO] Producer: Generated 0 failed functions for prompt 36
+2025-11-28 12:15:41,234 - INFO - Producer: Generated 0 failed functions for prompt 36
+[INFO]
+2025-11-28 12:15:41,236 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:15:41,237 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:15:41,237 - INFO - Island id 4
+[INFO]
+2025-11-28 12:15:41,238 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:15:48,384 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:15:48,386 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:15:48,388 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 37
+2025-11-28 12:15:48,388 - INFO - Producer: Generated 8 functions for prompt 37
+[INFO] Producer: Generated 0 failed functions for prompt 37
+2025-11-28 12:15:48,388 - INFO - Producer: Generated 0 failed functions for prompt 37
+[INFO]
+2025-11-28 12:15:48,390 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:15:48,391 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:15:48,391 - INFO - Island id 5
+[INFO]
+2025-11-28 12:15:48,392 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:15:55,561 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:15:55,562 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:15:55,564 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 38
+2025-11-28 12:15:55,565 - INFO - Producer: Generated 8 functions for prompt 38
+[INFO] Producer: Generated 0 failed functions for prompt 38
+2025-11-28 12:15:55,565 - INFO - Producer: Generated 0 failed functions for prompt 38
+[INFO]
+2025-11-28 12:15:55,567 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:15:55,567 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:15:55,568 - INFO - Island id 3
+[INFO]
+2025-11-28 12:15:55,568 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:16:03,263 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:16:03,265 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:16:03,267 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 39
+2025-11-28 12:16:03,267 - INFO - Producer: Generated 8 functions for prompt 39
+[INFO] Producer: Generated 0 failed functions for prompt 39
+2025-11-28 12:16:03,268 - INFO - Producer: Generated 0 failed functions for prompt 39
+[INFO]
+2025-11-28 12:16:03,269 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:16:03,269 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:16:03,270 - INFO - Island id 3
+[INFO]
+2025-11-28 12:16:03,270 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:16:10,368 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:16:10,370 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:16:10,372 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 40
+2025-11-28 12:16:10,373 - INFO - Producer: Generated 8 functions for prompt 40
+[INFO] Producer: Generated 0 failed functions for prompt 40
+2025-11-28 12:16:10,374 - INFO - Producer: Generated 0 failed functions for prompt 40
+[INFO]
+2025-11-28 12:16:10,375 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:16:10,376 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:16:10,376 - INFO - Island id 0
+[INFO]
+2025-11-28 12:16:10,376 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-28 12:16:20,008 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:16:20,010 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-28 12:16:20,012 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 41
+2025-11-28 12:16:20,012 - INFO - Producer: Generated 8 functions for prompt 41
+[INFO] Producer: Generated 0 failed functions for prompt 41
+2025-11-28 12:16:20,013 - INFO - Producer: Generated 0 failed functions for prompt 41
+[INFO]
+2025-11-28 12:16:20,014 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:16:20,015 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:16:20,015 - INFO - Island id 0
+[INFO]
+2025-11-28 12:16:20,015 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:16:26,946 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:16:26,948 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:16:26,950 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 42
+2025-11-28 12:16:26,950 - INFO - Producer: Generated 8 functions for prompt 42
+[INFO] Producer: Generated 0 failed functions for prompt 42
+2025-11-28 12:16:26,951 - INFO - Producer: Generated 0 failed functions for prompt 42
+[INFO]
+2025-11-28 12:16:26,953 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:16:26,954 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:16:26,954 - INFO - Island id 4
+[INFO]
+2025-11-28 12:16:26,954 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:16:35,828 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:16:35,830 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:16:35,832 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 43
+2025-11-28 12:16:35,832 - INFO - Producer: Generated 8 functions for prompt 43
+[INFO] Producer: Generated 0 failed functions for prompt 43
+2025-11-28 12:16:35,833 - INFO - Producer: Generated 0 failed functions for prompt 43
+[INFO]
+2025-11-28 12:16:35,835 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:16:35,835 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:16:35,835 - INFO - Island id 3
+[INFO]
+2025-11-28 12:16:35,835 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-28 12:16:46,113 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:16:46,115 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 10
+2025-11-28 12:16:46,116 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 8 functions for prompt 44
+2025-11-28 12:16:46,117 - INFO - Producer: Generated 8 functions for prompt 44
+[INFO] Producer: Generated 0 failed functions for prompt 44
+2025-11-28 12:16:46,118 - INFO - Producer: Generated 0 failed functions for prompt 44
+[INFO]
+2025-11-28 12:16:46,120 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:16:46,121 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:16:46,121 - INFO - Island id 5
+[INFO]
+2025-11-28 12:16:46,121 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:16:52,985 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:16:52,987 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:16:52,989 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 45
+2025-11-28 12:16:52,989 - INFO - Producer: Generated 8 functions for prompt 45
+[INFO] Producer: Generated 0 failed functions for prompt 45
+2025-11-28 12:16:52,990 - INFO - Producer: Generated 0 failed functions for prompt 45
+[INFO]
+2025-11-28 12:16:52,991 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:16:52,992 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:16:52,992 - INFO - Island id 1
+[INFO]
+2025-11-28 12:16:52,992 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:16:59,786 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:16:59,788 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:16:59,789 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 46
+2025-11-28 12:16:59,790 - INFO - Producer: Generated 8 functions for prompt 46
+[INFO] Producer: Generated 0 failed functions for prompt 46
+2025-11-28 12:16:59,791 - INFO - Producer: Generated 0 failed functions for prompt 46
+[INFO]
+2025-11-28 12:16:59,792 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:16:59,792 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:16:59,792 - INFO - Island id 1
+[INFO]
+2025-11-28 12:16:59,793 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:17:06,850 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:17:06,852 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:17:06,853 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 47
+2025-11-28 12:17:06,854 - INFO - Producer: Generated 8 functions for prompt 47
+[INFO] Producer: Generated 0 failed functions for prompt 47
+2025-11-28 12:17:06,855 - INFO - Producer: Generated 0 failed functions for prompt 47
+[INFO]
+2025-11-28 12:17:06,856 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:17:06,857 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:17:06,857 - INFO - Island id 3
+[INFO]
+2025-11-28 12:17:06,857 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:17:14,694 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:17:14,696 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:17:14,697 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 48
+2025-11-28 12:17:14,698 - INFO - Producer: Generated 8 functions for prompt 48
+[INFO] Producer: Generated 0 failed functions for prompt 48
+2025-11-28 12:17:14,699 - INFO - Producer: Generated 0 failed functions for prompt 48
+[INFO]
+2025-11-28 12:17:14,700 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:17:14,700 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:17:14,701 - INFO - Island id 5
+[INFO]
+2025-11-28 12:17:14,701 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:17:21,699 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:17:21,700 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:17:21,702 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 49
+2025-11-28 12:17:21,703 - INFO - Producer: Generated 8 functions for prompt 49
+[INFO] Producer: Generated 0 failed functions for prompt 49
+2025-11-28 12:17:21,704 - INFO - Producer: Generated 0 failed functions for prompt 49
+[INFO]
+2025-11-28 12:17:21,705 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:17:21,706 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:17:21,706 - INFO - Island id 1
+[INFO]
+2025-11-28 12:17:21,706 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:17:27,989 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:17:27,991 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:17:27,993 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 50
+2025-11-28 12:17:27,993 - INFO - Producer: Generated 8 functions for prompt 50
+[INFO] Producer: Generated 0 failed functions for prompt 50
+2025-11-28 12:17:27,995 - INFO - Producer: Generated 0 failed functions for prompt 50
+[INFO]
+2025-11-28 12:17:27,996 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:17:27,996 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:17:27,996 - INFO - Island id 3
+[INFO]
+2025-11-28 12:17:27,996 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:17:34,658 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:17:34,660 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:17:34,662 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 51
+2025-11-28 12:17:34,662 - INFO - Producer: Generated 8 functions for prompt 51
+[INFO] Producer: Generated 0 failed functions for prompt 51
+2025-11-28 12:17:34,663 - INFO - Producer: Generated 0 failed functions for prompt 51
+[INFO]
+2025-11-28 12:17:34,664 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:17:34,665 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:17:34,665 - INFO - Island id 1
+[INFO]
+2025-11-28 12:17:34,666 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:17:41,700 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:17:41,701 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:17:41,703 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 52
+2025-11-28 12:17:41,704 - INFO - Producer: Generated 8 functions for prompt 52
+[INFO] Producer: Generated 0 failed functions for prompt 52
+2025-11-28 12:17:41,705 - INFO - Producer: Generated 0 failed functions for prompt 52
+[INFO]
+2025-11-28 12:17:41,706 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:17:41,706 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:17:41,707 - INFO - Island id 5
+[INFO]
+2025-11-28 12:17:41,707 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:17:48,995 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:17:48,997 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:17:48,999 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 53
+2025-11-28 12:17:48,999 - INFO - Producer: Generated 8 functions for prompt 53
+[INFO] Producer: Generated 0 failed functions for prompt 53
+2025-11-28 12:17:49,000 - INFO - Producer: Generated 0 failed functions for prompt 53
+[INFO]
+2025-11-28 12:17:49,001 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:17:49,002 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:17:49,002 - INFO - Island id 3
+[INFO]
+2025-11-28 12:17:49,002 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:17:56,282 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:17:56,284 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:17:56,286 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 54
+2025-11-28 12:17:56,286 - INFO - Producer: Generated 8 functions for prompt 54
+[INFO] Producer: Generated 0 failed functions for prompt 54
+2025-11-28 12:17:56,287 - INFO - Producer: Generated 0 failed functions for prompt 54
+[INFO]
+2025-11-28 12:17:56,288 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:17:56,288 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:17:56,289 - INFO - Island id 5
+[INFO]
+2025-11-28 12:17:56,289 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:18:03,229 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:18:03,230 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:18:03,232 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 55
+2025-11-28 12:18:03,232 - INFO - Producer: Generated 8 functions for prompt 55
+[INFO] Producer: Generated 0 failed functions for prompt 55
+2025-11-28 12:18:03,233 - INFO - Producer: Generated 0 failed functions for prompt 55
+[INFO]
+2025-11-28 12:18:03,234 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:18:03,235 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:18:03,235 - INFO - Island id 3
+[INFO]
+2025-11-28 12:18:03,235 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-28 12:18:13,178 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:18:13,180 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-28 12:18:13,181 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 56
+2025-11-28 12:18:13,182 - INFO - Producer: Generated 8 functions for prompt 56
+[INFO] Producer: Generated 0 failed functions for prompt 56
+2025-11-28 12:18:13,183 - INFO - Producer: Generated 0 failed functions for prompt 56
+[INFO]
+2025-11-28 12:18:13,184 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:18:13,185 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:18:13,185 - INFO - Island id 3
+[INFO]
+2025-11-28 12:18:13,185 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:18:19,973 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:18:19,975 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:18:19,977 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 57
+2025-11-28 12:18:19,977 - INFO - Producer: Generated 8 functions for prompt 57
+[INFO] Producer: Generated 0 failed functions for prompt 57
+2025-11-28 12:18:19,978 - INFO - Producer: Generated 0 failed functions for prompt 57
+[INFO]
+2025-11-28 12:18:19,979 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:18:19,980 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:18:19,980 - INFO - Island id 0
+[INFO]
+2025-11-28 12:18:19,981 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:18:26,784 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:18:26,785 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:18:26,787 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 58
+2025-11-28 12:18:26,788 - INFO - Producer: Generated 8 functions for prompt 58
+[INFO] Producer: Generated 0 failed functions for prompt 58
+2025-11-28 12:18:26,789 - INFO - Producer: Generated 0 failed functions for prompt 58
+[INFO]
+2025-11-28 12:18:26,790 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:18:26,790 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:18:26,790 - INFO - Island id 5
+[INFO]
+2025-11-28 12:18:26,790 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-28 12:18:35,819 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:18:35,820 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-28 12:18:35,822 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 59
+2025-11-28 12:18:35,823 - INFO - Producer: Generated 8 functions for prompt 59
+[INFO] Producer: Generated 0 failed functions for prompt 59
+2025-11-28 12:18:35,825 - INFO - Producer: Generated 0 failed functions for prompt 59
+[INFO]
+2025-11-28 12:18:35,826 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:18:35,826 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:18:35,826 - INFO - Island id 5
+[INFO]
+2025-11-28 12:18:35,827 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:18:43,719 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:18:43,721 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:18:43,723 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 60
+2025-11-28 12:18:43,723 - INFO - Producer: Generated 8 functions for prompt 60
+[INFO] Producer: Generated 0 failed functions for prompt 60
+2025-11-28 12:18:43,724 - INFO - Producer: Generated 0 failed functions for prompt 60
+[INFO]
+2025-11-28 12:18:43,725 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:18:43,726 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:18:43,726 - INFO - Island id 1
+[INFO]
+2025-11-28 12:18:43,726 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:18:50,310 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:18:50,311 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:18:50,313 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 61
+2025-11-28 12:18:50,313 - INFO - Producer: Generated 8 functions for prompt 61
+[INFO] Producer: Generated 0 failed functions for prompt 61
+2025-11-28 12:18:50,314 - INFO - Producer: Generated 0 failed functions for prompt 61
+[INFO]
+2025-11-28 12:18:50,315 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:18:50,316 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 2
+2025-11-28 12:18:50,316 - INFO - Island id 2
+[INFO]
+2025-11-28 12:18:50,316 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:18:58,267 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:18:58,269 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:18:58,271 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 62
+2025-11-28 12:18:58,271 - INFO - Producer: Generated 8 functions for prompt 62
+[INFO] Producer: Generated 0 failed functions for prompt 62
+2025-11-28 12:18:58,272 - INFO - Producer: Generated 0 failed functions for prompt 62
+[INFO]
+2025-11-28 12:18:58,273 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:18:58,274 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:18:58,274 - INFO - Island id 1
+[INFO]
+2025-11-28 12:18:58,274 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:19:06,593 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:19:06,595 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:19:06,597 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 63
+2025-11-28 12:19:06,597 - INFO - Producer: Generated 8 functions for prompt 63
+[INFO] Producer: Generated 0 failed functions for prompt 63
+2025-11-28 12:19:06,598 - INFO - Producer: Generated 0 failed functions for prompt 63
+[INFO]
+2025-11-28 12:19:06,599 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:19:06,600 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:19:06,600 - INFO - Island id 5
+[INFO]
+2025-11-28 12:19:06,601 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:19:13,920 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:19:13,922 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:19:13,923 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 64
+2025-11-28 12:19:13,924 - INFO - Producer: Generated 8 functions for prompt 64
+[INFO] Producer: Generated 0 failed functions for prompt 64
+2025-11-28 12:19:13,926 - INFO - Producer: Generated 0 failed functions for prompt 64
+[INFO]
+2025-11-28 12:19:13,927 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:19:13,927 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 2
+2025-11-28 12:19:13,927 - INFO - Island id 2
+[INFO]
+2025-11-28 12:19:13,928 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:19:21,300 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:19:21,301 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:19:21,303 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 65
+2025-11-28 12:19:21,304 - INFO - Producer: Generated 8 functions for prompt 65
+[INFO] Producer: Generated 0 failed functions for prompt 65
+2025-11-28 12:19:21,305 - INFO - Producer: Generated 0 failed functions for prompt 65
+[INFO]
+2025-11-28 12:19:21,310 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:19:21,311 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:19:21,311 - INFO - Island id 4
+[INFO]
+2025-11-28 12:19:21,311 - INFO -
+
+
+[INFO] Time taken for LLM generation: 10 seconds
+
+
+2025-11-28 12:19:32,072 - INFO - Time taken for LLM generation: 10 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:19:32,074 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 10
+2025-11-28 12:19:32,076 - INFO - LLM generation time: 10
+[INFO] Producer: Generated 8 functions for prompt 66
+2025-11-28 12:19:32,076 - INFO - Producer: Generated 8 functions for prompt 66
+[INFO] Producer: Generated 0 failed functions for prompt 66
+2025-11-28 12:19:32,077 - INFO - Producer: Generated 0 failed functions for prompt 66
+[INFO]
+2025-11-28 12:19:32,079 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:19:32,079 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:19:32,079 - INFO - Island id 5
+[INFO]
+2025-11-28 12:19:32,080 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-28 12:19:41,217 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:19:41,219 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-28 12:19:41,221 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 67
+2025-11-28 12:19:41,221 - INFO - Producer: Generated 8 functions for prompt 67
+[INFO] Producer: Generated 0 failed functions for prompt 67
+2025-11-28 12:19:41,222 - INFO - Producer: Generated 0 failed functions for prompt 67
+[INFO]
+2025-11-28 12:19:41,229 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:19:41,230 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:19:41,231 - INFO - Island id 5
+[INFO]
+2025-11-28 12:19:41,231 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:19:48,656 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:19:48,657 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:19:48,659 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 68
+2025-11-28 12:19:48,660 - INFO - Producer: Generated 8 functions for prompt 68
+[INFO] Producer: Generated 0 failed functions for prompt 68
+2025-11-28 12:19:48,661 - INFO - Producer: Generated 0 failed functions for prompt 68
+[INFO]
+2025-11-28 12:19:48,662 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:19:48,663 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:19:48,663 - INFO - Island id 0
+[INFO]
+2025-11-28 12:19:48,663 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:19:55,244 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:19:55,245 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:19:55,247 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 69
+2025-11-28 12:19:55,247 - INFO - Producer: Generated 8 functions for prompt 69
+[INFO] Producer: Generated 0 failed functions for prompt 69
+2025-11-28 12:19:55,249 - INFO - Producer: Generated 0 failed functions for prompt 69
+[INFO]
+2025-11-28 12:19:55,250 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:19:55,251 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:19:55,251 - INFO - Island id 0
+[INFO]
+2025-11-28 12:19:55,251 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:20:03,365 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:20:03,366 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:20:03,368 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 70
+2025-11-28 12:20:03,369 - INFO - Producer: Generated 8 functions for prompt 70
+[INFO] Producer: Generated 0 failed functions for prompt 70
+2025-11-28 12:20:03,369 - INFO - Producer: Generated 0 failed functions for prompt 70
+[INFO]
+2025-11-28 12:20:03,371 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:20:03,371 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:20:03,371 - INFO - Island id 3
+[INFO]
+2025-11-28 12:20:03,372 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:20:11,933 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:20:11,934 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:20:11,936 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 71
+2025-11-28 12:20:11,937 - INFO - Producer: Generated 8 functions for prompt 71
+[INFO] Producer: Generated 0 failed functions for prompt 71
+2025-11-28 12:20:11,938 - INFO - Producer: Generated 0 failed functions for prompt 71
+[INFO]
+2025-11-28 12:20:11,939 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:20:11,940 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:20:11,940 - INFO - Island id 1
+[INFO]
+2025-11-28 12:20:11,940 - INFO -
+
+
+[INFO] Time taken for LLM generation: 11 seconds
+
+
+2025-11-28 12:20:23,683 - INFO - Time taken for LLM generation: 11 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:20:23,685 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 11
+2025-11-28 12:20:23,687 - INFO - LLM generation time: 11
+[INFO] Producer: Generated 8 functions for prompt 72
+2025-11-28 12:20:23,687 - INFO - Producer: Generated 8 functions for prompt 72
+[INFO] Producer: Generated 0 failed functions for prompt 72
+2025-11-28 12:20:23,688 - INFO - Producer: Generated 0 failed functions for prompt 72
+[INFO]
+2025-11-28 12:20:23,689 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:20:23,690 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:20:23,690 - INFO - Island id 5
+[INFO]
+2025-11-28 12:20:23,690 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:20:30,896 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:20:30,897 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:20:30,899 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 73
+2025-11-28 12:20:30,900 - INFO - Producer: Generated 8 functions for prompt 73
+[INFO] Producer: Generated 0 failed functions for prompt 73
+2025-11-28 12:20:30,901 - INFO - Producer: Generated 0 failed functions for prompt 73
+[INFO]
+2025-11-28 12:20:30,902 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:20:30,903 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:20:30,903 - INFO - Island id 4
+[INFO]
+2025-11-28 12:20:30,903 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:20:37,740 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:20:37,742 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:20:37,744 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 74
+2025-11-28 12:20:37,744 - INFO - Producer: Generated 8 functions for prompt 74
+[INFO] Producer: Generated 0 failed functions for prompt 74
+2025-11-28 12:20:37,745 - INFO - Producer: Generated 0 failed functions for prompt 74
+[INFO]
+2025-11-28 12:20:37,746 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:20:37,747 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:20:37,747 - INFO - Island id 3
+[INFO]
+2025-11-28 12:20:37,747 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:20:45,237 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:20:45,239 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:20:45,241 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 75
+2025-11-28 12:20:45,241 - INFO - Producer: Generated 8 functions for prompt 75
+[INFO] Producer: Generated 0 failed functions for prompt 75
+2025-11-28 12:20:45,242 - INFO - Producer: Generated 0 failed functions for prompt 75
+[INFO]
+2025-11-28 12:20:45,244 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:20:45,244 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:20:45,244 - INFO - Island id 1
+[INFO]
+2025-11-28 12:20:45,245 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:20:53,050 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:20:53,052 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:20:53,054 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 76
+2025-11-28 12:20:53,054 - INFO - Producer: Generated 8 functions for prompt 76
+[INFO] Producer: Generated 0 failed functions for prompt 76
+2025-11-28 12:20:53,056 - INFO - Producer: Generated 0 failed functions for prompt 76
+[INFO]
+2025-11-28 12:20:53,057 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:20:53,057 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:20:53,057 - INFO - Island id 3
+[INFO]
+2025-11-28 12:20:53,058 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:20:59,970 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:20:59,971 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:20:59,973 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 77
+2025-11-28 12:20:59,974 - INFO - Producer: Generated 8 functions for prompt 77
+[INFO] Producer: Generated 0 failed functions for prompt 77
+2025-11-28 12:20:59,975 - INFO - Producer: Generated 0 failed functions for prompt 77
+[INFO]
+2025-11-28 12:20:59,976 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:20:59,976 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:20:59,977 - INFO - Island id 5
+[INFO]
+2025-11-28 12:20:59,977 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:21:07,906 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:21:07,908 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:21:07,910 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 78
+2025-11-28 12:21:07,911 - INFO - Producer: Generated 8 functions for prompt 78
+[INFO] Producer: Generated 0 failed functions for prompt 78
+2025-11-28 12:21:07,911 - INFO - Producer: Generated 0 failed functions for prompt 78
+[INFO]
+2025-11-28 12:21:07,913 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:21:07,913 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 3
+2025-11-28 12:21:07,914 - INFO - Island id 3
+[INFO]
+2025-11-28 12:21:07,914 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:21:16,346 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:21:16,347 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:21:16,349 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 79
+2025-11-28 12:21:16,349 - INFO - Producer: Generated 8 functions for prompt 79
+[INFO] Producer: Generated 0 failed functions for prompt 79
+2025-11-28 12:21:16,350 - INFO - Producer: Generated 0 failed functions for prompt 79
+[INFO]
+2025-11-28 12:21:16,351 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:21:16,352 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:21:16,352 - INFO - Island id 1
+[INFO]
+2025-11-28 12:21:16,352 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:21:23,039 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:21:23,041 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:21:23,042 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 80
+2025-11-28 12:21:23,043 - INFO - Producer: Generated 8 functions for prompt 80
+[INFO] Producer: Generated 0 failed functions for prompt 80
+2025-11-28 12:21:23,043 - INFO - Producer: Generated 0 failed functions for prompt 80
+[INFO]
+2025-11-28 12:21:23,045 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:21:23,046 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:21:23,046 - INFO - Island id 0
+[INFO]
+2025-11-28 12:21:23,046 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:21:31,204 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:21:31,205 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:21:31,207 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 81
+2025-11-28 12:21:31,208 - INFO - Producer: Generated 8 functions for prompt 81
+[INFO] Producer: Generated 0 failed functions for prompt 81
+2025-11-28 12:21:31,209 - INFO - Producer: Generated 0 failed functions for prompt 81
+[INFO]
+2025-11-28 12:21:31,211 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:21:31,211 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:21:31,211 - INFO - Island id 4
+[INFO]
+2025-11-28 12:21:31,211 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:21:38,194 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:21:38,196 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:21:38,198 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 82
+2025-11-28 12:21:38,198 - INFO - Producer: Generated 8 functions for prompt 82
+[INFO] Producer: Generated 0 failed functions for prompt 82
+2025-11-28 12:21:38,199 - INFO - Producer: Generated 0 failed functions for prompt 82
+[INFO]
+2025-11-28 12:21:38,201 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:21:38,201 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:21:38,201 - INFO - Island id 0
+[INFO]
+2025-11-28 12:21:38,201 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:21:44,961 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:21:44,963 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:21:44,965 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 83
+2025-11-28 12:21:44,965 - INFO - Producer: Generated 8 functions for prompt 83
+[INFO] Producer: Generated 0 failed functions for prompt 83
+2025-11-28 12:21:44,966 - INFO - Producer: Generated 0 failed functions for prompt 83
+[INFO]
+2025-11-28 12:21:44,967 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:21:44,967 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:21:44,968 - INFO - Island id 0
+[INFO]
+2025-11-28 12:21:44,968 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:21:53,100 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:21:53,101 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:21:53,104 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 84
+2025-11-28 12:21:53,104 - INFO - Producer: Generated 8 functions for prompt 84
+[INFO] Producer: Generated 0 failed functions for prompt 84
+2025-11-28 12:21:53,105 - INFO - Producer: Generated 0 failed functions for prompt 84
+[INFO]
+2025-11-28 12:21:53,106 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:21:53,107 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:21:53,107 - INFO - Island id 5
+[INFO]
+2025-11-28 12:21:53,107 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:21:59,850 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:21:59,852 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:21:59,854 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 85
+2025-11-28 12:21:59,854 - INFO - Producer: Generated 8 functions for prompt 85
+[INFO] Producer: Generated 0 failed functions for prompt 85
+2025-11-28 12:21:59,855 - INFO - Producer: Generated 0 failed functions for prompt 85
+[INFO]
+2025-11-28 12:21:59,856 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:21:59,856 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:21:59,857 - INFO - Island id 0
+[INFO]
+2025-11-28 12:21:59,857 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:22:07,727 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:22:07,728 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:22:07,730 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 86
+2025-11-28 12:22:07,731 - INFO - Producer: Generated 8 functions for prompt 86
+[INFO] Producer: Generated 0 failed functions for prompt 86
+2025-11-28 12:22:07,732 - INFO - Producer: Generated 0 failed functions for prompt 86
+[INFO]
+2025-11-28 12:22:07,733 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:22:07,734 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:22:07,734 - INFO - Island id 0
+[INFO]
+2025-11-28 12:22:07,734 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:22:14,963 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:22:14,965 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:22:14,967 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 87
+2025-11-28 12:22:14,967 - INFO - Producer: Generated 8 functions for prompt 87
+[INFO] Producer: Generated 0 failed functions for prompt 87
+2025-11-28 12:22:14,968 - INFO - Producer: Generated 0 failed functions for prompt 87
+[INFO]
+2025-11-28 12:22:14,969 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:22:14,970 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:22:14,970 - INFO - Island id 4
+[INFO]
+2025-11-28 12:22:14,970 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:22:22,601 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:22:22,603 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:22:22,605 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 88
+2025-11-28 12:22:22,606 - INFO - Producer: Generated 8 functions for prompt 88
+[INFO] Producer: Generated 0 failed functions for prompt 88
+2025-11-28 12:22:22,607 - INFO - Producer: Generated 0 failed functions for prompt 88
+[INFO]
+2025-11-28 12:22:22,608 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:22:22,608 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 2
+2025-11-28 12:22:22,609 - INFO - Island id 2
+[INFO]
+2025-11-28 12:22:22,609 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:22:31,257 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:22:31,259 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:22:31,261 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 89
+2025-11-28 12:22:31,261 - INFO - Producer: Generated 8 functions for prompt 89
+[INFO] Producer: Generated 0 failed functions for prompt 89
+2025-11-28 12:22:31,262 - INFO - Producer: Generated 0 failed functions for prompt 89
+[INFO]
+2025-11-28 12:22:31,263 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:22:31,264 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:22:31,265 - INFO - Island id 5
+[INFO]
+2025-11-28 12:22:31,265 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:22:38,245 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:22:38,246 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:22:38,248 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 90
+2025-11-28 12:22:38,248 - INFO - Producer: Generated 8 functions for prompt 90
+[INFO] Producer: Generated 0 failed functions for prompt 90
+2025-11-28 12:22:38,249 - INFO - Producer: Generated 0 failed functions for prompt 90
+[INFO]
+2025-11-28 12:22:38,252 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:22:38,252 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:22:38,252 - INFO - Island id 5
+[INFO]
+2025-11-28 12:22:38,252 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:22:45,326 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:22:45,328 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:22:45,329 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 91
+2025-11-28 12:22:45,330 - INFO - Producer: Generated 8 functions for prompt 91
+[INFO] Producer: Generated 0 failed functions for prompt 91
+2025-11-28 12:22:45,332 - INFO - Producer: Generated 0 failed functions for prompt 91
+[INFO]
+2025-11-28 12:22:45,333 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:22:45,334 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:22:45,334 - INFO - Island id 5
+[INFO]
+2025-11-28 12:22:45,334 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:22:52,484 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:22:52,485 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:22:52,487 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 92
+2025-11-28 12:22:52,487 - INFO - Producer: Generated 8 functions for prompt 92
+[INFO] Producer: Generated 0 failed functions for prompt 92
+2025-11-28 12:22:52,488 - INFO - Producer: Generated 0 failed functions for prompt 92
+[INFO]
+2025-11-28 12:22:52,489 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:22:52,490 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:22:52,490 - INFO - Island id 1
+[INFO]
+2025-11-28 12:22:52,490 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:23:00,656 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:23:00,657 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:23:00,659 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 93
+2025-11-28 12:23:00,659 - INFO - Producer: Generated 8 functions for prompt 93
+[INFO] Producer: Generated 0 failed functions for prompt 93
+2025-11-28 12:23:00,660 - INFO - Producer: Generated 0 failed functions for prompt 93
+[INFO]
+2025-11-28 12:23:00,662 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:23:00,662 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 2
+2025-11-28 12:23:00,662 - INFO - Island id 2
+[INFO]
+2025-11-28 12:23:00,663 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:23:07,285 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:23:07,286 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:23:07,288 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 94
+2025-11-28 12:23:07,288 - INFO - Producer: Generated 8 functions for prompt 94
+[INFO] Producer: Generated 0 failed functions for prompt 94
+2025-11-28 12:23:07,289 - INFO - Producer: Generated 0 failed functions for prompt 94
+[INFO]
+2025-11-28 12:23:07,290 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:23:07,291 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 5
+2025-11-28 12:23:07,291 - INFO - Island id 5
+[INFO]
+2025-11-28 12:23:07,291 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:23:14,796 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:23:14,798 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:23:14,800 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 95
+2025-11-28 12:23:14,800 - INFO - Producer: Generated 8 functions for prompt 95
+[INFO] Producer: Generated 0 failed functions for prompt 95
+2025-11-28 12:23:14,801 - INFO - Producer: Generated 0 failed functions for prompt 95
+[INFO]
+2025-11-28 12:23:14,804 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:23:14,805 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 4
+2025-11-28 12:23:14,805 - INFO - Island id 4
+[INFO]
+2025-11-28 12:23:14,805 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:23:22,622 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:23:22,623 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:23:22,626 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 96
+2025-11-28 12:23:22,626 - INFO - Producer: Generated 8 functions for prompt 96
+[INFO] Producer: Generated 0 failed functions for prompt 96
+2025-11-28 12:23:22,627 - INFO - Producer: Generated 0 failed functions for prompt 96
+[INFO]
+2025-11-28 12:23:22,628 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:23:22,629 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 2
+2025-11-28 12:23:22,629 - INFO - Island id 2
+[INFO]
+2025-11-28 12:23:22,629 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:23:29,912 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:23:29,913 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:23:29,915 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 97
+2025-11-28 12:23:29,915 - INFO - Producer: Generated 8 functions for prompt 97
+[INFO] Producer: Generated 0 failed functions for prompt 97
+2025-11-28 12:23:29,916 - INFO - Producer: Generated 0 failed functions for prompt 97
+[INFO]
+2025-11-28 12:23:29,917 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:23:29,918 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 0
+2025-11-28 12:23:29,918 - INFO - Island id 0
+[INFO]
+2025-11-28 12:23:29,918 - INFO -
+
+
+[INFO] Time taken for LLM generation: 6 seconds
+
+
+2025-11-28 12:23:36,722 - INFO - Time taken for LLM generation: 6 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:23:36,724 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 6
+2025-11-28 12:23:36,726 - INFO - LLM generation time: 6
+[INFO] Producer: Generated 8 functions for prompt 98
+2025-11-28 12:23:36,726 - INFO - Producer: Generated 8 functions for prompt 98
+[INFO] Producer: Generated 0 failed functions for prompt 98
+2025-11-28 12:23:36,727 - INFO - Producer: Generated 0 failed functions for prompt 98
+[INFO]
+2025-11-28 12:23:36,728 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:23:36,729 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:23:36,729 - INFO - Island id 1
+[INFO]
+2025-11-28 12:23:36,729 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:23:44,250 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:23:44,252 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:23:44,253 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 99
+2025-11-28 12:23:44,254 - INFO - Producer: Generated 8 functions for prompt 99
+[INFO] Producer: Generated 0 failed functions for prompt 99
+2025-11-28 12:23:44,255 - INFO - Producer: Generated 0 failed functions for prompt 99
+[INFO]
+2025-11-28 12:23:44,257 - INFO -
+
+
+[INFO] Prompt scores: [-3301.3008]
+
+
+2025-11-28 12:23:44,257 - INFO - Prompt scores: [-3301.3008]
+[INFO] Island id 1
+2025-11-28 12:23:44,257 - INFO - Island id 1
+[INFO]
+2025-11-28 12:23:44,258 - INFO -
+
+
+[INFO] Time taken for LLM generation: 7 seconds
+
+
+2025-11-28 12:23:51,428 - INFO - Time taken for LLM generation: 7 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:23:51,430 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 7
+2025-11-28 12:23:51,432 - INFO - LLM generation time: 7
+[INFO] Producer: Generated 8 functions for prompt 100
+2025-11-28 12:23:51,432 - INFO - Producer: Generated 8 functions for prompt 100
+[INFO] Producer: Generated 0 failed functions for prompt 100
+2025-11-28 12:23:51,433 - INFO - Producer: Generated 0 failed functions for prompt 100
+[INFO] Producer: Sent stopping signals to consumers
+2025-11-28 12:23:51,434 - INFO - Producer: Sent stopping signals to consumers
+[INFO] WAITING FOR CONSUMERS TO FINISH
+2025-11-28 12:23:51,434 - INFO - WAITING FOR CONSUMERS TO FINISH
+[INFO] Waiting for consumer process 751989, worker id 0 to finish
+2025-11-28 12:23:51,434 - INFO - Waiting for consumer process 751989, worker id 0 to finish
+[INFO] Queue size: 13, timeout time: 120
+2025-11-28 12:23:51,435 - INFO - Queue size: 13, timeout time: 120
+[INFO] Consumer process 751989 exited
+2025-11-28 12:23:52,872 - INFO - Consumer process 751989 exited
+[INFO] Waiting for consumer process 751993, worker id 1 to finish
+2025-11-28 12:23:52,872 - INFO - Waiting for consumer process 751993, worker id 1 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,873 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 751993 exited
+2025-11-28 12:23:52,873 - INFO - Consumer process 751993 exited
+[INFO] Waiting for consumer process 751997, worker id 2 to finish
+2025-11-28 12:23:52,874 - INFO - Waiting for consumer process 751997, worker id 2 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,874 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 751997 exited
+2025-11-28 12:23:52,875 - INFO - Consumer process 751997 exited
+[INFO] Waiting for consumer process 752001, worker id 3 to finish
+2025-11-28 12:23:52,875 - INFO - Waiting for consumer process 752001, worker id 3 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,876 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 752001 exited
+2025-11-28 12:23:52,876 - INFO - Consumer process 752001 exited
+[INFO] Waiting for consumer process 752005, worker id 4 to finish
+2025-11-28 12:23:52,876 - INFO - Waiting for consumer process 752005, worker id 4 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,877 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 752005 exited
+2025-11-28 12:23:52,877 - INFO - Consumer process 752005 exited
+[INFO] Waiting for consumer process 752019, worker id 5 to finish
+2025-11-28 12:23:52,877 - INFO - Waiting for consumer process 752019, worker id 5 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,878 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 752019 exited
+2025-11-28 12:23:52,878 - INFO - Consumer process 752019 exited
+[INFO] Waiting for consumer process 752029, worker id 6 to finish
+2025-11-28 12:23:52,878 - INFO - Waiting for consumer process 752029, worker id 6 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,879 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 752029 exited
+2025-11-28 12:23:52,879 - INFO - Consumer process 752029 exited
+[INFO] Waiting for consumer process 752035, worker id 7 to finish
+2025-11-28 12:23:52,879 - INFO - Waiting for consumer process 752035, worker id 7 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,880 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 752035 exited
+2025-11-28 12:23:52,880 - INFO - Consumer process 752035 exited
+[INFO] Waiting for consumer process 752042, worker id 8 to finish
+2025-11-28 12:23:52,880 - INFO - Waiting for consumer process 752042, worker id 8 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,881 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 752042 exited
+2025-11-28 12:23:52,881 - INFO - Consumer process 752042 exited
+[INFO] Waiting for consumer process 752050, worker id 9 to finish
+2025-11-28 12:23:52,881 - INFO - Waiting for consumer process 752050, worker id 9 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,882 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 752050 exited
+2025-11-28 12:23:52,882 - INFO - Consumer process 752050 exited
+[INFO] Waiting for consumer process 752058, worker id 10 to finish
+2025-11-28 12:23:52,882 - INFO - Waiting for consumer process 752058, worker id 10 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,882 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 752058 exited
+2025-11-28 12:23:52,883 - INFO - Consumer process 752058 exited
+[INFO] Waiting for consumer process 752066, worker id 11 to finish
+2025-11-28 12:23:52,883 - INFO - Waiting for consumer process 752066, worker id 11 to finish
+[INFO] Queue size: 0, timeout time: 60
+2025-11-28 12:23:52,883 - INFO - Queue size: 0, timeout time: 60
+[INFO] Consumer process 752066 exited
+2025-11-28 12:23:52,884 - INFO - Consumer process 752066 exited
+[INFO] ###################
+2025-11-28 12:23:53,007 - INFO - ###################
+[INFO] Num of passed functions: 189
+2025-11-28 12:23:53,008 - INFO - Num of passed functions: 189
+[INFO] Num of failed functions: 611
+2025-11-28 12:23:53,008 - INFO - Num of failed functions: 611
+[INFO] ###################
+2025-11-28 12:23:53,008 - INFO - ###################
+[INFO] Finished with continuous sampling and evaluation for 100 rounds
+2025-11-28 12:23:53,042 - INFO - Finished with continuous sampling and evaluation for 100 rounds
+[INFO] ----------
+2025-11-28 12:23:53,043 - INFO - ----------
+[INFO] REGISTERING PROGRAMS
+2025-11-28 12:23:53,043 - INFO - REGISTERING PROGRAMS
+
+Number of passing functions to register: 189
+
+
+Number of failed functions: 611
+
+Best score of island 4 increased to -128.3686
+Saving a program to a file...
+Saving a program to a file...
+Best score of island 3 increased to -146.7647
+Saving a program to a file...
+Saving a program to a file...
+Best score of island 5 increased to -239.2867
+Saving a program to a file...
+Best score of island 0 increased to -156.5208
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Best score of island 0 increased to -86.6656
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Best score of island 5 increased to -68.849
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Best score of island 1 increased to -62.912
+Saving a program to a file...
+Saving a program to a file...
+Best score of island 2 increased to -148.1607
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Best score of island 0 increased to -49.0314
+Saving a program to a file...
+Best score of island 0 increased to -33.9456
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Best score of island 3 increased to -128.4084
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Best score of island 3 increased to -54.3474
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving a program to a file...
+Saving the programs from program bank to a file...
+[INFO] Saved to logs directory
+2025-11-28 12:23:54,301 - INFO - Saved to logs directory
+[INFO]
+
+Time taken for one round: 799 seconds
+2025-11-28 12:23:54,301 - INFO -
+
+Time taken for one round: 799 seconds
+
+
+[INFO]
+
+
+2025-11-28 12:23:54,304 - INFO -
+
+
+[INFO] ROUND 0 FINISHED
+
+
+2025-11-28 12:23:54,305 - INFO - ROUND 0 FINISHED
+[INFO] STARTING ROUND NUM: 100
+2025-11-28 12:23:54,305 - INFO - STARTING ROUND NUM: 100
+[INFO] Prompt num: 100
+2025-11-28 12:23:54,305 - INFO - Prompt num: 100
+[INFO] Total functions generated so far: 800
+2025-11-28 12:23:54,306 - INFO - Total functions generated so far: 800
+[INFO] Total functions evaluated so far: 800
+2025-11-28 12:23:54,306 - INFO - Total functions evaluated so far: 800
+[INFO] Number of functions in the programbank: 195
+2025-11-28 12:23:54,306 - INFO - Number of functions in the programbank: 195
+[INFO] Number of datatpoints in DPO data: 556
+2025-11-28 12:23:54,307 - INFO - Number of datatpoints in DPO data: 556
+[INFO] Best overall program score: -33.9456
+2025-11-28 12:23:54,307 - INFO - Best overall program score: -33.9456
+[INFO] Best running_dict score: -33.9456
+2025-11-28 12:23:54,307 - INFO - Best running_dict score: -33.9456
+[INFO] Best running_dict best_true_score_from_score: -33.9456
+2025-11-28 12:23:54,308 - INFO - Best running_dict best_true_score_from_score: -33.9456
+[INFO] VLLM model server is still alive, continuing...
+2025-11-28 12:23:54,309 - INFO - VLLM model server is still alive, continuing...
+[INFO] ----------
+2025-11-28 12:23:54,309 - INFO - ----------
+[INFO] GENERATING PROMPTS
+2025-11-28 12:23:54,310 - INFO - GENERATING PROMPTS
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,310 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,311 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,311 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,311 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,312 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,313 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,313 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,313 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,314 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,315 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,315 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,315 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,316 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,316 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,317 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,317 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -15175.8593
+2025-11-28 12:23:54,318 - INFO - Using the top percentile score: -15175.8593
+[INFO] Number of clusters in the island: 18
+2025-11-28 12:23:54,318 - INFO - Number of clusters in the island: 18
+[INFO] Number of clusters in the top percentile: 10
+2025-11-28 12:23:54,319 - INFO - Number of clusters in the top percentile: 10
+[INFO] Number of programs in the top percentile: 34
+2025-11-28 12:23:54,319 - INFO - Number of programs in the top percentile: 34
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,320 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,320 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,321 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,321 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,322 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,322 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,323 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,323 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,324 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,324 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,324 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,325 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,326 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,326 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,326 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,327 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,328 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,328 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,328 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,329 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,329 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,330 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,330 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,330 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,331 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,332 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,332 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,332 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,333 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,334 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,334 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,334 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,335 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,335 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,336 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,336 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,337 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,337 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,338 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,338 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -15175.8593
+2025-11-28 12:23:54,339 - INFO - Using the top percentile score: -15175.8593
+[INFO] Number of clusters in the island: 18
+2025-11-28 12:23:54,339 - INFO - Number of clusters in the island: 18
+[INFO] Number of clusters in the top percentile: 10
+2025-11-28 12:23:54,340 - INFO - Number of clusters in the top percentile: 10
+[INFO] Number of programs in the top percentile: 34
+2025-11-28 12:23:54,340 - INFO - Number of programs in the top percentile: 34
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,341 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,341 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,341 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,342 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,343 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,343 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,343 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,344 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,345 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,345 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,345 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,346 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,346 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,347 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,347 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,347 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,348 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,349 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,349 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,349 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,350 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,350 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,351 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,351 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,352 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,352 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,353 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,353 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,354 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,354 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,355 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,355 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,356 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,356 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,357 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,357 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,358 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,358 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,358 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,359 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,360 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,360 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,360 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,361 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,362 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,362 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,362 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,363 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -15175.8593
+2025-11-28 12:23:54,363 - INFO - Using the top percentile score: -15175.8593
+[INFO] Number of clusters in the island: 18
+2025-11-28 12:23:54,364 - INFO - Number of clusters in the island: 18
+[INFO] Number of clusters in the top percentile: 10
+2025-11-28 12:23:54,364 - INFO - Number of clusters in the top percentile: 10
+[INFO] Number of programs in the top percentile: 34
+2025-11-28 12:23:54,365 - INFO - Number of programs in the top percentile: 34
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,365 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,366 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,366 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,366 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,367 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,368 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,368 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,368 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,369 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,369 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,370 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,370 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,371 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,371 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,372 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,372 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,373 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,373 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,374 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,374 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,375 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,375 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,375 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,376 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,377 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,377 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,377 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,378 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,378 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,379 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,379 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,379 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,380 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,380 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,381 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,381 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,382 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,383 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,383 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,383 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,384 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,384 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,385 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,385 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,386 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,386 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,387 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,387 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,388 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,388 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,389 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,389 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,390 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,390 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,391 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,391 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,392 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,392 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,392 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,393 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,394 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,394 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,394 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,395 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,396 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,396 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,396 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,397 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -15175.8593
+2025-11-28 12:23:54,397 - INFO - Using the top percentile score: -15175.8593
+[INFO] Number of clusters in the island: 18
+2025-11-28 12:23:54,398 - INFO - Number of clusters in the island: 18
+[INFO] Number of clusters in the top percentile: 10
+2025-11-28 12:23:54,398 - INFO - Number of clusters in the top percentile: 10
+[INFO] Number of programs in the top percentile: 34
+2025-11-28 12:23:54,399 - INFO - Number of programs in the top percentile: 34
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,399 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,400 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,400 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,400 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -15175.8593
+2025-11-28 12:23:54,401 - INFO - Using the top percentile score: -15175.8593
+[INFO] Number of clusters in the island: 18
+2025-11-28 12:23:54,402 - INFO - Number of clusters in the island: 18
+[INFO] Number of clusters in the top percentile: 10
+2025-11-28 12:23:54,402 - INFO - Number of clusters in the top percentile: 10
+[INFO] Number of programs in the top percentile: 34
+2025-11-28 12:23:54,402 - INFO - Number of programs in the top percentile: 34
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,403 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,404 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,404 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,404 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,405 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,406 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,406 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,406 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,407 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,407 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,408 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,408 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,409 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,409 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,410 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,410 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,411 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,411 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,412 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,412 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,413 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,413 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,413 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,414 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,415 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,415 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,415 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,416 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,416 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,417 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,417 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,418 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,418 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,419 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,419 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,419 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,420 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,421 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,421 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,421 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,422 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,423 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,423 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,423 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,424 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,425 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,425 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,425 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,426 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,426 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,427 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,427 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,429 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,429 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,429 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,430 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,430 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,431 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,431 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,431 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,432 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,433 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,433 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,433 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,434 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,435 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,435 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,435 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,436 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,436 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,437 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,437 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,438 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,438 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,439 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,439 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -15175.8593
+2025-11-28 12:23:54,440 - INFO - Using the top percentile score: -15175.8593
+[INFO] Number of clusters in the island: 18
+2025-11-28 12:23:54,440 - INFO - Number of clusters in the island: 18
+[INFO] Number of clusters in the top percentile: 10
+2025-11-28 12:23:54,441 - INFO - Number of clusters in the top percentile: 10
+[INFO] Number of programs in the top percentile: 34
+2025-11-28 12:23:54,441 - INFO - Number of programs in the top percentile: 34
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,442 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,442 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,442 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,443 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,444 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,444 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,444 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,445 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,446 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,446 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,446 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,447 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,447 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,448 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,448 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,448 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,449 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,450 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,450 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,450 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -15175.8593
+2025-11-28 12:23:54,451 - INFO - Using the top percentile score: -15175.8593
+[INFO] Number of clusters in the island: 18
+2025-11-28 12:23:54,452 - INFO - Number of clusters in the island: 18
+[INFO] Number of clusters in the top percentile: 10
+2025-11-28 12:23:54,452 - INFO - Number of clusters in the top percentile: 10
+[INFO] Number of programs in the top percentile: 34
+2025-11-28 12:23:54,452 - INFO - Number of programs in the top percentile: 34
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,453 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,453 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,454 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,454 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,455 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,455 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,456 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,456 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,457 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,457 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,458 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,458 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,459 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,459 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,459 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,460 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,461 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,461 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,461 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,462 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,462 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,463 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,463 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,463 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,464 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,465 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,465 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,465 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,466 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,467 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,467 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,467 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,468 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,468 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,469 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,469 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,470 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,470 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,471 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,471 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,472 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,472 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,473 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,473 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,474 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,474 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,474 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,475 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,476 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,476 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,476 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,477 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,477 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,478 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,478 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,479 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,479 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,480 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,480 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,480 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,481 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,482 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,482 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,482 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,483 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,484 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,484 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,484 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,485 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,486 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,486 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,486 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,487 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,488 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,488 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,488 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -146.7532
+2025-11-28 12:23:54,489 - INFO - Using the top percentile score: -146.7532
+[INFO] Number of clusters in the island: 16
+2025-11-28 12:23:54,489 - INFO - Number of clusters in the island: 16
+[INFO] Number of clusters in the top percentile: 9
+2025-11-28 12:23:54,490 - INFO - Number of clusters in the top percentile: 9
+[INFO] Number of programs in the top percentile: 9
+2025-11-28 12:23:54,490 - INFO - Number of programs in the top percentile: 9
+[INFO] Using the top percentile score: -239.2867
+2025-11-28 12:23:54,491 - INFO - Using the top percentile score: -239.2867
+[INFO] Number of clusters in the island: 10
+2025-11-28 12:23:54,491 - INFO - Number of clusters in the island: 10
+[INFO] Number of clusters in the top percentile: 5
+2025-11-28 12:23:54,492 - INFO - Number of clusters in the top percentile: 5
+[INFO] Number of programs in the top percentile: 5
+2025-11-28 12:23:54,492 - INFO - Number of programs in the top percentile: 5
+[INFO] Using the top percentile score: -3301.3008
+2025-11-28 12:23:54,493 - INFO - Using the top percentile score: -3301.3008
+[INFO] Number of clusters in the island: 15
+2025-11-28 12:23:54,493 - INFO - Number of clusters in the island: 15
+[INFO] Number of clusters in the top percentile: 8
+2025-11-28 12:23:54,494 - INFO - Number of clusters in the top percentile: 8
+[INFO] Number of programs in the top percentile: 8
+2025-11-28 12:23:54,494 - INFO - Number of programs in the top percentile: 8
+[INFO] Using the top percentile score: -165.3537
+2025-11-28 12:23:54,495 - INFO - Using the top percentile score: -165.3537
+[INFO] Number of clusters in the island: 6
+2025-11-28 12:23:54,495 - INFO - Number of clusters in the island: 6
+[INFO] Number of clusters in the top percentile: 3
+2025-11-28 12:23:54,496 - INFO - Number of clusters in the top percentile: 3
+[INFO] Number of programs in the top percentile: 3
+2025-11-28 12:23:54,496 - INFO - Number of programs in the top percentile: 3
+[INFO] Using the top percentile score: -16796.452
+2025-11-28 12:23:54,497 - INFO - Using the top percentile score: -16796.452
+[INFO] Number of clusters in the island: 7
+2025-11-28 12:23:54,497 - INFO - Number of clusters in the island: 7
+[INFO] Number of clusters in the top percentile: 4
+2025-11-28 12:23:54,498 - INFO - Number of clusters in the top percentile: 4
+[INFO] Number of programs in the top percentile: 11
+2025-11-28 12:23:54,498 - INFO - Number of programs in the top percentile: 11
+[INFO] Using the top percentile score: -15175.8593
+2025-11-28 12:23:54,499 - INFO - Using the top percentile score: -15175.8593
+[INFO] Number of clusters in the island: 18
+2025-11-28 12:23:54,499 - INFO - Number of clusters in the island: 18
+[INFO] Number of clusters in the top percentile: 10
+2025-11-28 12:23:54,499 - INFO - Number of clusters in the top percentile: 10
+[INFO] Number of programs in the top percentile: 34
+2025-11-28 12:23:54,500 - INFO - Number of programs in the top percentile: 34
+[INFO] ----------
+2025-11-28 12:23:54,527 - INFO - ----------
+[INFO] STARTING CONSUMERS
+2025-11-28 12:23:54,529 - INFO - STARTING CONSUMERS
+[INFO] ----------
+2025-11-28 12:23:54,658 - INFO - ----------
+[INFO] STARTING THE PRODUCER
+2025-11-28 12:23:54,660 - INFO - STARTING THE PRODUCER
+[INFO]
+2025-11-28 12:23:54,663 - INFO -
+
+
+[INFO] Prompt scores: [-116.3323, -68.849]
+
+
+2025-11-28 12:23:54,664 - INFO - Prompt scores: [-116.3323, -68.849]
+[INFO] Island id 5
+2025-11-28 12:23:54,664 - INFO - Island id 5
+[INFO]
+2025-11-28 12:23:54,665 - INFO -
+
+
+[INFO] Time taken for LLM generation: 15 seconds
+
+
+2025-11-28 12:24:10,329 - INFO - Time taken for LLM generation: 15 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:24:10,332 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 15
+2025-11-28 12:24:10,334 - INFO - LLM generation time: 15
+[INFO] Producer: Generated 8 functions for prompt 101
+2025-11-28 12:24:10,335 - INFO - Producer: Generated 8 functions for prompt 101
+[INFO] Producer: Generated 0 failed functions for prompt 101
+2025-11-28 12:24:10,336 - INFO - Producer: Generated 0 failed functions for prompt 101
+[INFO]
+2025-11-28 12:24:10,337 - INFO -
+
+
+[INFO] Prompt scores: [-105.9947, -33.9456]
+
+
+2025-11-28 12:24:10,337 - INFO - Prompt scores: [-105.9947, -33.9456]
+[INFO] Island id 0
+2025-11-28 12:24:10,338 - INFO - Island id 0
+[INFO]
+2025-11-28 12:24:10,338 - INFO -
+
+
+[INFO] Time taken for LLM generation: 8 seconds
+
+
+2025-11-28 12:24:19,031 - INFO - Time taken for LLM generation: 8 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:24:19,033 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 8
+2025-11-28 12:24:19,035 - INFO - LLM generation time: 8
+[INFO] Producer: Generated 8 functions for prompt 102
+2025-11-28 12:24:19,036 - INFO - Producer: Generated 8 functions for prompt 102
+[INFO] Producer: Generated 0 failed functions for prompt 102
+2025-11-28 12:24:19,036 - INFO - Producer: Generated 0 failed functions for prompt 102
+[INFO]
+2025-11-28 12:24:19,038 - INFO -
+
+
+[INFO] Prompt scores: [-77.8405, -49.0314]
+
+
+2025-11-28 12:24:19,038 - INFO - Prompt scores: [-77.8405, -49.0314]
+[INFO] Island id 0
+2025-11-28 12:24:19,038 - INFO - Island id 0
+[INFO]
+2025-11-28 12:24:19,039 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-28 12:24:28,881 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:24:28,883 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-28 12:24:28,885 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 103
+2025-11-28 12:24:28,885 - INFO - Producer: Generated 8 functions for prompt 103
+[INFO] Producer: Generated 0 failed functions for prompt 103
+2025-11-28 12:24:28,886 - INFO - Producer: Generated 0 failed functions for prompt 103
+[INFO]
+2025-11-28 12:24:28,887 - INFO -
+
+
+[INFO] Prompt scores: [-156.5208, -101.3115]
+
+
+2025-11-28 12:24:28,887 - INFO - Prompt scores: [-156.5208, -101.3115]
+[INFO] Island id 1
+2025-11-28 12:24:28,888 - INFO - Island id 1
+[INFO]
+2025-11-28 12:24:28,888 - INFO -
+
+
+[INFO] Time taken for LLM generation: 13 seconds
+
+
+2025-11-28 12:24:42,556 - INFO - Time taken for LLM generation: 13 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:24:42,558 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 13
+2025-11-28 12:24:42,559 - INFO - LLM generation time: 13
+[INFO] Producer: Generated 8 functions for prompt 104
+2025-11-28 12:24:42,560 - INFO - Producer: Generated 8 functions for prompt 104
+[INFO] Producer: Generated 0 failed functions for prompt 104
+2025-11-28 12:24:42,561 - INFO - Producer: Generated 0 failed functions for prompt 104
+[INFO]
+2025-11-28 12:24:42,562 - INFO -
+
+
+[INFO] Prompt scores: [-156.5359, -96.2118]
+
+
+2025-11-28 12:24:42,563 - INFO - Prompt scores: [-156.5359, -96.2118]
+[INFO] Island id 3
+2025-11-28 12:24:42,563 - INFO - Island id 3
+[INFO]
+2025-11-28 12:24:42,563 - INFO -
+
+
+[INFO] Time taken for LLM generation: 12 seconds
+
+
+2025-11-28 12:24:55,233 - INFO - Time taken for LLM generation: 12 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:24:55,234 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 12
+2025-11-28 12:24:55,237 - INFO - LLM generation time: 12
+[INFO] Producer: Generated 8 functions for prompt 105
+2025-11-28 12:24:55,237 - INFO - Producer: Generated 8 functions for prompt 105
+[INFO] Producer: Generated 0 failed functions for prompt 105
+2025-11-28 12:24:55,238 - INFO - Producer: Generated 0 failed functions for prompt 105
+[INFO]
+2025-11-28 12:24:55,239 - INFO -
+
+
+[INFO] Prompt scores: [-156.5208, -62.912]
+
+
+2025-11-28 12:24:55,240 - INFO - Prompt scores: [-156.5208, -62.912]
+[INFO] Island id 1
+2025-11-28 12:24:55,240 - INFO - Island id 1
+[INFO]
+2025-11-28 12:24:55,240 - INFO -
+
+
+[INFO] Time taken for LLM generation: 9 seconds
+
+
+2025-11-28 12:25:04,432 - INFO - Time taken for LLM generation: 9 seconds
+[INFO] Number of outputs with at least one valid function definition: 8
+2025-11-28 12:25:04,433 - INFO - Number of outputs with at least one valid function definition: 8
+[INFO] LLM generation time: 9
+2025-11-28 12:25:04,435 - INFO - LLM generation time: 9
+[INFO] Producer: Generated 8 functions for prompt 106
+2025-11-28 12:25:04,436 - INFO - Producer: Generated 8 functions for prompt 106
+[INFO] Producer: Generated 0 failed functions for prompt 106
+2025-11-28 12:25:04,437 - INFO - Producer: Generated 0 failed functions for prompt 106
+[INFO]
+2025-11-28 12:25:04,438 - INFO -
+
+
+[INFO] Prompt scores: [-49.0314, -33.9456]
+
+
+2025-11-28 12:25:04,438 - INFO - Prompt scores: [-49.0314, -33.9456]
+[INFO] Island id 0
+2025-11-28 12:25:04,438 - INFO - Island id 0
+[INFO]
+2025-11-28 12:25:04,439 - INFO -

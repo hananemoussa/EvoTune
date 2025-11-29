@@ -1,0 +1,31 @@
+# Task: Symbolic Regression (sr)
+# Discover mathematical equations from data using llm-srbench benchmark
+
+task_name: "sr"
+function_str_to_extract: "equation"
+
+# Dataset configuration
+# Available categories: bio_pop_growth, chem_react, phys_osc, matsci, lsr_transform
+dataset_category: "bio_pop_growth"
+
+# Problem name within the category
+# Examples by category:
+#   bio_pop_growth: BPG0, BPG1, ..., BPG23 (24 problems)
+#   chem_react: CRK0, CRK1, ..., CRK35 (36 problems)
+#   phys_osc: PO0, PO1, ..., PO43 (44 problems)
+#   matsci: MatSci0, MatSci1, ..., MatSci28 (25 problems, some indices skipped)
+#   lsr_transform: I.10.7_1_0, I.11.19_0_0, etc. (111 problems)
+problem_name: "BPG0"
+
+# Evaluation settings
+# Score is -NMSE * 100, so failed_score should be very negative
+failed_score: -10000
+timeout_period: 30    # Max seconds per function evaluation
+mem_limit_gb: 10      # Memory limit for evaluation workers
+
+# ProgramsDatabase settings (for evolutionary search)
+programdatabaseConfig:
+  temp: 40.0
+
+# Initial sampling percentile for island selection
+initial_percentile: 0.3

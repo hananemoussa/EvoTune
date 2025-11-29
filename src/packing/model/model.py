@@ -345,6 +345,15 @@ def make_vllm_request(cfg, chat, load_finetuned, port):
         "top_p": cfg.model.topp,
     }
 
+    # Disable thinking mode for Qwen3 models to prevent <think> tag generation
+    model_name = cfg.full_model_name if not load_finetuned else cfg.model_adapter_dir
+    if "Qwen3" in model_name or "qwen3" in str(model_name).lower():
+        payload["extra_body"] = {
+            "chat_template_kwargs": {
+                "enable_thinking": False
+            }
+        }
+
     response = requests.post(url, json=payload)
     response.raise_for_status()  # Raises an HTTPError if the response was unsuccessful
     return dict_to_namespace(response.json())

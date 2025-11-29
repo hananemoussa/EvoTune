@@ -228,7 +228,9 @@ append_prompt = """You are tasked with creating a new function, priority(), that
 Think Outside the Box: Avoid simply rewriting or rephrasing existing approaches. Prioritize creating novel solutions rather than making superficial tweaks.
 Analyze the Score Drivers: Analyze the characteristics of the higher-scoring function. Identify what it is doing differently or more effectively than the lower-scoring function. Determine which specific changes or techniques lead to better performance.
 Experiment with Variations: Use the insights to create a new function that builds upon successful ideas but introduces innovative variations. Consider entirely new strategies or optimizations that were not present in the previous attempts.
-To summarize, your task is to write a new function named priority() that will perform better than both functions above and achieve a higher score."""
+To summarize, your task is to write a new function named priority() that will perform better than both functions above and achieve a higher score.
+
+IMPORTANT: Your solution MUST be a single, self-contained function named priority(). Only the priority() function will be extracted and executed for scoring - any code outside this function will be ignored and not available during evaluation. Do NOT define any helper functions outside of priority(). All logic must be contained within the priority() function itself. If you need helper functionality, define it as nested functions inside priority() or inline the logic directly."""
 
 system_prompt = "You are helpful, excellent and innovative problem solver specializing in mathematical optimization and algorithm design. You are an expert in writing Python functions."
 
